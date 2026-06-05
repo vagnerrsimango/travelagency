@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-beige: #F5F0E8;
+  --color-leafy: #365140;
+  --color-lightbeige: #FCFBF8;
+  --color-orange: #D16D56;
+  --color-shadow: #EBE7E0;
+  --color-darkgray: #AFAFAF;
+  --color-parablack: #0E150E;
+  --color-textdark: #0E0E0E;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair-display), Georgia, serif;
+}
+
+body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+/* Native dropdown option visibility inside dark-background forms */
+.bg-leafy select {
+  color-scheme: dark;
+}
+
+.bg-leafy select option {
+  background-color: #365140;
+  color: #ffffff;
+}
+
+.embla__slide--dest {
+  flex: 0 0 82%;
+}
+@media (min-width: 640px) {
+  .embla__slide--dest {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+@media (min-width: 1024px) {
+  .embla__slide--dest {
+    flex: 0 0 calc(33.333% - 11px);
+  }
+}
+
+.embla__slide--tours {
+  flex: 0 0 85%;
+}
+@media (min-width: 640px) {
+  .embla__slide--tours {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+@media (min-width: 1024px) {
+  .embla__slide--tours {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* ─── Entrance ─── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.animate-fade-up {
+  animation: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Hero background ─── */
+@keyframes ken-burns {
+  from { transform: scale(1);    }
+  to   { transform: scale(1.07); }
+}
+.animate-ken-burns {
+  animation: ken-burns 22s ease-out both;
+}
+
+/* ─── Promo badge shimmer ─── */
+@keyframes shimmer-sweep {
+  0%   { background-position: -250% center; }
+  100% { background-position:  250% center; }
+}
+.badge-shimmer {
+  background: linear-gradient(90deg,
+    #D16D56 0%, #e8956d 35%, #ffd4c2 50%, #e8956d 65%, #D16D56 100%
+  );
+  background-size: 300% auto;
+  animation: shimmer-sweep 2.8s linear infinite;
+}
+
+/* ─── Live offer dot ─── */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.3; transform: scale(0.75); }
+}
+.animate-live-pulse {
+  animation: live-pulse 1.8s ease-in-out infinite;
+}

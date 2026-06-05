@@ -1,0 +1,446 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link [ref=e4] [cursor=pointer]:
+      - /url: /
+      - img [ref=e5]
+    - list [ref=e18]:
+      - listitem [ref=e19]:
+        - link "Home" [ref=e20] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=e21]:
+        - generic [ref=e22] [cursor=pointer]:
+          - text: About
+          - img [ref=e23]
+      - listitem [ref=e25]:
+        - link "Services" [ref=e26] [cursor=pointer]:
+          - /url: /services
+      - listitem [ref=e27]:
+        - link "Tours" [ref=e28] [cursor=pointer]:
+          - /url: /tours
+      - listitem [ref=e29]:
+        - link "Destinations" [ref=e30] [cursor=pointer]:
+          - /url: /destinations
+      - listitem [ref=e31]:
+        - link "Blog" [ref=e32] [cursor=pointer]:
+          - /url: /blog
+    - link "Contact Us" [ref=e34] [cursor=pointer]:
+      - /url: /contact
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - img "Travel destination" [ref=e37]
+      - generic [ref=e39]:
+        - heading "Discover the World Through Travel" [level=1] [ref=e40]
+        - paragraph [ref=e41]: Design your perfect escape with our tailored travel services, ensuring every detail of your dream vacation is meticulously planned and flawlessly executed
+        - generic [ref=e42]:
+          - link "Book Now" [ref=e43] [cursor=pointer]:
+            - /url: /contact
+          - link "Learn More" [ref=e44] [cursor=pointer]:
+            - /url: /about
+            - text: Learn More
+            - img [ref=e45]
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - img "Travelers" [ref=e50]
+        - img "Travelers" [ref=e51]
+      - generic [ref=e52]:
+        - heading "We Are Your Gateway To Adventure" [level=2] [ref=e53]
+        - paragraph [ref=e54]: At Express Travel, we believe in the transformative power of travel. As avid explorers ourselves, we understand the desire to uncover new experiences, forge meaningful connections, and create lasting memories.
+        - link "Read More" [ref=e56] [cursor=pointer]:
+          - /url: /about
+      - generic [ref=e57]:
+        - img "Travelers" [ref=e58]
+        - img "Travelers" [ref=e59]
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - heading "Explore Exceptional Travel Benefits" [level=2] [ref=e63]
+        - generic [ref=e64]:
+          - img "Travel" [ref=e69]
+          - img "Travel" [ref=e74]
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - img "Personalized Itineraries" [ref=e78]
+          - heading "Personalized Itineraries" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Our personalized itineraries are meticulously designed to cater to your individual preferences.
+        - generic [ref=e81]:
+          - img "Best Price Guarantee" [ref=e83]
+          - heading "Best Price Guarantee" [level=3] [ref=e84]
+          - paragraph [ref=e85]: Our Best Price Guarantee assures you of the most competitive rates.
+        - generic [ref=e86]:
+          - img "VIP Access to Attractions" [ref=e88]
+          - heading "VIP Access to Attractions" [level=3] [ref=e89]
+          - paragraph [ref=e90]: Gain exclusive VIP access to top attractions, ensuring you the best experience.
+        - generic [ref=e91]:
+          - img "Safe & Secure Travels" [ref=e93]
+          - heading "Safe & Secure Travels" [level=3] [ref=e94]
+          - paragraph [ref=e95]: Enjoy peace of mind with our commitment to safe and secure travel.
+    - generic [ref=e96]:
+      - paragraph [ref=e98]: “Travel is not just about the places you go, but the experiences that transform you along the way.”
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - heading "Our Exclusive Destinations" [level=2] [ref=e101]
+          - paragraph [ref=e102]: Discover a world of unparalleled beauty and charm with our handpicked selection of exclusive destinations.
+        - generic [ref=e103]:
+          - button "Previous" [ref=e104]:
+            - img [ref=e105]
+          - button "Next" [ref=e107]:
+            - img [ref=e108]
+      - generic [ref=e111]:
+        - generic [ref=e113] [cursor=pointer]:
+          - img "Netherland" [ref=e114]
+          - generic [ref=e116]:
+            - generic [ref=e119]: Netherland
+            - paragraph [ref=e120]: 2 Cities
+        - generic [ref=e122] [cursor=pointer]:
+          - img "France" [ref=e123]
+          - generic [ref=e125]:
+            - generic [ref=e128]: France
+            - paragraph [ref=e129]: 3 Cities
+        - generic [ref=e131] [cursor=pointer]:
+          - img "Maldives" [ref=e132]
+          - generic [ref=e134]:
+            - generic [ref=e137]: Maldives
+            - paragraph [ref=e138]: 2 Cities
+        - generic [ref=e140] [cursor=pointer]:
+          - img "Switzerland" [ref=e141]
+          - generic [ref=e143]:
+            - generic [ref=e146]: Switzerland
+            - paragraph [ref=e147]: 4 Cities
+        - generic [ref=e149] [cursor=pointer]:
+          - img "Brazil" [ref=e150]
+          - generic [ref=e152]:
+            - generic [ref=e155]: Brazil
+            - paragraph [ref=e156]: 3 Cities
+        - generic [ref=e158] [cursor=pointer]:
+          - img "Spain" [ref=e159]
+          - generic [ref=e161]:
+            - generic [ref=e164]: Spain
+            - paragraph [ref=e165]: 3 Cities
+        - generic [ref=e167] [cursor=pointer]:
+          - img "India" [ref=e168]
+          - generic [ref=e170]:
+            - generic [ref=e173]: India
+            - paragraph [ref=e174]: 5 Cities
+        - generic [ref=e176] [cursor=pointer]:
+          - img "Iceland" [ref=e177]
+          - generic [ref=e179]:
+            - generic [ref=e182]: Iceland
+            - paragraph [ref=e183]: 4 Cities
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - img "Travel" [ref=e188]
+          - img "Travel" [ref=e189]
+          - img "Travel" [ref=e190]
+        - img [ref=e192]
+      - generic [ref=e194]:
+        - heading "Ready To Embark On Your Next Adventure?" [level=2] [ref=e195]
+        - generic [ref=e196]:
+          - generic [ref=e197]:
+            - generic [ref=e198]: Name*
+            - textbox "Full Name" [ref=e199]
+          - generic [ref=e200]:
+            - generic [ref=e201]: Email*
+            - textbox "Email" [ref=e202]
+          - generic [ref=e203]:
+            - generic [ref=e204]: Destination*
+            - combobox [ref=e205]:
+              - option "Select one" [selected]
+              - option "Netherland"
+              - option "France"
+              - option "Maldives"
+              - option "Switzerland"
+              - option "Brazil"
+              - option "Spain"
+              - option "India"
+          - button "Submit" [ref=e206]
+    - generic [ref=e207]:
+      - generic [ref=e208]:
+        - generic [ref=e209]:
+          - heading "Explore Our Tours" [level=2] [ref=e210]
+          - paragraph [ref=e211]: Dive into adventure with our curated selection of tours, offering unforgettable experiences in destinations around the globe.
+        - link "View More" [ref=e212] [cursor=pointer]:
+          - /url: /tours
+      - generic [ref=e213]:
+        - generic [ref=e215]:
+          - link "Discover Spain Discover Spain City In 2 Days! 2 Days From 1,600$ Discover Spain" [ref=e217] [cursor=pointer]:
+            - /url: /tours/discover-spain
+            - generic [ref=e218]:
+              - generic [ref=e219]:
+                - generic [ref=e220]:
+                  - heading "Discover Spain" [level=3] [ref=e221]
+                  - img [ref=e222]
+                - paragraph [ref=e224]: Discover Spain City In 2 Days!
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - img [ref=e227]
+                    - paragraph [ref=e229]: 2 Days
+                  - generic [ref=e230]:
+                    - img [ref=e231]
+                    - paragraph [ref=e234]: From 1,600$
+              - img "Discover Spain" [ref=e236]
+          - link "Discover India A Journey Through Tradition And Innovation 4 Days From 2,500$ Discover India" [ref=e238] [cursor=pointer]:
+            - /url: /tours/discover-india
+            - generic [ref=e239]:
+              - generic [ref=e240]:
+                - generic [ref=e241]:
+                  - heading "Discover India" [level=3] [ref=e242]
+                  - img [ref=e243]
+                - paragraph [ref=e245]: A Journey Through Tradition And Innovation
+                - generic [ref=e246]:
+                  - generic [ref=e247]:
+                    - img [ref=e248]
+                    - paragraph [ref=e250]: 4 Days
+                  - generic [ref=e251]:
+                    - img [ref=e252]
+                    - paragraph [ref=e255]: From 2,500$
+              - img "Discover India" [ref=e257]
+          - link "Safari Tour Explore The Wild Wonders Of Nature. 3 Days From 1,900$ Safari Tour" [ref=e259] [cursor=pointer]:
+            - /url: /tours/safari-tour
+            - generic [ref=e260]:
+              - generic [ref=e261]:
+                - generic [ref=e262]:
+                  - heading "Safari Tour" [level=3] [ref=e263]
+                  - img [ref=e264]
+                - paragraph [ref=e266]: Explore The Wild Wonders Of Nature.
+                - generic [ref=e267]:
+                  - generic [ref=e268]:
+                    - img [ref=e269]
+                    - paragraph [ref=e271]: 3 Days
+                  - generic [ref=e272]:
+                    - img [ref=e273]
+                    - paragraph [ref=e276]: From 1,900$
+              - img "Safari Tour" [ref=e278]
+          - link "Maldives Explore Experience Paradise In The Indian Ocean. 5 Days From 3,200$ Maldives Explore" [ref=e280] [cursor=pointer]:
+            - /url: /tours/maldives-explore
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - generic [ref=e283]:
+                  - heading "Maldives Explore" [level=3] [ref=e284]
+                  - img [ref=e285]
+                - paragraph [ref=e287]: Experience Paradise In The Indian Ocean.
+                - generic [ref=e288]:
+                  - generic [ref=e289]:
+                    - img [ref=e290]
+                    - paragraph [ref=e292]: 5 Days
+                  - generic [ref=e293]:
+                    - img [ref=e294]
+                    - paragraph [ref=e297]: From 3,200$
+              - img "Maldives Explore" [ref=e299]
+          - link "Swiss Alps Breathtaking Views Across Switzerland. 4 Days From 2,800$ Swiss Alps" [ref=e301] [cursor=pointer]:
+            - /url: /tours/swiss-alps
+            - generic [ref=e302]:
+              - generic [ref=e303]:
+                - generic [ref=e304]:
+                  - heading "Swiss Alps" [level=3] [ref=e305]
+                  - img [ref=e306]
+                - paragraph [ref=e308]: Breathtaking Views Across Switzerland.
+                - generic [ref=e309]:
+                  - generic [ref=e310]:
+                    - img [ref=e311]
+                    - paragraph [ref=e313]: 4 Days
+                  - generic [ref=e314]:
+                    - img [ref=e315]
+                    - paragraph [ref=e318]: From 2,800$
+              - img "Swiss Alps" [ref=e320]
+          - link "Brazil Adventure Explore The Stunning Beaches Of Brazil. 6 Days From 1,300$ Brazil Adventure" [ref=e322] [cursor=pointer]:
+            - /url: /tours/brazil-adventure
+            - generic [ref=e323]:
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - heading "Brazil Adventure" [level=3] [ref=e326]
+                  - img [ref=e327]
+                - paragraph [ref=e329]: Explore The Stunning Beaches Of Brazil.
+                - generic [ref=e330]:
+                  - generic [ref=e331]:
+                    - img [ref=e332]
+                    - paragraph [ref=e334]: 6 Days
+                  - generic [ref=e335]:
+                    - img [ref=e336]
+                    - paragraph [ref=e339]: From 1,300$
+              - img "Brazil Adventure" [ref=e341]
+        - button "Previous" [ref=e342]:
+          - img [ref=e343]
+        - button "Next" [ref=e345]:
+          - img [ref=e346]
+    - generic [ref=e348]:
+      - heading "What Our Clients Say" [level=2] [ref=e349]
+      - generic [ref=e350]:
+        - generic [ref=e351]:
+          - generic [ref=e352]:
+            - img [ref=e353]
+            - img [ref=e355]
+            - img [ref=e357]
+            - img [ref=e359]
+            - img [ref=e361]
+          - paragraph [ref=e363]: “Exceptional service and unforgettable experiences! Highly recommend Express Travel for anyone looking to create lifelong memories through travel.”
+          - generic [ref=e364]:
+            - generic [ref=e365]: H
+            - generic [ref=e366]:
+              - paragraph [ref=e367]: Hary Gurdan
+              - paragraph [ref=e368]: GN SL
+        - generic [ref=e369]:
+          - generic [ref=e370]:
+            - img [ref=e371]
+            - img [ref=e373]
+            - img [ref=e375]
+            - img [ref=e377]
+            - img [ref=e379]
+          - paragraph [ref=e381]: “An exceptional travel company! Express Travel exceeded our expectations in every way. Their professionalism, expertise, and commitment to customer satisfaction are truly commendable.”
+          - generic [ref=e382]:
+            - generic [ref=e383]: L
+            - generic [ref=e384]:
+              - paragraph [ref=e385]: Lucas Thompson
+              - paragraph [ref=e386]: GN SL SN
+        - generic [ref=e387]:
+          - generic [ref=e388]:
+            - img [ref=e389]
+            - img [ref=e391]
+            - img [ref=e393]
+            - img [ref=e395]
+            - img [ref=e397]
+          - paragraph [ref=e399]: “Express Travel made our dream vacation a reality. We couldn't have asked for a better travel experience. We're already planning our next adventure with them.”
+          - generic [ref=e400]:
+            - generic [ref=e401]: K
+            - generic [ref=e402]:
+              - paragraph [ref=e403]: Katty Perry
+              - paragraph [ref=e404]: SL
+        - generic [ref=e405]:
+          - generic [ref=e406]:
+            - img [ref=e407]
+            - img [ref=e409]
+            - img [ref=e411]
+            - img [ref=e413]
+            - img [ref=e415]
+          - paragraph [ref=e417]: “Incredible customer service and attention to detail. Express Travel truly goes above and beyond to ensure their clients have a memorable experience. Can't wait to travel with them again!”
+          - generic [ref=e418]:
+            - generic [ref=e419]: J
+            - generic [ref=e420]:
+              - paragraph [ref=e421]: James Wilson
+              - paragraph [ref=e422]: GN
+        - generic [ref=e423]:
+          - generic [ref=e424]:
+            - img [ref=e425]
+            - img [ref=e427]
+            - img [ref=e429]
+            - img [ref=e431]
+            - img [ref=e433]
+          - paragraph [ref=e435]: “Five stars all around! Express Travel provided us with an unforgettable travel experience. Their attention to detail, personalized service, and passion for travel shine through.”
+          - generic [ref=e436]:
+            - generic [ref=e437]: S
+            - generic [ref=e438]:
+              - paragraph [ref=e439]: Sophia Chen
+              - paragraph [ref=e440]: SN
+        - generic [ref=e441]:
+          - generic [ref=e442]:
+            - img [ref=e443]
+            - img [ref=e445]
+            - img [ref=e447]
+            - img [ref=e449]
+            - img [ref=e451]
+          - paragraph [ref=e453]: “Our vacation with Express Travel exceeded all expectations. From the luxurious accommodations to the unique excursions, every detail was carefully thought out.”
+          - generic [ref=e454]:
+            - generic [ref=e455]: M
+            - generic [ref=e456]:
+              - paragraph [ref=e457]: Martin Rodriguez
+              - paragraph [ref=e458]: GN SL
+    - generic [ref=e459]:
+      - generic [ref=e460]:
+        - heading "Our Travel Blog" [level=2] [ref=e461]
+        - paragraph [ref=e462]: Welcome to our travel blog, where we embark on a journey to uncover the wonders of the world.
+      - generic [ref=e463]:
+        - 'link "Unveiling the Secrets of French Cuisine: A Culinary Journey Through France Unveiling the Secrets of French Cuisine: A Culinary Journey Through France Harry Thompson Harry Thompson May 25, 2023" [ref=e464] [cursor=pointer]':
+          - /url: /blog/french-cuisine-culinary-journey
+          - generic [ref=e465]:
+            - 'img "Unveiling the Secrets of French Cuisine: A Culinary Journey Through France" [ref=e466]'
+            - generic [ref=e468]:
+              - 'heading "Unveiling the Secrets of French Cuisine: A Culinary Journey Through France" [level=3] [ref=e469]'
+              - generic [ref=e470]:
+                - img "Harry Thompson" [ref=e472]
+                - generic [ref=e473]:
+                  - paragraph [ref=e474]: Harry Thompson
+                  - paragraph [ref=e475]: May 25, 2023
+        - 'link "A Taste of Paradise: Exploring the Stunning Beaches of Brazil A Taste of Paradise: Exploring the Stunning Beaches of Brazil Sophia Williams Sophia Williams May 20, 2023" [ref=e476] [cursor=pointer]':
+          - /url: /blog/beaches-of-brazil
+          - generic [ref=e477]:
+            - 'img "A Taste of Paradise: Exploring the Stunning Beaches of Brazil" [ref=e478]'
+            - generic [ref=e480]:
+              - 'heading "A Taste of Paradise: Exploring the Stunning Beaches of Brazil" [level=3] [ref=e481]'
+              - generic [ref=e482]:
+                - img "Sophia Williams" [ref=e484]
+                - generic [ref=e485]:
+                  - paragraph [ref=e486]: Sophia Williams
+                  - paragraph [ref=e487]: May 20, 2023
+        - link "A Journey Through the Venice of the North A Journey Through the Venice of the North Martin Rodriguez Martin Rodriguez May 05, 2023" [ref=e488] [cursor=pointer]:
+          - /url: /blog/venice-of-the-north
+          - generic [ref=e489]:
+            - img "A Journey Through the Venice of the North" [ref=e490]
+            - generic [ref=e492]:
+              - heading "A Journey Through the Venice of the North" [level=3] [ref=e493]
+              - generic [ref=e494]:
+                - img "Martin Rodriguez" [ref=e496]
+                - generic [ref=e497]:
+                  - paragraph [ref=e498]: Martin Rodriguez
+                  - paragraph [ref=e499]: May 05, 2023
+  - contentinfo [ref=e500]:
+    - generic [ref=e501]:
+      - link "Home" [ref=e502] [cursor=pointer]:
+        - /url: /
+      - link "About Us" [ref=e503] [cursor=pointer]:
+        - /url: /about
+      - link "Testimonials" [ref=e504] [cursor=pointer]:
+        - /url: /testimonials
+      - link "Services" [ref=e505] [cursor=pointer]:
+        - /url: /services
+      - link "Our Team" [ref=e506] [cursor=pointer]:
+        - /url: /team
+      - link "FAQ" [ref=e507] [cursor=pointer]:
+        - /url: /faq
+    - generic [ref=e508]:
+      - generic [ref=e509]:
+        - heading "LET'S HAVE A CONVERSATION" [level=2] [ref=e510]:
+          - text: LET'S HAVE A
+          - text: CONVERSATION
+        - paragraph [ref=e511]: Express Travel specializes in efficient booking services and crafting personalized itineraries for seamless and unforgettable travel experiences.
+        - generic [ref=e512]:
+          - paragraph [ref=e513]: "Follow Us:"
+          - generic [ref=e514]:
+            - link "Facebook" [ref=e515] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e516]
+            - link "X" [ref=e518] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e519]
+            - link "Pinterest" [ref=e521] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e522]
+            - link "YouTube" [ref=e524] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e525]
+            - link "TikTok" [ref=e527] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e528]
+            - link "WhatsApp" [ref=e530] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e531]
+      - generic [ref=e533]:
+        - img "Contact us" [ref=e535]
+        - paragraph [ref=e536]: "Follow Us:"
+        - generic [ref=e537]:
+          - generic [ref=e538] [cursor=pointer]:
+            - img "Instagram" [ref=e539]
+            - img [ref=e541]
+          - generic [ref=e543] [cursor=pointer]:
+            - img "Instagram" [ref=e544]
+            - img [ref=e546]
+          - generic [ref=e548] [cursor=pointer]:
+            - img "Instagram" [ref=e549]
+            - img [ref=e551]
+    - generic [ref=e553]:
+      - paragraph [ref=e554]: ©2024 Travel Agency Template. All Rights Reserved.
+      - paragraph [ref=e555]:
+        - text: Template by
+        - link "Jamstackers" [ref=e556] [cursor=pointer]:
+          - /url: https://jamstackers.com
+        - text: .
+  - button "Open Next.js Dev Tools" [ref=e562] [cursor=pointer]:
+    - img [ref=e563]
