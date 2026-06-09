@@ -1,0 +1,487 @@
+{
+  "metadata": {
+    "root": {
+      "title": "ZambiTour — Agência de Viagens da África Austral",
+      "description": "Reserve voos, hotéis, aluguer de carros e pacotes de viagem pela África Austral. A ZambiTour é especialista em Moçambique, Zâmbia, Zimbábue, África do Sul e muito mais."
+    },
+    "destinations": {
+      "title": "Destinos e Tours — ZambiTour",
+      "description": "Explore os principais destinos da África Austral — das Cataratas Vitória às ilhas de Moçambique, do Kruger ao Serengeti."
+    },
+    "hotels": {
+      "title": "Hotéis e Alojamento — ZambiTour",
+      "description": "Veja hotéis, lodges e resorts de praia selecionados pela África Austral."
+    },
+    "cars": {
+      "title": "Aluguer de Carros — ZambiTour",
+      "description": "Alugue sedans económicos, SUVs, viaturas 4x4 de safari e minibuses pela África Austral."
+    },
+    "about": {
+      "title": "Sobre a ZambiTour — Agência de Viagens da África Austral",
+      "description": "Conheça a ZambiTour — o parceiro de confiança da África Austral para voos, hotéis, aluguer de carros e pacotes de safari."
+    },
+    "book": {
+      "title": "Reserve a Sua Viagem — ZambiTour",
+      "description": "Reserve voos, hotéis e aluguer de carros pela África Austral. Receba confirmação em até 24 horas."
+    },
+    "blog": {
+      "title": "Blog de Viagens — ZambiTour",
+      "description": "Dicas de viagem, guias de destinos e histórias locais de toda a África Austral."
+    }
+  },
+  "layout": {
+    "nav": {
+      "home": "Início",
+      "destinations": "Destinos",
+      "hotels": "Hotéis",
+      "cars": "Carros",
+      "about": "Sobre",
+      "bookNow": "Reservar",
+      "toggleMenu": "Abrir ou fechar menu",
+      "language": "Idioma",
+      "switchTo": "Mudar para"
+    },
+    "footer": {
+      "description": "A ZambiTour é o parceiro de confiança para viagens na África Austral — voos, hotéis, aluguer de carros e itinerários de safari personalizados pela Zâmbia, Zimbábue, África do Sul, Moçambique, Botswana e muito mais.",
+      "conversationLine1": "VAMOS",
+      "conversationLine2": "CONVERSAR",
+      "contactAlt": "Contacte-nos",
+      "followUs": "Siga-nos",
+      "instagramAlt": "ZambiTour no Instagram",
+      "copyright": "©2026 ZambiTour. Todos os direitos reservados.",
+      "developedBy": "Desenvolvido por"
+    }
+  },
+  "pages": {
+    "destinations": {
+      "title": "Explore",
+      "titleAccent": "a África Austral",
+      "description": "Descubra destinos selecionados, tours personalizados e pacotes de viagem completos por toda a região."
+    },
+    "hotels": {
+      "title": "Hotéis e",
+      "titleAccent": "Alojamento",
+      "description": "De resorts de praia a hotéis urbanos e lodges de safari — trabalhamos com as melhores propriedades da região."
+    },
+    "cars": {
+      "title": "Aluguer de",
+      "titleAccent": "Carros",
+      "description": "Escolha a viatura certa para a sua viagem — de sedans urbanos a 4x4 de safari totalmente equipados. Levantamento em qualquer ponto da região."
+    },
+    "about": {
+      "title": "Sobre a",
+      "titleAccent": "ZambiTour",
+      "description": "O parceiro de confiança da África Austral — construído com conhecimento local, paixão e compromisso para tornar a sua viagem simples."
+    },
+    "book": {
+      "title": "Faça uma",
+      "titleAccent": "Reserva",
+      "description": "Preencha o formulário abaixo e a nossa equipa confirmará a sua reserva em até 24 horas. Não é necessário pagamento inicial."
+    },
+    "blog": {
+      "title": "Blog de",
+      "titleAccent": "Viagens",
+      "description": "Guias de destinos, dicas de viagem e histórias locais de toda a África Austral."
+    }
+  },
+  "home": {
+    "hero": {
+      "imageAlt": "África Austral",
+      "title": "Encontre a Sua",
+      "titleAccent": "Viagem Perfeita",
+      "subtitle": "Voos · Hotéis · Carros · Pacotes.",
+      "region": "Moçambique, Zâmbia, Zimbábue, África do Sul e muito mais.",
+      "tabs": {
+        "flight": "Voos",
+        "hotel": "Hotéis",
+        "car": "Aluguer"
+      },
+      "fields": {
+        "from": "Origem",
+        "to": "Destino",
+        "pickupCity": "Cidade de levantamento",
+        "dropOffCity": "Cidade de entrega",
+        "destination": "Destino"
+      },
+      "rooms": {
+        "singular": "quarto",
+        "plural": "quartos"
+      },
+      "passengers": {
+        "singular": "passageiro",
+        "plural": "passageiros"
+      },
+      "carTypes": ["Económico", "SUV", "4x4 Safari", "Minibus"],
+      "search": "Pesquisar",
+      "trustItems": [
+        "Confirmação em 24h",
+        "Garantia do Melhor Preço",
+        "Pagamento Online Seguro"
+      ]
+    },
+    "bookingOptions": {
+      "title": "O Que Procura",
+      "titleAccent": "Hoje?",
+      "description": "Escolha o serviço de viagem e deixe a ZambiTour tratar de tudo — da primeira pesquisa ao embarque.",
+      "options": [
+        {
+          "id": "flights",
+          "title": "Voos",
+          "description": "As melhores tarifas em rotas domésticas e internacionais pela África Austral e além. Partidas diárias de Maputo.",
+          "cta": "Pesquisar Voos"
+        },
+        {
+          "id": "hotels",
+          "title": "Hotéis",
+          "description": "Hotéis, lodges e resorts de praia escolhidos a dedo para todos os orçamentos — de guesthouses a propriedades cinco estrelas.",
+          "cta": "Ver Hotéis"
+        },
+        {
+          "id": "cars",
+          "title": "Aluguer de Carros",
+          "description": "Sedans urbanos, viaturas 4x4 de safari e minibuses disponíveis. Explore a África Austral ao seu ritmo.",
+          "cta": "Alugar Carro"
+        }
+      ]
+    },
+    "promoFares": {
+      "eyebrow": "Ofertas por Tempo Limitado",
+      "title": "Tarifas",
+      "titleAccent": "Promocionais",
+      "description": "Rotas com desconto exclusivo a partir de Maputo. Reserve antes do fim da validade.",
+      "viewAllFares": "Ver Todas as Tarifas",
+      "liveOffer": "Oferta Ativa",
+      "from": "De",
+      "to": "Para",
+      "startingFrom": "A partir de",
+      "perPerson": "por pessoa",
+      "bookThisFare": "Reservar Tarifa",
+      "fares": [
+        {
+          "from": "Maputo",
+          "to": "Joanesburgo",
+          "highlight": "Partidas diárias — voo de 1h",
+          "price": "89",
+          "currency": "USD",
+          "validity": "Válido até 30 jun 2026",
+          "badge": "OFERTA",
+          "badgeClass": "badge-shimmer"
+        },
+        {
+          "from": "Maputo",
+          "to": "Lisboa",
+          "highlight": "Rota direta — voo de 11h",
+          "price": "890",
+          "currency": "USD",
+          "validity": "Válido até 31 jul 2026",
+          "badge": "INTERNACIONAL",
+          "badgeClass": "bg-white/20"
+        },
+        {
+          "from": "Maputo",
+          "to": "Dubai",
+          "highlight": "Pacotes com stopover disponíveis",
+          "price": "650",
+          "currency": "USD",
+          "validity": "Válido até 15 ago 2026",
+          "badge": "POPULAR",
+          "badgeClass": "bg-white/20"
+        },
+        {
+          "from": "Maputo",
+          "to": "Cidade do Cabo",
+          "highlight": "Especial de fim de semana",
+          "price": "220",
+          "currency": "USD",
+          "validity": "Válido até 30 jun 2026",
+          "badge": "FIM DE SEMANA",
+          "badgeClass": "bg-white/20"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Como",
+      "titleAccent": "Funciona",
+      "description": "Reservar a sua próxima aventura pela África Austral é simples. Quatro passos e está pronto para viajar.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Escolha o Serviço",
+          "description": "Selecione voos, hotéis, aluguer de carros ou um pacote completo ajustado ao seu destino."
+        },
+        {
+          "number": "02",
+          "title": "Envie o Pedido",
+          "description": "Preencha o formulário de reserva com datas, preferências e dados dos passageiros."
+        },
+        {
+          "number": "03",
+          "title": "Receba a Confirmação",
+          "description": "A nossa equipa analisa o pedido e envia a cotação detalhada e a confirmação em até 24h."
+        },
+        {
+          "number": "04",
+          "title": "Pague e Prepare-se",
+          "description": "Confirme a reserva com pagamento seguro via M-Pesa, cartão ou transferência bancária. Depois é só preparar as malas."
+        }
+      ]
+    }
+  },
+  "sections": {
+    "destinations": {
+      "quote": "Viajar não é apenas sobre os lugares que visita, mas sobre as experiências que o transformam pelo caminho.",
+      "title": "Os Nossos",
+      "titleAccent": "Destinos",
+      "titleRest": "Exclusivos",
+      "description": "Descubra beleza e encanto incomparáveis com a nossa seleção de destinos escolhidos a dedo.",
+      "previous": "Anterior",
+      "next": "Seguinte",
+      "items": [
+        { "name": "Zâmbia", "label": "4 Parques Nacionais", "image": "/images/safari1.jpg" },
+        { "name": "Zimbábue", "label": "Cataratas Vitória", "image": "/images/safari2.jpg" },
+        { "name": "África do Sul", "label": "5 Maravilhas", "image": "/images/Switzerland.jpg" },
+        { "name": "Moçambique", "label": "3 Escapadas Insulares", "image": "/images/Maldives.jpg" },
+        { "name": "Botswana", "label": "Delta do Okavango", "image": "/images/Brazil.jpg" },
+        { "name": "Tanzânia", "label": "Safari no Serengeti", "image": "/images/safari2.jpg" },
+        { "name": "Namíbia", "label": "Paisagens Desérticas", "image": "/images/Iceland.jpg" },
+        { "name": "Quénia", "label": "5 Parques Nacionais", "image": "/images/India.jpg" }
+      ]
+    },
+    "tours": {
+      "title": "Explore os Nossos Tours",
+      "description": "De quedas de água imponentes a savanas vastas e praias intocadas — explore tours pela África Austral criados para cada tipo de viajante.",
+      "viewMore": "Ver Mais",
+      "previous": "Anterior",
+      "next": "Seguinte",
+      "days": "Dias",
+      "from": "A partir de",
+      "tours": [
+        { "name": "Cataratas Vitória", "description": "Viva a experiência da maior queda de água do mundo.", "days": 3, "price": "1,200", "image": "/images/safari2.jpg", "slug": "victoria-falls" },
+        { "name": "Parque Nacional Kruger", "description": "Safari Big Five na África do Sul.", "days": 4, "price": "2,100", "image": "/images/safari1.jpg", "slug": "kruger-national-park" },
+        { "name": "Explorador da Cidade do Cabo", "description": "Descubra a Cidade do Cabo e as vinhas.", "days": 3, "price": "1,500", "image": "/images/Switzerland.jpg", "slug": "cape-town-explorer" },
+        { "name": "Ilhas de Moçambique", "description": "Praias intocadas e águas turquesa.", "days": 5, "price": "2,800", "image": "/images/Maldives.jpg", "slug": "mozambique-islands" },
+        { "name": "Delta do Okavango", "description": "Explore o paraíso natural do Botswana.", "days": 4, "price": "3,200", "image": "/images/Brazil.jpg", "slug": "okavango-delta" },
+        { "name": "Migração do Serengeti", "description": "Veja a Grande Migração na Tanzânia.", "days": 6, "price": "4,500", "image": "/images/safari2.jpg", "slug": "serengeti-migration" }
+      ]
+    },
+    "packages": {
+      "eyebrow": "Experiências Selecionadas",
+      "title": "Pacotes de",
+      "titleAccent": "Viagem",
+      "description": "Itinerários completos com voos, alojamento e atividades incluídas. Só precisa escolher o destino.",
+      "from": "A partir de",
+      "perPerson": "/pessoa",
+      "bookPackage": "Reservar Pacote",
+      "packages": [
+        {
+          "title": "Fim de Semana em Vilankulo",
+          "destination": "Vilankulo, Moçambique",
+          "duration": "3 Dias / 2 Noites",
+          "included": ["Voos de ida e volta a partir de Maputo", "Alojamento à beira-mar", "Passeio de barco à Ilha de Bazaruto", "Pequeno-almoço diário"],
+          "priceFrom": 650,
+          "currency": "USD",
+          "image": "/images/Maldives.jpg",
+          "tag": "PRAIA"
+        },
+        {
+          "title": "Safari no Kruger",
+          "destination": "Parque Kruger, África do Sul",
+          "duration": "4 Dias / 3 Noites",
+          "included": ["Voos Maputo–Joanesburgo ida e volta", "Alojamento em lodge de safari", "2 safaris por dia", "Refeições em pensão completa"],
+          "priceFrom": 1200,
+          "currency": "USD",
+          "image": "/images/safari1.jpg",
+          "tag": "SAFARI"
+        },
+        {
+          "title": "Escapada a Zanzibar",
+          "destination": "Zanzibar, Tanzânia",
+          "duration": "5 Dias / 4 Noites",
+          "included": ["Voos de ida e volta", "Resort de praia em meia pensão", "Tour guiado por Stone Town", "Passeio de snorkeling"],
+          "priceFrom": 980,
+          "currency": "USD",
+          "image": "/images/safari2.jpg",
+          "tag": "ILHA"
+        },
+        {
+          "title": "Experiência Dubai",
+          "destination": "Dubai, EAU",
+          "duration": "6 Dias / 5 Noites",
+          "included": ["Voos de ida e volta a partir de Maputo", "Alojamento em hotel 4 estrelas", "Safari no deserto e jantar nas dunas", "Tour panorâmico pela cidade"],
+          "priceFrom": 1850,
+          "currency": "USD",
+          "image": "/images/Switzerland.jpg",
+          "tag": "LUXO"
+        }
+      ]
+    },
+    "hotels": {
+      "eyebrow": "Alojamento",
+      "title": "Hotéis em",
+      "titleAccent": "Destaque",
+      "description": "De resorts de praia a hotéis urbanos — trabalhamos com as melhores propriedades da África Austral.",
+      "browseAllHotels": "Ver Todos os Hotéis",
+      "from": "A partir de",
+      "perNight": "/noite",
+      "checkAvailability": "Ver Disponibilidade",
+      "hotels": [
+        { "name": "Polana Serena Hotel", "location": "Maputo, Moçambique", "stars": 5, "priceFrom": 220, "currency": "USD", "description": "Marco colonial icónico com vista para o mar, piscina infinita e gastronomia premiada.", "amenities": ["Piscina", "Spa", "Restaurante", "WiFi"], "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" },
+        { "name": "Baobab Beach Resort", "location": "Vilankulo, Moçambique", "stars": 4, "priceFrom": 180, "currency": "USD", "description": "Resort tropical à beira-mar com acesso direto ao arquipélago intocado de Bazaruto.", "amenities": ["Praia", "Desportos Aquáticos", "Piscina", "WiFi"], "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" },
+        { "name": "Victoria Falls Hotel", "location": "Cataratas Vitória, Zimbábue", "stars": 5, "priceFrom": 340, "currency": "USD", "description": "A grande referência dos hotéis africanos, a poucos passos da queda de água mais espetacular do mundo.", "amenities": ["Alta Gastronomia", "Spa", "Piscina", "WiFi"], "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80" },
+        { "name": "Sandton Sun Hotel", "location": "Joanesburgo, África do Sul", "stars": 4, "priceFrom": 95, "currency": "USD", "description": "Hotel contemporâneo no coração do centro financeiro e comercial de Sandton.", "amenities": ["Ginásio", "Restaurante", "Centro de Negócios", "WiFi"], "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" }
+      ]
+    },
+    "cars": {
+      "eyebrow": "Mobilidade",
+      "title": "Opções de",
+      "titleAccent": "Aluguer",
+      "description": "Escolha a viatura certa para a sua viagem — de sedans urbanos a 4x4 de safari totalmente equipados.",
+      "seeAllVehicles": "Ver Todas as Viaturas",
+      "seats": "Lugares",
+      "bags": "Malas",
+      "gearbox": "Caixa",
+      "from": "A partir de",
+      "perDay": "/dia",
+      "reserveCar": "Reservar",
+      "cars": [
+        { "category": "Económico", "brand": "Toyota Corolla ou similar", "pricePerDay": 35, "currency": "USD", "seats": 5, "luggage": 1, "transmission": "Manual", "type": "Sedan", "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" },
+        { "category": "SUV", "brand": "Toyota RAV4 ou similar", "pricePerDay": 75, "currency": "USD", "seats": 5, "luggage": 2, "transmission": "Automático", "type": "SUV 4x2", "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" },
+        { "category": "4x4 Safari", "brand": "Toyota Land Cruiser ou similar", "pricePerDay": 120, "currency": "USD", "seats": 7, "luggage": 3, "transmission": "Manual / 4WD", "type": "Todo-o-terreno", "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" },
+        { "category": "Minibus", "brand": "Toyota HiAce ou similar", "pricePerDay": 90, "currency": "USD", "seats": 12, "luggage": 4, "transmission": "Manual", "type": "Transfer de Grupo", "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" }
+      ]
+    },
+    "booking": {
+      "imageAlt": "Reserve a sua viagem pela África Austral",
+      "brand": "ZambiTour",
+      "imageTitleLine1": "A sua viagem pela",
+      "imageTitleLine2": "África Austral começa aqui.",
+      "tagline": "Reserve. Confirme. Viaje.",
+      "title": "Reserve a Sua",
+      "titleAccent": "Viagem",
+      "description": "Preencha os seus dados e a nossa equipa confirmará em até 24 horas.",
+      "tabs": {
+        "flight": "Voo",
+        "hotel": "Hotel",
+        "car": "Aluguer"
+      },
+      "labels": {
+        "from": "Origem *",
+        "to": "Destino *",
+        "departureDate": "Data de Partida *",
+        "returnDate": "Data de Regresso",
+        "returnDateRequired": "Data de Regresso *",
+        "passengers": "Passageiros *",
+        "destination": "Destino *",
+        "checkIn": "Check-in *",
+        "checkOut": "Check-out *",
+        "rooms": "Quartos *",
+        "guests": "Hóspedes *",
+        "pickupCity": "Cidade de Levantamento *",
+        "dropOffCity": "Cidade de Entrega",
+        "pickupDate": "Data de Levantamento *",
+        "vehicleType": "Tipo de Viatura *",
+        "yourDetails": "Os Seus Dados",
+        "fullName": "Nome Completo *",
+        "phone": "Telefone *",
+        "email": "Email *"
+      },
+      "placeholders": {
+        "departureCity": "Cidade de partida",
+        "destinationCity": "Cidade de destino",
+        "selectCity": "Selecione a cidade",
+        "sameAsPickup": "Igual ao levantamento",
+        "anyVehicle": "Qualquer viatura",
+        "fullName": "O seu nome completo",
+        "phone": "+258 8x xxx xxxx",
+        "email": "seu@email.com"
+      },
+      "passengers": {
+        "singular": "passageiro",
+        "plural": "passageiros"
+      },
+      "rooms": {
+        "singular": "quarto",
+        "plural": "quartos"
+      },
+      "guests": {
+        "singular": "hóspede",
+        "plural": "hóspedes"
+      },
+      "vehicleTypes": ["Sedan Económico", "SUV", "4x4 Safari", "Minibus"],
+      "submit": "Enviar Pedido de Reserva",
+      "note": "Não é necessário pagar agora. Confirmaremos em até 24 horas."
+    },
+    "payment": {
+      "title": "Pagamento",
+      "titleAccent": "Online Seguro",
+      "description": "O pagamento só é necessário depois de receber a confirmação de reserva da nossa equipa. Aceitamos vários métodos de pagamento para que possa pagar da forma mais conveniente.",
+      "steps": [
+        "Preencha o formulário de reserva",
+        "Receba a nossa confirmação e fatura",
+        "Pague pelo método preferido",
+        "Receba os documentos da reserva"
+      ],
+      "secureTitle": "Seguro e protegido",
+      "secureDescription": "Todas as transações são processadas por canais de pagamento verificados. Os seus dados financeiros nunca ficam guardados nos nossos servidores.",
+      "acceptedMethods": "Métodos de Pagamento Aceites",
+      "available": "Disponível",
+      "methods": [
+        { "id": "mpesa", "name": "M-Pesa", "description": "Pague de imediato via Vodacom M-Pesa." },
+        { "id": "emola", "name": "e-Mola", "description": "Pagamento móvel seguro através do BCI e-Mola." },
+        { "id": "visa", "name": "Visa", "description": "Pague com cartão de crédito ou débito Visa." },
+        { "id": "bank", "name": "Transferência Bancária", "description": "Transferência bancária direta em MZN, USD ou ZAR." }
+      ]
+    },
+    "about": {
+      "imageAlt": "Viajantes",
+      "title": "O Parceiro de Confiança para Viajar pela África Austral",
+      "description": "Na ZambiTour, somos especialistas em viagens pela África Austral. Com raízes profundas na região, oferecemos conhecimento especializado sobre Zâmbia, Zimbábue, África do Sul, Moçambique, Botswana e muito mais — desde a reserva de voos e hotéis até ao planeamento do seu safari perfeito.",
+      "readMore": "Ler Mais"
+    },
+    "services": {
+      "title": "Tudo o Que Precisa para",
+      "titleAccent": "Viajar por África",
+      "imageAlt": "Viagem",
+      "services": [
+        { "icon": "/images/paths.svg", "title": "Reserva de Voos e Hotéis", "description": "Reserve voos domésticos e internacionais e hotéis pela África Austral com facilidade. Procuramos centenas de opções para encontrar as melhores tarifas.", "dark": true },
+        { "icon": "/images/vip.svg", "title": "Aluguer de Carros", "description": "Explore a África Austral ao seu ritmo. De sedans urbanos a viaturas 4x4 de safari — temos o carro certo para cada estrada.", "dark": false },
+        { "icon": "/images/safe.svg", "title": "Pagamentos Online Seguros", "description": "Reserve e pague online com segurança através da nossa plataforma de pagamento confiável. Aceitamos várias moedas e métodos.", "dark": false },
+        { "icon": "/images/price.svg", "title": "Tarifas Promocionais e Itinerários", "description": "Aproveite tarifas promocionais exclusivas nas principais rotas da África Austral, além de itinerários personalizados ao seu estilo e orçamento.", "dark": false }
+      ]
+    },
+    "blog": {
+      "title": "O Nosso Blog de Viagens",
+      "description": "Descubra dicas de viagem, guias de destinos e histórias locais de toda a África Austral.",
+      "posts": [
+        { "title": "Cataratas Vitória: O Fumo Que Troveja", "author": "James Mwale", "date": "15 de maio de 2025", "image": "/images/safari2.jpg", "slug": "victoria-falls-smoke-that-thunders" },
+        { "title": "Moçambique: O Paraíso Insular Escondido de África", "author": "Sofia Nhambi", "date": "10 de maio de 2025", "image": "/images/Maldives.jpg", "slug": "mozambique-hidden-island-paradise" },
+        { "title": "Parque Nacional Kruger: Um Safari Sem Igual", "author": "David Mhlanga", "date": "1 de maio de 2025", "image": "/images/safari1.jpg", "slug": "kruger-national-park-safari" }
+      ]
+    },
+    "testimonials": {
+      "title": "O Que Dizem os Nossos Clientes",
+      "testimonials": [
+        { "name": "Hary Gurdan", "role": "GN SL", "text": "Serviço excecional e experiências inesquecíveis! Recomendo muito a ZambiTour a quem quer criar memórias de viagem para a vida." },
+        { "name": "Lucas Thompson", "role": "GN SL SN", "text": "Uma empresa de viagens excecional! A ZambiTour superou as nossas expectativas em todos os aspetos. O profissionalismo, a experiência e o compromisso com a satisfação do cliente são admiráveis." },
+        { "name": "Katty Perry", "role": "SL", "text": "A ZambiTour tornou as nossas férias de sonho realidade. Não poderíamos ter pedido uma experiência melhor. Mal podemos esperar pela próxima aventura." },
+        { "name": "Benjamin Carter", "role": "GN SL", "text": "Atendimento incrível e atenção ao detalhe. A ZambiTour faz sempre mais para garantir uma experiência memorável. Queremos viajar com eles novamente!" },
+        { "name": "Eva Williams", "role": "SN SL", "text": "Cinco estrelas em tudo! A ZambiTour proporcionou uma experiência de viagem inesquecível. A atenção ao detalhe, o serviço personalizado e a paixão por viagens aparecem em tudo o que fazem." },
+        { "name": "Jack Henry", "role": "GN EH", "text": "As nossas férias com a ZambiTour superaram todas as expectativas. Do alojamento luxuoso às excursões únicas, cada detalhe foi pensado com cuidado. Sentimo-nos especiais durante toda a viagem!" }
+      ]
+    }
+  },
+  "status": {
+    "notFound": {
+      "code": "404",
+      "title": "Página não encontrada",
+      "description": "A viagem que procura não está disponível aqui.",
+      "returnHome": "Voltar ao início"
+    },
+    "error": {
+      "title": "Algo correu mal",
+      "description": "Não conseguimos carregar esta página. Tente novamente dentro de instantes.",
+      "tryAgain": "Tentar novamente"
+    },
+    "loading": "A carregar..."
+  }
+}

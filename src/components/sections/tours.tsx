@@ -2,57 +2,11 @@
 
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
+import type { Dictionary } from "@/i18n/types";
 
-const tours = [
-  {
-    name: "Victoria Falls",
-    desc: "Experience The World's Largest Waterfall.",
-    days: 3,
-    price: "1,200",
-    image: "/images/safari2.jpg",
-    slug: "victoria-falls",
-  },
-  {
-    name: "Kruger National Park",
-    desc: "Big Five Safari In South Africa.",
-    days: 4,
-    price: "2,100",
-    image: "/images/safari1.jpg",
-    slug: "kruger-national-park",
-  },
-  {
-    name: "Cape Town Explorer",
-    desc: "Discover Cape Town & The Winelands.",
-    days: 3,
-    price: "1,500",
-    image: "/images/Switzerland.jpg",
-    slug: "cape-town-explorer",
-  },
-  {
-    name: "Mozambique Islands",
-    desc: "Pristine Beaches & Turquoise Waters.",
-    days: 5,
-    price: "2,800",
-    image: "/images/Maldives.jpg",
-    slug: "mozambique-islands",
-  },
-  {
-    name: "Okavango Delta",
-    desc: "Explore Botswana's Paradise Delta.",
-    days: 4,
-    price: "3,200",
-    image: "/images/Brazil.jpg",
-    slug: "okavango-delta",
-  },
-  {
-    name: "Serengeti Migration",
-    desc: "Witness The Great Migration In Tanzania.",
-    days: 6,
-    price: "4,500",
-    image: "/images/safari2.jpg",
-    slug: "serengeti-migration",
-  },
-];
+type ToursProps = {
+  copy: Dictionary["sections"]["tours"];
+};
 
 const ClockIcon = () => (
   <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="text-darkgray" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +27,7 @@ const ArrowIcon = () => (
   </svg>
 );
 
-export function Tours() {
+export function Tours({ copy }: ToursProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", slidesToScroll: 1 });
 
   return (
@@ -81,16 +35,16 @@ export function Tours() {
       {/* Header */}
       <div className="px-7 lg:px-28 flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
         <div>
-          <h2 className="text-4xl md:text-5xl text-textdark">Explore Our Tours</h2>
+          <h2 className="text-4xl md:text-5xl text-textdark">{copy.title}</h2>
           <p className="text-parablack max-w-xl text-lg pt-6">
-            From thundering waterfalls to vast savannas and pristine island beaches — explore our curated Southern Africa tours designed for every kind of traveller.
+            {copy.description}
           </p>
         </div>
         <button
           type="button"
           className="bg-orange/80 text-white hover:bg-orange transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0 cursor-pointer"
         >
-          View More
+          {copy.viewMore}
         </button>
       </div>
 
@@ -98,7 +52,7 @@ export function Tours() {
       <div className="relative">
         <div className="embla__viewport px-7 lg:px-28" ref={emblaRef}>
           <div className="embla__container flex gap-6">
-            {tours.map((tour) => (
+            {copy.tours.map((tour) => (
               <div
                 key={tour.slug}
                 className="embla__slide embla__slide--tours shrink-0"
@@ -112,15 +66,15 @@ export function Tours() {
                         </h3>
                         <ArrowIcon />
                       </div>
-                      <p className="text-parablack border-b border-darkgray pb-4">{tour.desc}</p>
+                      <p className="text-parablack border-b border-darkgray pb-4">{tour.description}</p>
                       <div className="flex flex-row justify-between items-center">
                         <div className="inline-flex gap-3 items-center">
                           <ClockIcon />
-                          <p className="italic text-textdark">{tour.days} Days</p>
+                          <p className="italic text-textdark">{tour.days} {copy.days}</p>
                         </div>
                         <div className="inline-flex gap-3 items-center">
                           <TagIcon />
-                          <p className="italic text-textdark">From {tour.price}$</p>
+                          <p className="italic text-textdark">{copy.from} {tour.price}$</p>
                         </div>
                       </div>
                     </div>
@@ -144,7 +98,7 @@ export function Tours() {
         <button
           onClick={() => emblaApi?.scrollPrev()}
           className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-darkgray flex items-center justify-center hover:bg-orange hover:text-white hover:border-orange transition-all duration-300 z-10"
-          aria-label="Previous"
+          aria-label={copy.previous}
         >
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
@@ -153,7 +107,7 @@ export function Tours() {
         <button
           onClick={() => emblaApi?.scrollNext()}
           className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-darkgray flex items-center justify-center hover:bg-orange hover:text-white hover:border-orange transition-all duration-300 z-10"
-          aria-label="Next"
+          aria-label={copy.next}
         >
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>

@@ -1,5 +1,12 @@
 import Link from "next/link";
 import { AnimateIn } from "@/components/ui/animate-in";
+import { localizedPath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
+
+type BookingOptionsProps = {
+  locale: Locale;
+  copy: Dictionary["home"]["bookingOptions"];
+};
 
 const FlightIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -19,65 +26,55 @@ const CarIcon = () => (
   </svg>
 );
 
-const options = [
-  {
-    id: "flights",
-    title: "Flights",
-    desc: "Best fares on domestic and international routes across Southern Africa and beyond. Daily departures from Maputo.",
-    cta: "Search Flights",
-    href: "/book",
-    Icon: FlightIcon,
-  },
-  {
-    id: "hotels",
-    title: "Hotels",
-    desc: "Handpicked hotels, lodges and beach resorts at every price point — from guesthouses to five-star properties.",
-    cta: "Browse Hotels",
-    href: "/hotels",
-    Icon: HotelIcon,
-  },
-  {
-    id: "cars",
-    title: "Car Rentals",
-    desc: "City sedans, 4x4 safari vehicles and minibuses available. Explore Southern Africa at your own pace.",
-    cta: "Rent a Car",
-    href: "/cars",
-    Icon: CarIcon,
-  },
-];
+const icons = {
+  flights: FlightIcon,
+  hotels: HotelIcon,
+  cars: CarIcon,
+};
 
-export function BookingOptions() {
+export function BookingOptions({ locale, copy }: BookingOptionsProps) {
+  const hrefs = {
+    flights: localizedPath(locale, "/book"),
+    hotels: localizedPath(locale, "/hotels"),
+    cars: localizedPath(locale, "/cars"),
+  };
+
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-beige">
       <AnimateIn className="text-center mb-14">
         <h2 className="text-4xl md:text-5xl text-textdark">
-          What Are You <span className="italic">Looking For?</span>
+          {copy.title} <span className="italic">{copy.titleAccent}</span>
         </h2>
         <p className="text-parablack text-lg mt-4 max-w-xl mx-auto">
-          Select your travel need and let ZambiTour handle everything — from the first search to boarding.
+          {copy.description}
         </p>
       </AnimateIn>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {options.map((opt, i) => (
-          <AnimateIn key={opt.id} delay={i * 120}>
-            <div className="bg-white border border-darkgray/30 rounded-2xl p-8 flex flex-col gap-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group h-full">
-              <div className="w-16 h-16 rounded-full bg-beige group-hover:bg-orange/10 flex items-center justify-center text-orange transition-colors duration-300">
-                <opt.Icon />
+        {copy.options.map((opt, i) => {
+          const Icon = icons[opt.id as keyof typeof icons];
+          const href = hrefs[opt.id as keyof typeof hrefs];
+
+          return (
+            <AnimateIn key={opt.id} delay={i * 120}>
+              <div className="bg-white border border-darkgray/30 rounded-2xl p-8 flex flex-col gap-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group h-full">
+                <div className="w-16 h-16 rounded-full bg-beige group-hover:bg-orange/10 flex items-center justify-center text-orange transition-colors duration-300">
+                  <Icon />
+                </div>
+                <div>
+                  <h3 className="text-2xl text-textdark mb-3">{opt.title}</h3>
+                  <p className="text-parablack leading-relaxed text-sm">{opt.description}</p>
+                </div>
+                <Link
+                  href={href}
+                  className="mt-auto bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 text-sm font-semibold uppercase w-fit"
+                >
+                  {opt.cta}
+                </Link>
               </div>
-              <div>
-                <h3 className="text-2xl text-textdark mb-3">{opt.title}</h3>
-                <p className="text-parablack leading-relaxed text-sm">{opt.desc}</p>
-              </div>
-              <Link
-                href={opt.href}
-                className="mt-auto bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 text-sm font-semibold uppercase w-fit"
-              >
-                {opt.cta}
-              </Link>
-            </div>
-          </AnimateIn>
-        ))}
+            </AnimateIn>
+          );
+        })}
       </div>
     </div>
   );

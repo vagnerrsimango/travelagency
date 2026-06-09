@@ -1,41 +1,22 @@
 import Image from "next/image";
+import type { Dictionary } from "@/i18n/types";
 
-const posts = [
-  {
-    title: "Victoria Falls: The Smoke That Thunders",
-    author: "James Mwale",
-    date: "May 15, 2025",
-    image: "/images/safari2.jpg",
-    slug: "victoria-falls-smoke-that-thunders",
-  },
-  {
-    title: "Mozambique: Africa's Hidden Island Paradise",
-    author: "Sofia Nhambi",
-    date: "May 10, 2025",
-    image: "/images/Maldives.jpg",
-    slug: "mozambique-hidden-island-paradise",
-  },
-  {
-    title: "Kruger National Park: A Safari Like No Other",
-    author: "David Mhlanga",
-    date: "May 01, 2025",
-    image: "/images/safari1.jpg",
-    slug: "kruger-national-park-safari",
-  },
-];
+type BlogProps = {
+  copy: Dictionary["sections"]["blog"];
+};
 
-export function Blog() {
+export function Blog({ copy }: BlogProps) {
   return (
     <div className="px-7 lg:px-28 pb-14 lg:pb-28 bg-beige">
       <div className="mb-10">
-        <h2 className="text-4xl md:text-5xl text-textdark">Our Travel Blog</h2>
+        <h2 className="text-4xl md:text-5xl text-textdark">{copy.title}</h2>
         <p className="text-parablack text-lg mt-4 max-w-xl">
-          Discover travel tips, destination guides, and insider stories from across Southern Africa.
+          {copy.description}
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {posts.map((post) => (
+        {copy.posts.map((post) => (
           <div key={post.slug} className="cursor-pointer">
             <div className="relative h-72 rounded-xl overflow-hidden group">
               <Image

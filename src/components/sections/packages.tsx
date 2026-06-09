@@ -1,4 +1,9 @@
 import Image from "next/image";
+import type { Dictionary } from "@/i18n/types";
+
+type PackagesProps = {
+  copy: Dictionary["sections"]["packages"];
+};
 
 const CheckIcon = () => (
   <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-orange shrink-0 mt-0.5">
@@ -12,97 +17,23 @@ const ClockIcon = () => (
   </svg>
 );
 
-interface TravelPackage {
-  title: string;
-  destination: string;
-  duration: string;
-  included: string[];
-  priceFrom: number;
-  currency: string;
-  image: string;
-  tag: string;
-}
-
-const packages: TravelPackage[] = [
-  {
-    title: "Weekend in Vilankulo",
-    destination: "Vilankulo, Mozambique",
-    duration: "3 Days / 2 Nights",
-    included: [
-      "Return flights from Maputo",
-      "Beachfront accommodation",
-      "Boat trip to Bazaruto Island",
-      "Daily breakfast",
-    ],
-    priceFrom: 650,
-    currency: "USD",
-    image: "/images/Maldives.jpg",
-    tag: "BEACH",
-  },
-  {
-    title: "Kruger Safari",
-    destination: "Kruger Park, South Africa",
-    duration: "4 Days / 3 Nights",
-    included: [
-      "Return flights Maputo–Johannesburg",
-      "Safari lodge accommodation",
-      "2 game drives per day",
-      "Full board meals",
-    ],
-    priceFrom: 1200,
-    currency: "USD",
-    image: "/images/safari1.jpg",
-    tag: "SAFARI",
-  },
-  {
-    title: "Zanzibar Escape",
-    destination: "Zanzibar, Tanzania",
-    duration: "5 Days / 4 Nights",
-    included: [
-      "Return flights",
-      "Beach resort (half board)",
-      "Stone Town guided tour",
-      "Snorkeling trip",
-    ],
-    priceFrom: 980,
-    currency: "USD",
-    image: "/images/safari2.jpg",
-    tag: "ISLAND",
-  },
-  {
-    title: "Dubai Experience",
-    destination: "Dubai, UAE",
-    duration: "6 Days / 5 Nights",
-    included: [
-      "Return flights from Maputo",
-      "4-star hotel accommodation",
-      "Desert safari & dune dinner",
-      "City sightseeing tour",
-    ],
-    priceFrom: 1850,
-    currency: "USD",
-    image: "/images/Switzerland.jpg",
-    tag: "LUXURY",
-  },
-];
-
-export function Packages() {
+export function Packages({ copy }: PackagesProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-lightbeige">
       {/* Header */}
       <div className="text-center mb-14">
-        <p className="text-orange text-sm uppercase tracking-widest mb-3">Curated Experiences</p>
+        <p className="text-orange text-sm uppercase tracking-widest mb-3">{copy.eyebrow}</p>
         <h2 className="text-4xl md:text-5xl text-textdark">
-          Travel <span className="italic">Packages</span>
+          {copy.title} <span className="italic">{copy.titleAccent}</span>
         </h2>
         <p className="text-parablack text-lg mt-4 max-w-xl mx-auto">
-          All-in-one itineraries with flights, accommodation and activities included. Just pick your destination.
+          {copy.description}
         </p>
       </div>
 
       {/* Package cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {packages.map((pkg) => (
+        {copy.packages.map((pkg) => (
           <div
             key={pkg.title}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
@@ -148,17 +79,17 @@ export function Packages() {
               {/* Price + CTA */}
               <div className="flex items-center justify-between pt-3 border-t border-shadow mt-auto">
                 <div>
-                  <p className="text-xs text-darkgray">From</p>
+                  <p className="text-xs text-darkgray">{copy.from}</p>
                   <p className="text-orange font-bold text-xl">
                     {pkg.currency} {pkg.priceFrom.toLocaleString()}
-                    <span className="text-darkgray text-xs font-normal">/person</span>
+                    <span className="text-darkgray text-xs font-normal">{copy.perPerson}</span>
                   </p>
                 </div>
                 <button
                   type="button"
                   className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase cursor-pointer transition-all duration-300"
                 >
-                  Book Package
+                  {copy.bookPackage}
                 </button>
               </div>
             </div>

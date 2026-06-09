@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { localizedPath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
 const socialIcons = [
   {
@@ -58,13 +60,18 @@ const instagramImages = [
   "/images/Iceland.jpg",
 ];
 
-export function Footer() {
+type FooterProps = {
+  locale: Locale;
+  copy: Dictionary["layout"]["footer"];
+};
+
+export function Footer({ locale, copy }: FooterProps) {
   return (
     <footer className="bg-leafy px-7 lg:px-28 py-14 lg:py-28">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 pb-12 border-b border-white/10">
         {/* Left: Logo + description + social icons */}
         <div className="flex flex-col gap-6">
-          <Link href="/">
+          <Link href={localizedPath(locale, "/")}>
             <Image
               src="/images/zambitour.png"
               alt="ZambiTour"
@@ -73,10 +80,7 @@ export function Footer() {
               className="h-20 w-auto object-contain"
             />
           </Link>
-          <p className="text-white/60 max-w-sm leading-relaxed text-sm">
-            ZambiTour is Southern Africa&apos;s trusted travel partner — flights, hotels, car rentals,
-            and bespoke safari itineraries across Zambia, Zimbabwe, South Africa, Mozambique, Botswana, and beyond.
-          </p>
+          <p className="text-white/60 max-w-sm leading-relaxed text-sm">{copy.description}</p>
           <div className="flex items-center gap-2.5 flex-wrap">
             {socialIcons.map((s) => (
               <Link
@@ -95,14 +99,14 @@ export function Footer() {
         <div className="flex flex-col gap-8">
           <div className="flex items-center gap-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-white italic leading-tight">
-              LET&apos;S HAVE A<br />CONVERSATION
+              {copy.conversationLine1}<br />{copy.conversationLine2}
             </h2>
             <div className="cursor-pointer shrink-0">
               <div className="h-20 w-20 lg:h-24 lg:w-24 rounded-full overflow-hidden p-1.5 hover:p-2.5 duration-500 transition-all border-2 border-orange">
                 <div className="bg-orange h-full w-full rounded-full overflow-hidden">
                   <Image
                     src="/images/contactus.svg"
-                    alt="Contact us"
+                    alt={copy.contactAlt}
                     width={96}
                     height={96}
                     className="w-full h-full hover:rotate-45 duration-500 transition-all"
@@ -113,13 +117,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Follow Us</p>
+            <p className="text-white/40 text-xs uppercase tracking-widest mb-3">{copy.followUs}</p>
             <div className="flex gap-3">
               {instagramImages.map((img, i) => (
                 <div key={i} className="relative h-20 w-20 rounded-xl overflow-hidden group cursor-pointer shrink-0">
                   <Image
                     src={img}
-                    alt="ZambiTour on Instagram"
+                    alt={copy.instagramAlt}
                     fill
                     sizes="80px"
                     className="object-cover group-hover:scale-110 transition-all duration-300"
@@ -138,8 +142,8 @@ export function Footer() {
 
       {/* Copyright */}
       <div className="flex flex-col gap-3 sm:flex-row justify-between items-center pt-8 text-sm text-white/40">
-        <p>©2026 ZambiTour. All Rights Reserved.</p>
-        <p>Developed by <span className="text-orange">Vagner Caetano Simango</span>.</p>
+        <p>{copy.copyright}</p>
+        <p>{copy.developedBy} <span className="text-orange">Vagner Caetano Simango</span>.</p>
       </div>
     </footer>
   );

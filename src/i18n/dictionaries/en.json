@@ -1,0 +1,487 @@
+{
+  "metadata": {
+    "root": {
+      "title": "ZambiTour — Southern Africa Travel Agency",
+      "description": "Book flights, hotels, car rentals and travel packages across Southern Africa. ZambiTour specialises in Mozambique, Zambia, Zimbabwe, South Africa and beyond."
+    },
+    "destinations": {
+      "title": "Destinations & Tours — ZambiTour",
+      "description": "Explore Southern Africa's top destinations — from Victoria Falls to Mozambique's islands, Kruger to the Serengeti."
+    },
+    "hotels": {
+      "title": "Hotels & Accommodation — ZambiTour",
+      "description": "Browse handpicked hotels, lodges and beach resorts across Southern Africa."
+    },
+    "cars": {
+      "title": "Car Rentals — ZambiTour",
+      "description": "Rent economy sedans, SUVs, 4x4 safari vehicles and minibuses across Southern Africa."
+    },
+    "about": {
+      "title": "About ZambiTour — Southern Africa Travel Agency",
+      "description": "Learn about ZambiTour — Southern Africa's trusted travel partner for flights, hotels, car rentals and safari packages."
+    },
+    "book": {
+      "title": "Book Your Trip — ZambiTour",
+      "description": "Reserve flights, hotels and car rentals across Southern Africa. Receive confirmation within 24 hours."
+    },
+    "blog": {
+      "title": "Travel Blog — ZambiTour",
+      "description": "Travel tips, destination guides and insider stories from across Southern Africa."
+    }
+  },
+  "layout": {
+    "nav": {
+      "home": "Home",
+      "destinations": "Destinations",
+      "hotels": "Hotels",
+      "cars": "Cars",
+      "about": "About",
+      "bookNow": "Book Now",
+      "toggleMenu": "Toggle menu",
+      "language": "Language",
+      "switchTo": "Switch to"
+    },
+    "footer": {
+      "description": "ZambiTour is Southern Africa's trusted travel partner — flights, hotels, car rentals, and bespoke safari itineraries across Zambia, Zimbabwe, South Africa, Mozambique, Botswana, and beyond.",
+      "conversationLine1": "LET'S HAVE A",
+      "conversationLine2": "CONVERSATION",
+      "contactAlt": "Contact us",
+      "followUs": "Follow Us",
+      "instagramAlt": "ZambiTour on Instagram",
+      "copyright": "©2026 ZambiTour. All Rights Reserved.",
+      "developedBy": "Developed by"
+    }
+  },
+  "pages": {
+    "destinations": {
+      "title": "Explore",
+      "titleAccent": "Southern Africa",
+      "description": "Discover our handpicked destinations, curated tours and all-inclusive travel packages across the region."
+    },
+    "hotels": {
+      "title": "Hotels &",
+      "titleAccent": "Accommodation",
+      "description": "From beach resorts to city hotels and safari lodges — we partner with the best properties across the region."
+    },
+    "cars": {
+      "title": "Car",
+      "titleAccent": "Rentals",
+      "description": "Choose the right vehicle for your journey — city sedans to fully-equipped 4x4 safari vehicles. Pick up anywhere in the region."
+    },
+    "about": {
+      "title": "About",
+      "titleAccent": "ZambiTour",
+      "description": "Southern Africa's trusted travel partner — built on local knowledge, passion and a commitment to making your journey seamless."
+    },
+    "book": {
+      "title": "Make a",
+      "titleAccent": "Reservation",
+      "description": "Fill in the form below and our team will confirm your booking within 24 hours. No payment required upfront."
+    },
+    "blog": {
+      "title": "Travel",
+      "titleAccent": "Blog",
+      "description": "Destination guides, travel tips and insider stories from across Southern Africa."
+    }
+  },
+  "home": {
+    "hero": {
+      "imageAlt": "Southern Africa",
+      "title": "Find Your",
+      "titleAccent": "Perfect Trip",
+      "subtitle": "Flights · Hotels · Cars · Packages.",
+      "region": "Mozambique, Zambia, Zimbabwe, South Africa and beyond.",
+      "tabs": {
+        "flight": "Flights",
+        "hotel": "Hotels",
+        "car": "Car Rental"
+      },
+      "fields": {
+        "from": "From",
+        "to": "To",
+        "pickupCity": "Pickup city",
+        "dropOffCity": "Drop-off city",
+        "destination": "Destination"
+      },
+      "rooms": {
+        "singular": "room",
+        "plural": "rooms"
+      },
+      "passengers": {
+        "singular": "passenger",
+        "plural": "passengers"
+      },
+      "carTypes": ["Economy", "SUV", "4x4 Safari", "Minibus"],
+      "search": "Search",
+      "trustItems": [
+        "24h Booking Confirmation",
+        "Best Price Guarantee",
+        "Secure Online Payment"
+      ]
+    },
+    "bookingOptions": {
+      "title": "What Are You",
+      "titleAccent": "Looking For?",
+      "description": "Select your travel need and let ZambiTour handle everything — from the first search to boarding.",
+      "options": [
+        {
+          "id": "flights",
+          "title": "Flights",
+          "description": "Best fares on domestic and international routes across Southern Africa and beyond. Daily departures from Maputo.",
+          "cta": "Search Flights"
+        },
+        {
+          "id": "hotels",
+          "title": "Hotels",
+          "description": "Handpicked hotels, lodges and beach resorts at every price point — from guesthouses to five-star properties.",
+          "cta": "Browse Hotels"
+        },
+        {
+          "id": "cars",
+          "title": "Car Rentals",
+          "description": "City sedans, 4x4 safari vehicles and minibuses available. Explore Southern Africa at your own pace.",
+          "cta": "Rent a Car"
+        }
+      ]
+    },
+    "promoFares": {
+      "eyebrow": "Limited Time Offers",
+      "title": "Promotional",
+      "titleAccent": "Fares",
+      "description": "Exclusive discounted routes from Maputo. Book before validity expires.",
+      "viewAllFares": "View All Fares",
+      "liveOffer": "Live Offer",
+      "from": "From",
+      "to": "To",
+      "startingFrom": "Starting from",
+      "perPerson": "per person",
+      "bookThisFare": "Book This Fare",
+      "fares": [
+        {
+          "from": "Maputo",
+          "to": "Johannesburg",
+          "highlight": "Daily departures — 1h flight",
+          "price": "89",
+          "currency": "USD",
+          "validity": "Valid until 30 Jun 2026",
+          "badge": "HOT DEAL",
+          "badgeClass": "badge-shimmer"
+        },
+        {
+          "from": "Maputo",
+          "to": "Lisbon",
+          "highlight": "Direct route — 11h flight",
+          "price": "890",
+          "currency": "USD",
+          "validity": "Valid until 31 Jul 2026",
+          "badge": "INTERNATIONAL",
+          "badgeClass": "bg-white/20"
+        },
+        {
+          "from": "Maputo",
+          "to": "Dubai",
+          "highlight": "Stopover packages available",
+          "price": "650",
+          "currency": "USD",
+          "validity": "Valid until 15 Aug 2026",
+          "badge": "POPULAR",
+          "badgeClass": "bg-white/20"
+        },
+        {
+          "from": "Maputo",
+          "to": "Cape Town",
+          "highlight": "Weekend getaway special",
+          "price": "220",
+          "currency": "USD",
+          "validity": "Valid until 30 Jun 2026",
+          "badge": "WEEKEND",
+          "badgeClass": "bg-white/20"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It",
+      "titleAccent": "Works",
+      "description": "Booking your next Southern Africa adventure is simple. Four steps and you are ready to go.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Choose Your Service",
+          "description": "Select flights, hotels, car rentals or a complete travel package tailored to your destination."
+        },
+        {
+          "number": "02",
+          "title": "Send Your Request",
+          "description": "Fill in our reservation form with your travel dates, preferences and passenger details."
+        },
+        {
+          "number": "03",
+          "title": "Receive Confirmation",
+          "description": "Our team reviews your request and sends a detailed quote and booking confirmation within 24h."
+        },
+        {
+          "number": "04",
+          "title": "Pay & Prepare",
+          "description": "Confirm your booking with a secure payment via M-Pesa, card or bank transfer. Then pack your bags."
+        }
+      ]
+    }
+  },
+  "sections": {
+    "destinations": {
+      "quote": "Travel is not just about the places you go, but the experiences that transform you along the way.",
+      "title": "Our",
+      "titleAccent": "Exclusive",
+      "titleRest": "Destinations",
+      "description": "Discover a world of unparalleled beauty and charm with our handpicked selection of exclusive destinations.",
+      "previous": "Previous",
+      "next": "Next",
+      "items": [
+        { "name": "Zambia", "label": "4 National Parks", "image": "/images/safari1.jpg" },
+        { "name": "Zimbabwe", "label": "Victoria Falls", "image": "/images/safari2.jpg" },
+        { "name": "South Africa", "label": "5 World Wonders", "image": "/images/Switzerland.jpg" },
+        { "name": "Mozambique", "label": "3 Island Escapes", "image": "/images/Maldives.jpg" },
+        { "name": "Botswana", "label": "Okavango Delta", "image": "/images/Brazil.jpg" },
+        { "name": "Tanzania", "label": "Serengeti Safari", "image": "/images/safari2.jpg" },
+        { "name": "Namibia", "label": "Desert Landscapes", "image": "/images/Iceland.jpg" },
+        { "name": "Kenya", "label": "5 National Parks", "image": "/images/India.jpg" }
+      ]
+    },
+    "tours": {
+      "title": "Explore Our Tours",
+      "description": "From thundering waterfalls to vast savannas and pristine island beaches — explore our curated Southern Africa tours designed for every kind of traveller.",
+      "viewMore": "View More",
+      "previous": "Previous",
+      "next": "Next",
+      "days": "Days",
+      "from": "From",
+      "tours": [
+        { "name": "Victoria Falls", "description": "Experience The World's Largest Waterfall.", "days": 3, "price": "1,200", "image": "/images/safari2.jpg", "slug": "victoria-falls" },
+        { "name": "Kruger National Park", "description": "Big Five Safari In South Africa.", "days": 4, "price": "2,100", "image": "/images/safari1.jpg", "slug": "kruger-national-park" },
+        { "name": "Cape Town Explorer", "description": "Discover Cape Town & The Winelands.", "days": 3, "price": "1,500", "image": "/images/Switzerland.jpg", "slug": "cape-town-explorer" },
+        { "name": "Mozambique Islands", "description": "Pristine Beaches & Turquoise Waters.", "days": 5, "price": "2,800", "image": "/images/Maldives.jpg", "slug": "mozambique-islands" },
+        { "name": "Okavango Delta", "description": "Explore Botswana's Paradise Delta.", "days": 4, "price": "3,200", "image": "/images/Brazil.jpg", "slug": "okavango-delta" },
+        { "name": "Serengeti Migration", "description": "Witness The Great Migration In Tanzania.", "days": 6, "price": "4,500", "image": "/images/safari2.jpg", "slug": "serengeti-migration" }
+      ]
+    },
+    "packages": {
+      "eyebrow": "Curated Experiences",
+      "title": "Travel",
+      "titleAccent": "Packages",
+      "description": "All-in-one itineraries with flights, accommodation and activities included. Just pick your destination.",
+      "from": "From",
+      "perPerson": "/person",
+      "bookPackage": "Book Package",
+      "packages": [
+        {
+          "title": "Weekend in Vilankulo",
+          "destination": "Vilankulo, Mozambique",
+          "duration": "3 Days / 2 Nights",
+          "included": ["Return flights from Maputo", "Beachfront accommodation", "Boat trip to Bazaruto Island", "Daily breakfast"],
+          "priceFrom": 650,
+          "currency": "USD",
+          "image": "/images/Maldives.jpg",
+          "tag": "BEACH"
+        },
+        {
+          "title": "Kruger Safari",
+          "destination": "Kruger Park, South Africa",
+          "duration": "4 Days / 3 Nights",
+          "included": ["Return flights Maputo–Johannesburg", "Safari lodge accommodation", "2 game drives per day", "Full board meals"],
+          "priceFrom": 1200,
+          "currency": "USD",
+          "image": "/images/safari1.jpg",
+          "tag": "SAFARI"
+        },
+        {
+          "title": "Zanzibar Escape",
+          "destination": "Zanzibar, Tanzania",
+          "duration": "5 Days / 4 Nights",
+          "included": ["Return flights", "Beach resort (half board)", "Stone Town guided tour", "Snorkeling trip"],
+          "priceFrom": 980,
+          "currency": "USD",
+          "image": "/images/safari2.jpg",
+          "tag": "ISLAND"
+        },
+        {
+          "title": "Dubai Experience",
+          "destination": "Dubai, UAE",
+          "duration": "6 Days / 5 Nights",
+          "included": ["Return flights from Maputo", "4-star hotel accommodation", "Desert safari & dune dinner", "City sightseeing tour"],
+          "priceFrom": 1850,
+          "currency": "USD",
+          "image": "/images/Switzerland.jpg",
+          "tag": "LUXURY"
+        }
+      ]
+    },
+    "hotels": {
+      "eyebrow": "Accommodation",
+      "title": "Featured",
+      "titleAccent": "Hotels",
+      "description": "From beach resorts to city hotels — we partner with the best properties across Southern Africa.",
+      "browseAllHotels": "Browse All Hotels",
+      "from": "From",
+      "perNight": "/night",
+      "checkAvailability": "Check Availability",
+      "hotels": [
+        { "name": "Polana Serena Hotel", "location": "Maputo, Mozambique", "stars": 5, "priceFrom": 220, "currency": "USD", "description": "Iconic colonial landmark with ocean views, infinity pool and award-winning dining.", "amenities": ["Pool", "Spa", "Restaurant", "WiFi"], "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" },
+        { "name": "Baobab Beach Resort", "location": "Vilankulo, Mozambique", "stars": 4, "priceFrom": 180, "currency": "USD", "description": "Tropical beachfront resort with direct access to the pristine Bazaruto Archipelago.", "amenities": ["Beach", "Water Sports", "Pool", "WiFi"], "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" },
+        { "name": "Victoria Falls Hotel", "location": "Victoria Falls, Zimbabwe", "stars": 5, "priceFrom": 340, "currency": "USD", "description": "The grande dame of African hotels, steps from the world's most spectacular waterfall.", "amenities": ["Fine Dining", "Spa", "Pool", "WiFi"], "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80" },
+        { "name": "Sandton Sun Hotel", "location": "Johannesburg, South Africa", "stars": 4, "priceFrom": 95, "currency": "USD", "description": "Contemporary hotel in the heart of Sandton's financial and shopping district.", "amenities": ["Gym", "Restaurant", "Business Centre", "WiFi"], "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" }
+      ]
+    },
+    "cars": {
+      "eyebrow": "Mobility",
+      "title": "Car Rental",
+      "titleAccent": "Options",
+      "description": "Choose the right vehicle for your journey — from city sedans to fully-equipped safari 4x4s.",
+      "seeAllVehicles": "See All Vehicles",
+      "seats": "Seats",
+      "bags": "Bags",
+      "gearbox": "Gearbox",
+      "from": "From",
+      "perDay": "/day",
+      "reserveCar": "Reserve Car",
+      "cars": [
+        { "category": "Economy", "brand": "Toyota Corolla or similar", "pricePerDay": 35, "currency": "USD", "seats": 5, "luggage": 1, "transmission": "Manual", "type": "Sedan", "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" },
+        { "category": "SUV", "brand": "Toyota RAV4 or similar", "pricePerDay": 75, "currency": "USD", "seats": 5, "luggage": 2, "transmission": "Automatic", "type": "4x2 SUV", "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" },
+        { "category": "4x4 Safari", "brand": "Toyota Land Cruiser or similar", "pricePerDay": 120, "currency": "USD", "seats": 7, "luggage": 3, "transmission": "Manual / 4WD", "type": "Off-Road", "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" },
+        { "category": "Minibus", "brand": "Toyota HiAce or similar", "pricePerDay": 90, "currency": "USD", "seats": 12, "luggage": 4, "transmission": "Manual", "type": "Group Transfer", "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" }
+      ]
+    },
+    "booking": {
+      "imageAlt": "Book your Southern Africa trip",
+      "brand": "ZambiTour",
+      "imageTitleLine1": "Your Southern Africa",
+      "imageTitleLine2": "journey starts here.",
+      "tagline": "Book. Confirm. Travel.",
+      "title": "Reserve Your",
+      "titleAccent": "Journey",
+      "description": "Fill in your details and our team will confirm within 24 hours.",
+      "tabs": {
+        "flight": "Flight",
+        "hotel": "Hotel",
+        "car": "Car Rental"
+      },
+      "labels": {
+        "from": "From *",
+        "to": "To *",
+        "departureDate": "Departure Date *",
+        "returnDate": "Return Date",
+        "returnDateRequired": "Return Date *",
+        "passengers": "Passengers *",
+        "destination": "Destination *",
+        "checkIn": "Check-in *",
+        "checkOut": "Check-out *",
+        "rooms": "Rooms *",
+        "guests": "Guests *",
+        "pickupCity": "Pickup City *",
+        "dropOffCity": "Drop-off City",
+        "pickupDate": "Pickup Date *",
+        "vehicleType": "Vehicle Type *",
+        "yourDetails": "Your Details",
+        "fullName": "Full Name *",
+        "phone": "Phone *",
+        "email": "Email *"
+      },
+      "placeholders": {
+        "departureCity": "Departure city",
+        "destinationCity": "Destination city",
+        "selectCity": "Select city",
+        "sameAsPickup": "Same as pickup",
+        "anyVehicle": "Any vehicle",
+        "fullName": "Your full name",
+        "phone": "+258 8x xxx xxxx",
+        "email": "your@email.com"
+      },
+      "passengers": {
+        "singular": "passenger",
+        "plural": "passengers"
+      },
+      "rooms": {
+        "singular": "room",
+        "plural": "rooms"
+      },
+      "guests": {
+        "singular": "guest",
+        "plural": "guests"
+      },
+      "vehicleTypes": ["Economy Sedan", "SUV", "4x4 Safari", "Minibus"],
+      "submit": "Send Booking Request",
+      "note": "No payment required now. We will confirm within 24 hours."
+    },
+    "payment": {
+      "title": "Secure",
+      "titleAccent": "Online Payment",
+      "description": "Payment is only required after you receive booking confirmation from our team. We support multiple payment methods so you can pay the way that works best for you.",
+      "steps": [
+        "Complete the booking form",
+        "Receive our confirmation & invoice",
+        "Pay via your preferred method",
+        "Get your booking documents"
+      ],
+      "secureTitle": "Secure & protected",
+      "secureDescription": "All transactions are processed through verified payment channels. Your financial data is never stored on our servers.",
+      "acceptedMethods": "Accepted Payment Methods",
+      "available": "Available",
+      "methods": [
+        { "id": "mpesa", "name": "M-Pesa", "description": "Pay instantly via Vodacom M-Pesa mobile money." },
+        { "id": "emola", "name": "e-Mola", "description": "Secure mobile payment through BCI e-Mola." },
+        { "id": "visa", "name": "Visa", "description": "Pay with your Visa credit or debit card." },
+        { "id": "bank", "name": "Bank Transfer", "description": "Direct bank transfer in MZN, USD or ZAR." }
+      ]
+    },
+    "about": {
+      "imageAlt": "Travelers",
+      "title": "Southern Africa's Trusted Travel Partner",
+      "description": "At ZambiTour, we specialize in Southern Africa travel. With deep roots in the region, we offer expert knowledge of Zambia, Zimbabwe, South Africa, Mozambique, Botswana, and beyond — from booking flights and hotels to planning your perfect safari itinerary.",
+      "readMore": "Read More"
+    },
+    "services": {
+      "title": "Everything You Need to",
+      "titleAccent": "Travel Africa",
+      "imageAlt": "Travel",
+      "services": [
+        { "icon": "/images/paths.svg", "title": "Flight & Hotel Booking", "description": "Book domestic and international flights and hotels across Southern Africa with ease. We search hundreds of options to find you the best rates.", "dark": true },
+        { "icon": "/images/vip.svg", "title": "Car Rentals", "description": "Explore Southern Africa at your own pace. From city sedans to 4x4 safari vehicles — we have the right car for every road.", "dark": false },
+        { "icon": "/images/safe.svg", "title": "Secure Online Payments", "description": "Book and pay securely online through our trusted payment platform. Multiple currencies and payment methods accepted.", "dark": false },
+        { "icon": "/images/price.svg", "title": "Promo Fares & Custom Itineraries", "description": "Enjoy exclusive promotional fares on top Southern Africa routes, plus custom itineraries crafted to match your style and budget.", "dark": false }
+      ]
+    },
+    "blog": {
+      "title": "Our Travel Blog",
+      "description": "Discover travel tips, destination guides, and insider stories from across Southern Africa.",
+      "posts": [
+        { "title": "Victoria Falls: The Smoke That Thunders", "author": "James Mwale", "date": "May 15, 2025", "image": "/images/safari2.jpg", "slug": "victoria-falls-smoke-that-thunders" },
+        { "title": "Mozambique: Africa's Hidden Island Paradise", "author": "Sofia Nhambi", "date": "May 10, 2025", "image": "/images/Maldives.jpg", "slug": "mozambique-hidden-island-paradise" },
+        { "title": "Kruger National Park: A Safari Like No Other", "author": "David Mhlanga", "date": "May 01, 2025", "image": "/images/safari1.jpg", "slug": "kruger-national-park-safari" }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "testimonials": [
+        { "name": "Hary Gurdan", "role": "GN SL", "text": "Exceptional service and unforgettable experiences! Highly recommend ZambiTour for anyone looking to create lifelong memories through travel." },
+        { "name": "Lucas Thompson", "role": "GN SL SN", "text": "An exceptional travel company! ZambiTour exceeded our expectations in every way. Their professionalism, expertise, and commitment to customer satisfaction are truly commendable." },
+        { "name": "Katty Perry", "role": "SL", "text": "ZambiTour made our dream vacation a reality. We couldn't have asked for a better travel experience. Can't wait to book our next adventure with them." },
+        { "name": "Benjamin Carter", "role": "GN SL", "text": "Incredible customer service and attention to detail. ZambiTour truly goes above and beyond to ensure their clients have a memorable experience. Can't wait to travel with them again!" },
+        { "name": "Eva Williams", "role": "SN SL", "text": "Five stars all around! ZambiTour provided us with an unforgettable travel experience. Their attention to detail, personalized service, and passion for travel shine through in everything they do. We can't wait to book with them again!" },
+        { "name": "Jack Henry", "role": "GN EH", "text": "Our vacation with ZambiTour exceeded all expectations. From the luxurious accommodations to the unique excursions, every detail was carefully thought out. We felt like royalty the entire time!" }
+      ]
+    }
+  },
+  "status": {
+    "notFound": {
+      "code": "404",
+      "title": "Page not found",
+      "description": "The trip you are looking for is not available here.",
+      "returnHome": "Return home"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We could not load this page. Try again in a moment.",
+      "tryAgain": "Try again"
+    },
+    "loading": "Loading..."
+  }
+}

@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import type { Dictionary } from "@/i18n/types";
 
 type ServiceTab = "flight" | "hotel" | "car";
+
+type BookingProps = {
+  copy: Dictionary["sections"]["booking"];
+};
 
 const inputClass =
   "w-full bg-transparent border border-white/30 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-orange transition-colors text-sm";
@@ -40,13 +45,17 @@ const CarIcon = () => (
 
 type TabItem = { id: ServiceTab; label: string; Icon: () => React.ReactElement };
 
-export function Booking() {
+function countLabel(count: number, singular: string, plural: string) {
+  return `${count} ${count > 1 ? plural : singular}`;
+}
+
+export function Booking({ copy }: BookingProps) {
   const [activeTab, setActiveTab] = useState<ServiceTab>("flight");
 
   const tabs: TabItem[] = [
-    { id: "flight", label: "Flight", Icon: PlaneIcon },
-    { id: "hotel", label: "Hotel", Icon: BedIcon },
-    { id: "car", label: "Car Rental", Icon: CarIcon },
+    { id: "flight", label: copy.tabs.flight, Icon: PlaneIcon },
+    { id: "hotel", label: copy.tabs.hotel, Icon: BedIcon },
+    { id: "car", label: copy.tabs.car, Icon: CarIcon },
   ];
 
   return (
@@ -56,20 +65,20 @@ export function Booking() {
         <div className="relative hidden lg:block rounded-2xl overflow-hidden min-h-[500px]">
           <Image
             src="/images/desc2.jpg"
-            alt="Book your Southern Africa trip"
+            alt={copy.imageAlt}
             fill
             sizes="50vw"
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
           <div className="absolute bottom-10 left-10 right-10">
-            <p className="text-orange text-xs uppercase tracking-widest font-semibold mb-3">ZambiTour</p>
+            <p className="text-orange text-xs uppercase tracking-widest font-semibold mb-3">{copy.brand}</p>
             <p className="text-white text-3xl leading-snug">
-              Your Southern Africa<br />journey starts here.
+              {copy.imageTitleLine1}<br />{copy.imageTitleLine2}
             </p>
             <div className="mt-6 flex items-center gap-3">
               <div className="w-8 h-px bg-orange" />
-              <p className="text-white/60 text-sm">Book. Confirm. Travel.</p>
+              <p className="text-white/60 text-sm">{copy.tagline}</p>
             </div>
           </div>
         </div>
@@ -77,10 +86,10 @@ export function Booking() {
         {/* Right: form */}
         <div className="bg-leafy rounded-2xl px-8 py-10 text-white">
           <h2 className="text-3xl md:text-4xl text-white mb-2 leading-tight">
-            Reserve Your <span className="italic">Journey</span>
+            {copy.title} <span className="italic">{copy.titleAccent}</span>
           </h2>
           <p className="text-white/50 text-sm mb-8">
-            Fill in your details and our team will confirm within 24 hours.
+            {copy.description}
           </p>
 
           {/* Service tabs */}
@@ -108,18 +117,18 @@ export function Booking() {
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className={labelClass}>From *</label>
+                    <label className={labelClass}>{copy.labels.from}</label>
                     <select className={inputClass + " bg-leafy"}>
-                      <option value="">Departure city</option>
+                      <option value="">{copy.placeholders.departureCity}</option>
                       {destinations.map((d) => (
                         <option key={d} value={d}>{d}</option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className={labelClass}>To *</label>
+                    <label className={labelClass}>{copy.labels.to}</label>
                     <select className={inputClass + " bg-leafy"}>
-                      <option value="">Destination city</option>
+                      <option value="">{copy.placeholders.destinationCity}</option>
                       {destinations.map((d) => (
                         <option key={d} value={d}>{d}</option>
                       ))}
@@ -128,19 +137,19 @@ export function Booking() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className={labelClass}>Departure Date *</label>
+                    <label className={labelClass}>{copy.labels.departureDate}</label>
                     <input type="date" className={inputClass} />
                   </div>
                   <div>
-                    <label className={labelClass}>Return Date</label>
+                    <label className={labelClass}>{copy.labels.returnDate}</label>
                     <input type="date" className={inputClass} />
                   </div>
                 </div>
                 <div>
-                  <label className={labelClass}>Passengers *</label>
+                  <label className={labelClass}>{copy.labels.passengers}</label>
                   <select className={inputClass + " bg-leafy"}>
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-                      <option key={n} value={n}>{n} passenger{n > 1 ? "s" : ""}</option>
+                      <option key={n} value={n}>{countLabel(n, copy.passengers.singular, copy.passengers.plural)}</option>
                     ))}
                   </select>
                 </div>
@@ -150,9 +159,9 @@ export function Booking() {
             {activeTab === "hotel" && (
               <>
                 <div>
-                  <label className={labelClass}>Destination *</label>
+                  <label className={labelClass}>{copy.labels.destination}</label>
                   <select className={inputClass + " bg-leafy"}>
-                    <option value="">Select city</option>
+                    <option value="">{copy.placeholders.selectCity}</option>
                     {destinations.map((d) => (
                       <option key={d} value={d}>{d}</option>
                     ))}
@@ -160,28 +169,28 @@ export function Booking() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className={labelClass}>Check-in *</label>
+                    <label className={labelClass}>{copy.labels.checkIn}</label>
                     <input type="date" className={inputClass} />
                   </div>
                   <div>
-                    <label className={labelClass}>Check-out *</label>
+                    <label className={labelClass}>{copy.labels.checkOut}</label>
                     <input type="date" className={inputClass} />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className={labelClass}>Rooms *</label>
+                    <label className={labelClass}>{copy.labels.rooms}</label>
                     <select className={inputClass + " bg-leafy"}>
                       {[1, 2, 3, 4].map((n) => (
-                        <option key={n} value={n}>{n} room{n > 1 ? "s" : ""}</option>
+                        <option key={n} value={n}>{countLabel(n, copy.rooms.singular, copy.rooms.plural)}</option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className={labelClass}>Guests *</label>
+                    <label className={labelClass}>{copy.labels.guests}</label>
                     <select className={inputClass + " bg-leafy"}>
                       {[1, 2, 3, 4, 5, 6].map((n) => (
-                        <option key={n} value={n}>{n} guest{n > 1 ? "s" : ""}</option>
+                        <option key={n} value={n}>{countLabel(n, copy.guests.singular, copy.guests.plural)}</option>
                       ))}
                     </select>
                   </div>
@@ -193,18 +202,18 @@ export function Booking() {
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className={labelClass}>Pickup City *</label>
+                    <label className={labelClass}>{copy.labels.pickupCity}</label>
                     <select className={inputClass + " bg-leafy"}>
-                      <option value="">Select city</option>
+                      <option value="">{copy.placeholders.selectCity}</option>
                       {destinations.map((d) => (
                         <option key={d} value={d}>{d}</option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className={labelClass}>Drop-off City</label>
+                    <label className={labelClass}>{copy.labels.dropOffCity}</label>
                     <select className={inputClass + " bg-leafy"}>
-                      <option value="">Same as pickup</option>
+                      <option value="">{copy.placeholders.sameAsPickup}</option>
                       {destinations.map((d) => (
                         <option key={d} value={d}>{d}</option>
                       ))}
@@ -213,22 +222,21 @@ export function Booking() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className={labelClass}>Pickup Date *</label>
+                    <label className={labelClass}>{copy.labels.pickupDate}</label>
                     <input type="date" className={inputClass} />
                   </div>
                   <div>
-                    <label className={labelClass}>Return Date *</label>
+                    <label className={labelClass}>{copy.labels.returnDateRequired}</label>
                     <input type="date" className={inputClass} />
                   </div>
                 </div>
                 <div>
-                  <label className={labelClass}>Vehicle Type *</label>
+                  <label className={labelClass}>{copy.labels.vehicleType}</label>
                   <select className={inputClass + " bg-leafy"}>
-                    <option value="">Any vehicle</option>
-                    <option>Economy Sedan</option>
-                    <option>SUV</option>
-                    <option>4x4 Safari</option>
-                    <option>Minibus</option>
+                    <option value="">{copy.placeholders.anyVehicle}</option>
+                    {copy.vehicleTypes.map((type) => (
+                      <option key={type}>{type}</option>
+                    ))}
                   </select>
                 </div>
               </>
@@ -236,30 +244,30 @@ export function Booking() {
 
             {/* Divider */}
             <div className="border-t border-white/10 pt-4">
-              <p className="text-white/40 text-xs uppercase tracking-wider mb-4">Your Details</p>
+              <p className="text-white/40 text-xs uppercase tracking-wider mb-4">{copy.labels.yourDetails}</p>
               <div className="flex flex-col gap-4">
                 <div>
-                  <label className={labelClass}>Full Name *</label>
+                  <label className={labelClass}>{copy.labels.fullName}</label>
                   <input
                     type="text"
-                    placeholder="Your full name"
+                    placeholder={copy.placeholders.fullName}
                     className={inputClass}
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className={labelClass}>Phone *</label>
+                    <label className={labelClass}>{copy.labels.phone}</label>
                     <input
                       type="tel"
-                      placeholder="+258 8x xxx xxxx"
+                      placeholder={copy.placeholders.phone}
                       className={inputClass}
                     />
                   </div>
                   <div>
-                    <label className={labelClass}>Email *</label>
+                    <label className={labelClass}>{copy.labels.email}</label>
                     <input
                       type="email"
-                      placeholder="your@email.com"
+                      placeholder={copy.placeholders.email}
                       className={inputClass}
                     />
                   </div>
@@ -271,10 +279,10 @@ export function Booking() {
               type="submit"
               className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-8 py-3 uppercase text-sm font-semibold transition-all duration-300 w-full mt-2 cursor-pointer"
             >
-              Send Booking Request
+              {copy.submit}
             </button>
             <p className="text-center text-white/30 text-xs">
-              No payment required now. We will confirm within 24 hours.
+              {copy.note}
             </p>
           </form>
         </div>

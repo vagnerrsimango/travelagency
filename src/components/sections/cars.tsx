@@ -1,4 +1,9 @@
 import Image from "next/image";
+import type { Dictionary } from "@/i18n/types";
+
+type CarsProps = {
+  copy: Dictionary["sections"]["cars"];
+};
 
 const SeatIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-darkgray">
@@ -18,90 +23,31 @@ const GearIcon = () => (
   </svg>
 );
 
-interface Car {
-  category: string;
-  brand: string;
-  pricePerDay: number;
-  currency: string;
-  seats: number;
-  luggage: number;
-  transmission: string;
-  type: string;
-  image: string;
-}
-
-const cars: Car[] = [
-  {
-    category: "Economy",
-    brand: "Toyota Corolla or similar",
-    pricePerDay: 35,
-    currency: "USD",
-    seats: 5,
-    luggage: 1,
-    transmission: "Manual",
-    type: "Sedan",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    category: "SUV",
-    brand: "Toyota RAV4 or similar",
-    pricePerDay: 75,
-    currency: "USD",
-    seats: 5,
-    luggage: 2,
-    transmission: "Automatic",
-    type: "4x2 SUV",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    category: "4x4 Safari",
-    brand: "Toyota Land Cruiser or similar",
-    pricePerDay: 120,
-    currency: "USD",
-    seats: 7,
-    luggage: 3,
-    transmission: "Manual / 4WD",
-    type: "Off-Road",
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    category: "Minibus",
-    brand: "Toyota HiAce or similar",
-    pricePerDay: 90,
-    currency: "USD",
-    seats: 12,
-    luggage: 4,
-    transmission: "Manual",
-    type: "Group Transfer",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
-  },
-];
-
-export function Cars() {
+export function Cars({ copy }: CarsProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-beige">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
         <div>
-          <p className="text-orange text-sm uppercase tracking-widest mb-3">Mobility</p>
+          <p className="text-orange text-sm uppercase tracking-widest mb-3">{copy.eyebrow}</p>
           <h2 className="text-4xl md:text-5xl text-textdark">
-            Car Rental <span className="italic">Options</span>
+            {copy.title} <span className="italic">{copy.titleAccent}</span>
           </h2>
           <p className="text-parablack text-lg mt-4 max-w-md">
-            Choose the right vehicle for your journey — from city sedans to fully-equipped safari 4x4s.
+            {copy.description}
           </p>
         </div>
         <button
           type="button"
           className="bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0 cursor-pointer"
         >
-          See All Vehicles
+          {copy.seeAllVehicles}
         </button>
       </div>
 
       {/* Car cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {cars.map((car) => (
+        {copy.cars.map((car) => (
           <div
             key={car.category}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
@@ -133,34 +79,34 @@ export function Cars() {
                 <div className="flex flex-col items-center gap-1">
                   <SeatIcon />
                   <span className="text-xs text-parablack font-medium">{car.seats}</span>
-                  <span className="text-xs text-darkgray">Seats</span>
+                  <span className="text-xs text-darkgray">{copy.seats}</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <LuggageIcon />
                   <span className="text-xs text-parablack font-medium">{car.luggage}</span>
-                  <span className="text-xs text-darkgray">Bags</span>
+                  <span className="text-xs text-darkgray">{copy.bags}</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <GearIcon />
                   <span className="text-xs text-parablack font-medium text-center leading-tight">{car.transmission.split(" ")[0]}</span>
-                  <span className="text-xs text-darkgray">Gearbox</span>
+                  <span className="text-xs text-darkgray">{copy.gearbox}</span>
                 </div>
               </div>
 
               {/* Price + CTA */}
               <div className="flex items-center justify-between mt-auto">
                 <div>
-                  <p className="text-xs text-darkgray">From</p>
+                  <p className="text-xs text-darkgray">{copy.from}</p>
                   <p className="text-orange font-bold text-xl">
                     {car.currency} {car.pricePerDay}
-                    <span className="text-darkgray text-xs font-normal">/day</span>
+                    <span className="text-darkgray text-xs font-normal">{copy.perDay}</span>
                   </p>
                 </div>
                 <button
                   type="button"
                   className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase cursor-pointer transition-all duration-300"
                 >
-                  Reserve Car
+                  {copy.reserveCar}
                 </button>
               </div>
             </div>

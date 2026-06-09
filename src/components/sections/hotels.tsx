@@ -1,4 +1,9 @@
 import Image from "next/image";
+import type { Dictionary } from "@/i18n/types";
+
+type HotelsProps = {
+  copy: Dictionary["sections"]["hotels"];
+};
 
 const StarIcon = () => (
   <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-yellow-400">
@@ -12,85 +17,31 @@ const LocationIcon = () => (
   </svg>
 );
 
-interface Hotel {
-  name: string;
-  location: string;
-  stars: number;
-  priceFrom: number;
-  currency: string;
-  desc: string;
-  amenities: string[];
-  image: string;
-}
-
-const hotels: Hotel[] = [
-  {
-    name: "Polana Serena Hotel",
-    location: "Maputo, Mozambique",
-    stars: 5,
-    priceFrom: 220,
-    currency: "USD",
-    desc: "Iconic colonial landmark with ocean views, infinity pool and award-winning dining.",
-    amenities: ["Pool", "Spa", "Restaurant", "WiFi"],
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    name: "Baobab Beach Resort",
-    location: "Vilankulo, Mozambique",
-    stars: 4,
-    priceFrom: 180,
-    currency: "USD",
-    desc: "Tropical beachfront resort with direct access to the pristine Bazaruto Archipelago.",
-    amenities: ["Beach", "Water Sports", "Pool", "WiFi"],
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    name: "Victoria Falls Hotel",
-    location: "Victoria Falls, Zimbabwe",
-    stars: 5,
-    priceFrom: 340,
-    currency: "USD",
-    desc: "The grande dame of African hotels, steps from the world's most spectacular waterfall.",
-    amenities: ["Fine Dining", "Spa", "Pool", "WiFi"],
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    name: "Sandton Sun Hotel",
-    location: "Johannesburg, South Africa",
-    stars: 4,
-    priceFrom: 95,
-    currency: "USD",
-    desc: "Contemporary hotel in the heart of Sandton's financial and shopping district.",
-    amenities: ["Gym", "Restaurant", "Business Centre", "WiFi"],
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
-  },
-];
-
-export function Hotels() {
+export function Hotels({ copy }: HotelsProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-lightbeige">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
         <div>
-          <p className="text-orange text-sm uppercase tracking-widest mb-3">Accommodation</p>
+          <p className="text-orange text-sm uppercase tracking-widest mb-3">{copy.eyebrow}</p>
           <h2 className="text-4xl md:text-5xl text-textdark">
-            Featured <span className="italic">Hotels</span>
+            {copy.title} <span className="italic">{copy.titleAccent}</span>
           </h2>
           <p className="text-parablack text-lg mt-4 max-w-md">
-            From beach resorts to city hotels — we partner with the best properties across Southern Africa.
+            {copy.description}
           </p>
         </div>
         <button
           type="button"
           className="bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0 cursor-pointer"
         >
-          Browse All Hotels
+          {copy.browseAllHotels}
         </button>
       </div>
 
       {/* Hotel cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {hotels.map((hotel) => (
+        {copy.hotels.map((hotel) => (
           <div
             key={hotel.name}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
@@ -119,7 +70,7 @@ export function Hotels() {
                 <p className="text-xs text-darkgray">{hotel.location}</p>
               </div>
               <h3 className="text-lg text-textdark leading-tight">{hotel.name}</h3>
-              <p className="text-parablack text-xs leading-relaxed">{hotel.desc}</p>
+              <p className="text-parablack text-xs leading-relaxed">{hotel.description}</p>
 
               {/* Amenities */}
               <div className="flex flex-wrap gap-2 mt-auto">
@@ -133,17 +84,17 @@ export function Hotels() {
               {/* Price + CTA */}
               <div className="flex items-center justify-between pt-3 border-t border-shadow mt-2">
                 <div>
-                  <p className="text-xs text-darkgray">From</p>
+                  <p className="text-xs text-darkgray">{copy.from}</p>
                   <p className="text-orange font-bold text-lg">
                     {hotel.currency} {hotel.priceFrom}
-                    <span className="text-darkgray text-xs font-normal">/night</span>
+                    <span className="text-darkgray text-xs font-normal">{copy.perNight}</span>
                   </p>
                 </div>
                 <button
                   type="button"
                   className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase cursor-pointer transition-all duration-300"
                 >
-                  Check Availability
+                  {copy.checkAvailability}
                 </button>
               </div>
             </div>

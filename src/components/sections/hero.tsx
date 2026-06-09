@@ -1,10 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { localizedPath, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
 type Tab = "flight" | "hotel" | "car";
+
+type HeroProps = {
+  locale: Locale;
+  copy: Dictionary["home"]["hero"];
+};
 
 const cities = [
   "Maputo", "Beira", "Nampula", "Pemba",
@@ -41,26 +48,23 @@ const CheckIcon = () => (
 
 type TabItem = { id: Tab; label: string; Icon: () => React.ReactElement };
 
-const tabItems: TabItem[] = [
-  { id: "flight", label: "Flights", Icon: PlaneIcon },
-  { id: "hotel", label: "Hotels", Icon: BedIcon },
-  { id: "car", label: "Car Rental", Icon: CarIcon },
-];
+function countLabel(count: number, singular: string, plural: string) {
+  return `${count} ${count > 1 ? plural : singular}`;
+}
 
-const trustItems = [
-  "24h Booking Confirmation",
-  "Best Price Guarantee",
-  "Secure Online Payment",
-];
-
-export function Hero() {
+export function Hero({ locale, copy }: HeroProps) {
   const [tab, setTab] = useState<Tab>("flight");
+  const tabItems: TabItem[] = [
+    { id: "flight", label: copy.tabs.flight, Icon: PlaneIcon },
+    { id: "hotel", label: copy.tabs.hotel, Icon: BedIcon },
+    { id: "car", label: copy.tabs.car, Icon: CarIcon },
+  ];
 
   return (
     <div className="min-h-screen relative overflow-hidden flex flex-col justify-center">
       <Image
         src="/images/safari1.jpg"
-        alt="Southern Africa"
+        alt={copy.imageAlt}
         fill
         className="object-cover object-center animate-ken-burns"
         priority
@@ -74,12 +78,12 @@ export function Hero() {
       <div className="relative z-10 px-7 lg:px-28 pt-28 pb-20">
         {/* Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl text-white leading-none mb-5 max-w-3xl animate-fade-up" style={{ animationDelay: "150ms" }}>
-          Find Your<br />
-          <span className="italic text-orange">Perfect Trip</span>
+          {copy.title}<br />
+          <span className="italic text-orange">{copy.titleAccent}</span>
         </h1>
         <p className="text-white/65 text-lg mb-10 max-w-lg leading-relaxed animate-fade-up" style={{ animationDelay: "300ms" }}>
-          Flights · Hotels · Cars · Packages.<br />
-          Mozambique, Zambia, Zimbabwe, South Africa and beyond.
+          {copy.subtitle}<br />
+          {copy.region}
         </p>
 
         {/* Booking widget */}
@@ -106,11 +110,11 @@ export function Hero() {
           {/* Search row */}
           <div className="flex flex-col sm:flex-row gap-2 p-2 bg-white rounded-xl">
             <select className="flex-1 border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white min-w-0">
-              <option value="">{tab === "car" ? "Pickup city" : "From"}</option>
+              <option value="">{tab === "car" ? copy.fields.pickupCity : copy.fields.from}</option>
               {cities.map((c) => <option key={c}>{c}</option>)}
             </select>
             <select className="flex-1 border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white min-w-0">
-              <option value="">{tab === "car" ? "Drop-off city" : tab === "hotel" ? "Destination" : "To"}</option>
+              <option value="">{tab === "car" ? copy.fields.dropOffCity : tab === "hotel" ? copy.fields.destination : copy.fields.to}</option>
               {cities.map((c) => <option key={c}>{c}</option>)}
             </select>
             <input
@@ -119,30 +123,27 @@ export function Hero() {
             />
             <select className="border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white shrink-0">
               {tab === "hotel" ? (
-                <>{[1, 2, 3, 4].map((n) => <option key={n}>{n} room{n > 1 ? "s" : ""}</option>)}</>
+                <>{[1, 2, 3, 4].map((n) => <option key={n}>{countLabel(n, copy.rooms.singular, copy.rooms.plural)}</option>)}</>
               ) : tab === "car" ? (
                 <>
-                  <option>Economy</option>
-                  <option>SUV</option>
-                  <option>4x4 Safari</option>
-                  <option>Minibus</option>
+                  {copy.carTypes.map((type) => <option key={type}>{type}</option>)}
                 </>
               ) : (
-                <>{[1, 2, 3, 4, 5, 6].map((n) => <option key={n}>{n} passenger{n > 1 ? "s" : ""}</option>)}</>
+                <>{[1, 2, 3, 4, 5, 6].map((n) => <option key={n}>{countLabel(n, copy.passengers.singular, copy.passengers.plural)}</option>)}</>
               )}
             </select>
             <Link
-              href="/book"
+              href={localizedPath(locale, "/book")}
               className="bg-orange hover:bg-orange/90 text-white rounded-lg px-8 py-3 text-sm font-bold uppercase transition-all duration-300 text-center shrink-0 whitespace-nowrap"
             >
-              Search
+              {copy.search}
             </Link>
           </div>
         </div>
 
         {/* Trust badges */}
         <div className="flex flex-wrap gap-6 mt-8 animate-fade-up" style={{ animationDelay: "600ms" }}>
-          {trustItems.map((item) => (
+          {copy.trustItems.map((item) => (
             <div key={item} className="flex items-center gap-2">
               <CheckIcon />
               <span className="text-white/55 text-sm">{item}</span>

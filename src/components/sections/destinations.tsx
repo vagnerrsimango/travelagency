@@ -2,19 +2,13 @@
 
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
+import type { Dictionary } from "@/i18n/types";
 
-const destinations = [
-  { name: "Zambia", label: "4 National Parks", image: "/images/safari1.jpg" },
-  { name: "Zimbabwe", label: "Victoria Falls", image: "/images/safari2.jpg" },
-  { name: "South Africa", label: "5 World Wonders", image: "/images/Switzerland.jpg" },
-  { name: "Mozambique", label: "3 Island Escapes", image: "/images/Maldives.jpg" },
-  { name: "Botswana", label: "Okavango Delta", image: "/images/Brazil.jpg" },
-  { name: "Tanzania", label: "Serengeti Safari", image: "/images/safari2.jpg" },
-  { name: "Namibia", label: "Desert Landscapes", image: "/images/Iceland.jpg" },
-  { name: "Kenya", label: "5 National Parks", image: "/images/India.jpg" },
-];
+type DestinationsProps = {
+  copy: Dictionary["sections"]["destinations"];
+};
 
-export function Destinations() {
+export function Destinations({ copy }: DestinationsProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", slidesToScroll: 1 });
 
   return (
@@ -22,7 +16,7 @@ export function Destinations() {
       {/* Quote */}
       <div className="text-center mb-14 lg:mb-28">
         <p className="text-3xl md:text-5xl text-textdark max-w-4xl mx-auto leading-tight italic font-light">
-          &ldquo;Travel is not just about the places you go, but the experiences that transform you along the way.&rdquo;
+          &ldquo;{copy.quote}&rdquo;
         </p>
       </div>
 
@@ -30,17 +24,17 @@ export function Destinations() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
         <div>
           <h2 className="text-4xl md:text-5xl text-textdark">
-            Our <span className="italic">Exclusive</span> Destinations
+            {copy.title} <span className="italic">{copy.titleAccent}</span> {copy.titleRest}
           </h2>
           <p className="text-parablack text-lg mt-4 max-w-xl">
-            Discover a world of unparalleled beauty and charm with our handpicked selection of exclusive destinations.
+            {copy.description}
           </p>
         </div>
         <div className="flex gap-3 shrink-0">
           <button
             onClick={() => emblaApi?.scrollPrev()}
             className="w-10 h-10 rounded-full border border-textdark flex items-center justify-center hover:bg-textdark hover:text-white transition-all duration-300"
-            aria-label="Previous"
+            aria-label={copy.previous}
           >
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
@@ -49,7 +43,7 @@ export function Destinations() {
           <button
             onClick={() => emblaApi?.scrollNext()}
             className="w-10 h-10 rounded-full border border-textdark flex items-center justify-center hover:bg-textdark hover:text-white transition-all duration-300"
-            aria-label="Next"
+            aria-label={copy.next}
           >
             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
@@ -61,7 +55,7 @@ export function Destinations() {
       {/* Carousel */}
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container flex gap-4">
-          {destinations.map((d) => (
+          {copy.items.map((d) => (
             <div
               key={d.name}
               className="embla__slide embla__slide--dest shrink-0"
