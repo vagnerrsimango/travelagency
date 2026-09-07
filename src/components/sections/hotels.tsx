@@ -1,8 +1,20 @@
 import Image from "next/image";
 import type { Dictionary } from "@/i18n/types";
 
+export type HotelCard = {
+  name: string;
+  location: string;
+  stars: number;
+  priceFrom: number;
+  currency: string;
+  description: string;
+  amenities: string[];
+  image: string;
+};
+
 type HotelsProps = {
   copy: Dictionary["sections"]["hotels"];
+  hotels: HotelCard[];
 };
 
 const StarIcon = () => (
@@ -17,7 +29,7 @@ const LocationIcon = () => (
   </svg>
 );
 
-export function Hotels({ copy }: HotelsProps) {
+export function Hotels({ copy, hotels }: HotelsProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-lightbeige">
       {/* Header */}
@@ -41,7 +53,7 @@ export function Hotels({ copy }: HotelsProps) {
 
       {/* Hotel cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {copy.hotels.map((hotel) => (
+        {hotels.map((hotel) => (
           <div
             key={hotel.name}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"

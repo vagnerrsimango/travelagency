@@ -1,8 +1,20 @@
 import Image from "next/image";
 import type { Dictionary } from "@/i18n/types";
 
+export type PackageCard = {
+  title: string;
+  destination: string;
+  duration: string;
+  included: string[];
+  priceFrom: number;
+  currency: string;
+  image: string;
+  tag: string;
+};
+
 type PackagesProps = {
   copy: Dictionary["sections"]["packages"];
+  packages: PackageCard[];
 };
 
 const CheckIcon = () => (
@@ -17,7 +29,7 @@ const ClockIcon = () => (
   </svg>
 );
 
-export function Packages({ copy }: PackagesProps) {
+export function Packages({ copy, packages }: PackagesProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-lightbeige">
       {/* Header */}
@@ -33,7 +45,7 @@ export function Packages({ copy }: PackagesProps) {
 
       {/* Package cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {copy.packages.map((pkg) => (
+        {packages.map((pkg) => (
           <div
             key={pkg.title}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"

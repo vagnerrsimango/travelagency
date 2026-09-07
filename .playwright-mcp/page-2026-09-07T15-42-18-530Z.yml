@@ -1,0 +1,29 @@
+- generic [ref=f5e2]:
+  - complementary [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - paragraph [ref=f5e5]: ZambiTour
+      - paragraph [ref=f5e6]: Backoffice
+    - navigation [ref=f5e7]:
+      - link "Painel" [ref=f5e8] [cursor=pointer]:
+        - /url: /admin
+      - link "Catálogo" [ref=f5e9] [cursor=pointer]:
+        - /url: /admin/catalogo
+      - link "Reservas" [ref=f5e10] [cursor=pointer]:
+        - /url: /admin/reservas
+      - link "Pagamentos" [ref=f5e11] [cursor=pointer]:
+        - /url: /admin/pagamentos
+      - link "FAQ" [ref=f5e12] [cursor=pointer]:
+        - /url: /admin/faq
+      - link "Utilizadores" [ref=f5e13] [cursor=pointer]:
+        - /url: /admin/utilizadores
+    - generic [ref=f5e14]:
+      - paragraph [ref=f5e15]: ZambiTour Admin
+      - paragraph [ref=f5e16]: ADMINISTRATOR
+      - button "Terminar sessão" [ref=f5e17]
+  - main [ref=f5e18]:
+    - generic [ref=f5e19]:
+      - heading "FAQ" [level=1] [ref=f5e20]
+      - generic [ref=f5e21]:
+        - paragraph [ref=f5e22]: Fase 5 — FAQ bot
+        - paragraph [ref=f5e23]: Perguntas e respostas PT/EN para o bot do site, categorias, e o registo de perguntas sem resposta para revisão.
+        - paragraph [ref=f5e24]: Ver ROADMAP.md para o plano completo.

@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-beige: #F5F0E8;
-  --color-leafy: #365140;
-  --color-lightbeige: #FCFBF8;
-  --color-orange: #D16D56;
-  --color-shadow: #EBE7E0;
-  --color-darkgray: #AFAFAF;
-  --color-parablack: #0E150E;
-  --color-textdark: #0E0E0E;
+  /* ZambiTour brand palette — deep navy + gold, per corporate profile */
+  --color-beige: #EEF2F6;
+  --color-leafy: #0B2A45;
+  --color-lightbeige: #FAFBFC;
+  --color-orange: #C99A3B;
+  --color-shadow: #E2E7ED;
+  --color-darkgray: #90A0AC;
+  --color-parablack: #16222E;
+  --color-textdark: #0B2340;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,7 +30,7 @@ body {
 }
 
 .bg-leafy select option {
-  background-color: #365140;
+  background-color: #0B2A45;
   color: #ffffff;
 }
 
@@ -94,7 +95,7 @@ body {
 }
 .badge-shimmer {
   background: linear-gradient(90deg,
-    #D16D56 0%, #e8956d 35%, #ffd4c2 50%, #e8956d 65%, #D16D56 100%
+    #C99A3B 0%, #dab766 35%, #f3e3b8 50%, #dab766 65%, #C99A3B 100%
   );
   background-size: 300% auto;
   animation: shimmer-sweep 2.8s linear infinite;
@@ -107,4 +108,16 @@ body {
 }
 .animate-live-pulse {
   animation: live-pulse 1.8s ease-in-out infinite;
+}
+
+/* ─── Skeleton loading placeholders (catalog sections streaming from the
+   database — see components/ui/skeleton.tsx) ─── */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -150% 0; }
+  100% { background-position:  150% 0; }
+}
+.animate-skeleton {
+  background: linear-gradient(90deg, #e7e1d5 25%, #f3efe5 50%, #e7e1d5 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
 }

@@ -1,0 +1,886 @@
+{
+  "destinations": [
+    {
+      "slug": "maputo",
+      "nameEn": "Maputo",
+      "namePt": "Maputo",
+      "country": "Mozambique",
+      "region": "Southern Mozambique",
+      "taglineEn": "Where Africa Meets The Ocean",
+      "taglinePt": "Onde África Encontra o Oceano",
+      "descriptionEn": "Mozambique's vibrant capital combines Indian Ocean views, Portuguese-influenced architecture, lively restaurants and a relaxed coastal atmosphere. It is the ideal starting point for business travel, weekend escapes and journeys across Southern Africa.",
+      "descriptionPt": "A vibrante capital de Moçambique combina vistas sobre o Oceano Índico, arquitectura de influência portuguesa, restaurantes animados e uma atmosfera costeira descontraída. É o ponto de partida ideal para viagens de negócios, escapadinhas de fim de semana e viagens pela África Austral.",
+      "images": [
+        "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "vilanculos-bazaruto",
+      "nameEn": "Vilanculos & Bazaruto",
+      "namePt": "Vilanculos e Bazaruto",
+      "country": "Mozambique",
+      "region": "Inhambane Province",
+      "taglineEn": "Gateway To Island Paradise",
+      "taglinePt": "Porta Para o Paraíso Insular",
+      "descriptionEn": "Vilanculos is the gateway to the Bazaruto Archipelago, known for white-sand beaches, turquoise waters and exceptional marine life. The destination works equally well for relaxed beach holidays, diving adventures and refined island escapes.",
+      "descriptionPt": "Vilanculos é a porta de entrada para o Arquipélago de Bazaruto, conhecido pelas praias de areia branca, águas turquesa e vida marinha excepcional. O destino é ideal tanto para férias de praia descontraídas como para aventuras de mergulho e escapadinhas sofisticadas nas ilhas.",
+      "images": [
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "ponta-do-ouro",
+      "nameEn": "Ponta do Ouro",
+      "namePt": "Ponta do Ouro",
+      "country": "Mozambique",
+      "region": "Maputo Province",
+      "taglineEn": "Beach Days, Reef Adventures",
+      "taglinePt": "Dias de Praia, Aventuras no Recife",
+      "descriptionEn": "Ponta do Ouro is a popular southern Mozambique beach destination close to the South African border. Its warm waters, diving sites, restaurants and easy road access make it a natural choice for short coastal breaks.",
+      "descriptionPt": "Ponta do Ouro é um popular destino de praia no sul de Moçambique, próximo da fronteira com a África do Sul. As águas quentes, os locais de mergulho, os restaurantes e o fácil acesso rodoviário tornam-na uma escolha natural para escapadinhas costeiras.",
+      "images": [
+        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "kruger-national-park",
+      "nameEn": "Kruger National Park",
+      "namePt": "Parque Nacional Kruger",
+      "country": "South Africa",
+      "region": "Mpumalanga & Limpopo",
+      "taglineEn": "Big Five, Close To Home",
+      "taglinePt": "Big Five, Perto de Casa",
+      "descriptionEn": "Kruger National Park offers some of Southern Africa's most accessible safari experiences, with excellent opportunities to see the Big Five and diverse wildlife. Its proximity to Johannesburg and Mozambique makes it particularly convenient for regional travellers.",
+      "descriptionPt": "O Parque Nacional Kruger oferece algumas das experiências de safari mais acessíveis da África Austral, com excelentes oportunidades para observar os Big Five e uma grande diversidade de fauna. A proximidade de Joanesburgo e Moçambique torna-o especialmente conveniente para viajantes regionais.",
+      "images": [
+        "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "victoria-falls",
+      "nameEn": "Victoria Falls",
+      "namePt": "Victoria Falls",
+      "country": "Zimbabwe",
+      "region": "Matabeleland North",
+      "taglineEn": "The Smoke That Thunders",
+      "taglinePt": "O Fumo Que Troveja",
+      "descriptionEn": "Victoria Falls is one of Africa's most iconic natural attractions, where the Zambezi River plunges into a spectacular gorge. The area combines dramatic scenery with river cruises, wildlife experiences and adventure activities.",
+      "descriptionPt": "Victoria Falls é uma das mais emblemáticas atracções naturais de África, onde o rio Zambeze cai numa espectacular garganta. A região combina paisagens impressionantes com cruzeiros no rio, experiências de vida selvagem e actividades de aventura.",
+      "images": [
+        "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "zanzibar",
+      "nameEn": "Zanzibar",
+      "namePt": "Zanzibar",
+      "country": "Tanzania",
+      "region": "Zanzibar Archipelago",
+      "taglineEn": "Island Culture Meets Ocean",
+      "taglinePt": "Cultura Insular Encontra o Oceano",
+      "descriptionEn": "Zanzibar blends tropical beaches, Swahili culture and centuries of Indian Ocean history. From Stone Town to the northern and eastern beaches, it offers an easy combination of cultural discovery and relaxed coastal living.",
+      "descriptionPt": "Zanzibar combina praias tropicais, cultura suaíli e séculos de história do Oceano Índico. Desde Stone Town até às praias do norte e leste, oferece uma combinação fácil entre descoberta cultural e descanso à beira-mar.",
+      "images": [
+        "https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "nairobi",
+      "nameEn": "Nairobi",
+      "namePt": "Nairobi",
+      "country": "Kenya",
+      "region": "Nairobi County",
+      "taglineEn": "City Energy, Wild Encounters",
+      "taglinePt": "Energia Urbana, Encontros Selvagens",
+      "descriptionEn": "Nairobi combines a dynamic East African capital with remarkable access to wildlife and national parks. It is an excellent gateway for Kenya safaris, business travel and onward journeys along the East African coast.",
+      "descriptionPt": "Nairobi combina uma dinâmica capital da África Oriental com um acesso extraordinário à vida selvagem e aos parques nacionais. É uma excelente porta de entrada para safaris no Quénia, viagens de negócios e ligações para a costa da África Oriental.",
+      "images": [
+        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "windhoek",
+      "nameEn": "Windhoek",
+      "namePt": "Windhoek",
+      "country": "Namibia",
+      "region": "Khomas Region",
+      "taglineEn": "Gateway To Namibia's Wild",
+      "taglinePt": "Porta Para a Natureza da Namíbia",
+      "descriptionEn": "Windhoek is Namibia's compact and welcoming capital and a practical starting point for exploring the country's dramatic landscapes. It connects naturally with desert adventures, wildlife reserves and longer Namibia road journeys.",
+      "descriptionPt": "Windhoek é a compacta e acolhedora capital da Namíbia e um ponto de partida prático para explorar as paisagens dramáticas do país. Liga-se naturalmente a aventuras no deserto, reservas de vida selvagem e viagens rodoviárias mais longas pela Namíbia.",
+      "images": [
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "slug": "southern-sun-maputo",
+      "nameEn": "Southern Sun Maputo",
+      "namePt": "Southern Sun Maputo",
+      "destinationSlug": "maputo",
+      "category": "City Hotel",
+      "stars": 4,
+      "address": "Avenida da Marginal, Maputo, Mozambique",
+      "descriptionEn": "A modern waterfront hotel overlooking Maputo Bay, well suited to business trips and leisure stays. Guests have access to a pool, restaurant, fitness facilities and convenient city connections.",
+      "descriptionPt": "Um moderno hotel à beira-mar com vista para a Baía de Maputo, adequado tanto para viagens de negócios como para estadias de lazer. Os hóspedes têm acesso a piscina, restaurante, instalações de fitness e ligações convenientes para a cidade.",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Fitness Centre",
+        "Free Wi-Fi",
+        "Airport Transfer",
+        "Conference Facilities"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 145,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "polana-serena-hotel",
+      "nameEn": "Polana Serena Hotel",
+      "namePt": "Polana Serena Hotel",
+      "destinationSlug": "maputo",
+      "category": "Luxury City Hotel",
+      "stars": 5,
+      "address": "Rua de Sofala, 115, Maputo, Mozambique",
+      "descriptionEn": "One of Maputo's best-known landmark hotels, combining classic character with contemporary hospitality. Its restaurants, spa, pool and panoramic city views make it a strong choice for premium stays.",
+      "descriptionPt": "Um dos hotéis históricos mais conhecidos de Maputo, combinando carácter clássico com hospitalidade contemporânea. Os seus restaurantes, spa, piscina e vistas panorâmicas sobre a cidade tornam-no uma excelente opção para estadias premium.",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Restaurants",
+        "Fitness Centre",
+        "Free Wi-Fi",
+        "Business Centre"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 220,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "vilanculos-beach-lodge",
+      "nameEn": "Vilanculos Beach Lodge",
+      "namePt": "Vilanculos Beach Lodge",
+      "destinationSlug": "vilanculos-bazaruto",
+      "category": "Beach Lodge",
+      "stars": 4,
+      "address": "Vilanculos Coastal Road, Vilanculos, Mozambique",
+      "descriptionEn": "A relaxed beachfront property overlooking the Indian Ocean and the Bazaruto Archipelago. It offers a comfortable base for island excursions, water activities and quiet beach days.",
+      "descriptionPt": "Uma propriedade descontraída junto à praia, com vista para o Oceano Índico e o Arquipélago de Bazaruto. Oferece uma base confortável para excursões às ilhas, actividades aquáticas e dias tranquilos na praia.",
+      "amenities": [
+        "Beach Access",
+        "Pool",
+        "Restaurant",
+        "Bar",
+        "Wi-Fi",
+        "Water Activities"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 165,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "anantara-bazaruto-island-resort",
+      "nameEn": "Anantara Bazaruto Island Resort",
+      "namePt": "Anantara Bazaruto Island Resort",
+      "destinationSlug": "vilanculos-bazaruto",
+      "category": "Island Resort",
+      "stars": 5,
+      "address": "Bazaruto Island, Bazaruto Archipelago, Mozambique",
+      "descriptionEn": "A high-end island resort set on the pristine beaches of Bazaruto Island. The property combines ocean views, refined accommodation, wellness facilities and a wide range of marine experiences.",
+      "descriptionPt": "Um resort insular de alto padrão situado nas praias preservadas da Ilha de Bazaruto. A propriedade combina vistas para o oceano, alojamento sofisticado, instalações de bem-estar e uma ampla variedade de experiências marinhas.",
+      "amenities": [
+        "Private Beach",
+        "Pool",
+        "Spa",
+        "Restaurants",
+        "Diving",
+        "Snorkelling",
+        "Wi-Fi"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 520,
+      "currency": "USD",
+      "conditionsEn": "Rates are subject to seasonal availability and may include selected meals and activities depending on the room plan.",
+      "conditionsPt": "As tarifas estão sujeitas à disponibilidade sazonal e podem incluir refeições e actividades seleccionadas, dependendo do plano de alojamento."
+    },
+    {
+      "slug": "pestana-bazaruto-lodge",
+      "nameEn": "Pestana Bazaruto Lodge",
+      "namePt": "Pestana Bazaruto Lodge",
+      "destinationSlug": "vilanculos-bazaruto",
+      "category": "Island Lodge",
+      "stars": 4,
+      "address": "Bazaruto Island, Inhambane Province, Mozambique",
+      "descriptionEn": "A beachfront island lodge offering a relaxed setting for exploring the Bazaruto Archipelago. Guests can combine comfortable accommodation with beach time and marine activities.",
+      "descriptionPt": "Um lodge insular junto à praia que oferece um ambiente descontraído para explorar o Arquipélago de Bazaruto. Os hóspedes podem combinar alojamento confortável com momentos de praia e actividades marinhas.",
+      "amenities": [
+        "Beach Access",
+        "Pool",
+        "Restaurant",
+        "Bar",
+        "Snorkelling",
+        "Boat Trips"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 310,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "ponta-do-ouro-naturally",
+      "nameEn": "Devocean Eco Adventure Lodge",
+      "namePt": "Devocean Eco Adventure Lodge",
+      "destinationSlug": "ponta-do-ouro",
+      "category": "Beach Lodge",
+      "stars": 3,
+      "address": "Ponta do Ouro, Maputo Province, Mozambique",
+      "descriptionEn": "A relaxed coastal property designed around easy access to Ponta do Ouro's beaches and marine activities. It suits travellers looking for a comfortable base close to diving and the village atmosphere.",
+      "descriptionPt": "Uma propriedade costeira descontraída com acesso fácil às praias e actividades marinhas de Ponta do Ouro. É adequada para viajantes que procuram uma base confortável perto dos locais de mergulho e da atmosfera da vila.",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Bar",
+        "Wi-Fi",
+        "Diving",
+        "Beach Access"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 95,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "simbavati-river-lodge",
+      "nameEn": "Simbavati River Lodge",
+      "namePt": "Simbavati River Lodge",
+      "destinationSlug": "kruger-national-park",
+      "category": "Safari Lodge",
+      "stars": 4,
+      "address": "Timbavati Private Nature Reserve, Limpopo, South Africa",
+      "descriptionEn": "A safari lodge overlooking the Nhlaralumi River within the Timbavati Private Nature Reserve. It provides an intimate setting for guided game drives and wildlife viewing close to Kruger National Park.",
+      "descriptionPt": "Um lodge de safari com vista para o rio Nhlaralumi, situado na Reserva Natural Privada de Timbavati. Oferece um ambiente intimista para safaris guiados e observação de vida selvagem junto ao Parque Nacional Kruger.",
+      "amenities": [
+        "Game Drives",
+        "Pool",
+        "Restaurant",
+        "Bar",
+        "Wi-Fi",
+        "Bush Walks"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 390,
+      "currency": "USD",
+      "conditionsEn": "Rates are subject to availability and may vary according to season and safari package.",
+      "conditionsPt": "As tarifas estão sujeitas à disponibilidade e podem variar de acordo com a época e o pacote de safari."
+    },
+    {
+      "slug": "victoria-falls-safari-lodge",
+      "nameEn": "Victoria Falls Safari Lodge",
+      "namePt": "Victoria Falls Safari Lodge",
+      "destinationSlug": "victoria-falls",
+      "category": "Safari Lodge",
+      "stars": 4,
+      "address": "Squire Cummings Road, Victoria Falls, Zimbabwe",
+      "descriptionEn": "A renowned lodge overlooking the African bush close to Victoria Falls. Its location combines easy access to the falls with wildlife viewing, sunset experiences and comfortable lodge facilities.",
+      "descriptionPt": "Um conhecido lodge com vista para a savana africana, situado perto de Victoria Falls. A sua localização combina acesso fácil às cataratas com observação de vida selvagem, experiências ao pôr do sol e instalações confortáveis.",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Bar",
+        "Game Viewing",
+        "Shuttle",
+        "Wi-Fi"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 190,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "serena-inn-zanzibar",
+      "nameEn": "Zanzibar Serena Hotel",
+      "namePt": "Zanzibar Serena Hotel",
+      "destinationSlug": "zanzibar",
+      "category": "Beach & City Hotel",
+      "stars": 5,
+      "address": "Shangani Street, Stone Town, Zanzibar, Tanzania",
+      "descriptionEn": "A historic waterfront hotel in Stone Town blending Swahili heritage with contemporary comfort. Its location makes it convenient for exploring Zanzibar's cultural landmarks while staying close to the Indian Ocean.",
+      "descriptionPt": "Um histórico hotel à beira-mar em Stone Town que combina património suaíli com conforto contemporâneo. A sua localização é conveniente para explorar os principais pontos culturais de Zanzibar enquanto se permanece perto do Oceano Índico.",
+      "amenities": [
+        "Pool",
+        "Beach Access",
+        "Spa",
+        "Restaurant",
+        "Bar",
+        "Wi-Fi"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 230,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "giraffe-manor-nairobi",
+      "nameEn": "Giraffe Manor",
+      "namePt": "Giraffe Manor",
+      "destinationSlug": "nairobi",
+      "category": "Boutique Safari Hotel",
+      "stars": 5,
+      "address": "Gogo Falls Road, Karen, Nairobi, Kenya",
+      "descriptionEn": "An iconic boutique property in Nairobi known for its resident Rothschild's giraffes and distinctive architecture. It offers a highly memorable stay for travellers combining the Kenyan capital with wildlife experiences.",
+      "descriptionPt": "Uma propriedade boutique icónica em Nairobi, conhecida pelas girafas Rothschild residentes e pela sua arquitectura distinta. Oferece uma estadia memorável para viajantes que combinam a capital queniana com experiências de vida selvagem.",
+      "amenities": [
+        "Garden",
+        "Restaurant",
+        "Wildlife Experience",
+        "Wi-Fi",
+        "Airport Transfer",
+        "Breakfast"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 650,
+      "currency": "USD",
+      "conditionsEn": "Rates are subject to availability and seasonal demand and may include selected meals and experiences.",
+      "conditionsPt": "As tarifas estão sujeitas à disponibilidade e à procura sazonal e podem incluir refeições e experiências seleccionadas."
+    },
+    {
+      "slug": "avani-windhoek-hotel",
+      "nameEn": "Avani Windhoek Hotel & Casino",
+      "namePt": "Avani Windhoek Hotel & Casino",
+      "destinationSlug": "windhoek",
+      "category": "City Hotel",
+      "stars": 4,
+      "address": "129 Independence Avenue, Windhoek, Namibia",
+      "descriptionEn": "A centrally located hotel in Windhoek offering practical access to the city's business district and attractions. It is a convenient base before or after a Namibia road trip.",
+      "descriptionPt": "Um hotel central em Windhoek com acesso conveniente ao distrito empresarial e às principais atracções da cidade. É uma base prática antes ou depois de uma viagem rodoviária pela Namíbia.",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Fitness Centre",
+        "Casino",
+        "Wi-Fi",
+        "Business Centre"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 120,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    },
+    {
+      "slug": "royal-livingstone-hotel",
+      "nameEn": "Royal Livingstone Victoria Falls Zambia Hotel by Anantara",
+      "namePt": "Royal Livingstone Victoria Falls Zambia Hotel by Anantara",
+      "destinationSlug": "victoria-falls",
+      "category": "Luxury Safari Hotel",
+      "stars": 5,
+      "address": "Mosi-oa-Tunya Road, Livingstone, Zambia",
+      "descriptionEn": "A refined riverside hotel set on the Zambian side of Victoria Falls, offering direct access to the Zambezi landscape. Its elegant setting makes it suited to premium leisure stays and special occasions.",
+      "descriptionPt": "Um elegante hotel junto ao rio, situado no lado zambiano de Victoria Falls, com acesso privilegiado à paisagem do Zambeze. O ambiente sofisticado torna-o adequado para estadias premium e ocasiões especiais.",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Restaurant",
+        "River Access",
+        "Wi-Fi",
+        "Game Activities"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80"
+      ],
+      "pricePerNight": 390,
+      "currency": "USD",
+      "conditionsEn": null,
+      "conditionsPt": null
+    }
+  ],
+  "vehicles": [
+    {
+      "category": "Economico",
+      "type": "Sedan",
+      "model": "Toyota Corolla ou similar",
+      "seats": 5,
+      "luggage": 2,
+      "transmission": "Manual",
+      "withDriver": false,
+      "pricePerDay": 42,
+      "currency": "USD",
+      "deposit": 300,
+      "images": [
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "category": "Economico",
+      "type": "Hatchback",
+      "model": "Toyota Starlet ou similar",
+      "seats": 5,
+      "luggage": 2,
+      "transmission": "Manual",
+      "withDriver": false,
+      "pricePerDay": 35,
+      "currency": "USD",
+      "deposit": 250,
+      "images": [
+        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "category": "SUV",
+      "type": "SUV 4x2",
+      "model": "Toyota RAV4 ou similar",
+      "seats": 5,
+      "luggage": 3,
+      "transmission": "Automatic",
+      "withDriver": false,
+      "pricePerDay": 78,
+      "currency": "USD",
+      "deposit": 500,
+      "images": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "category": "4x4 Safari",
+      "type": "Todo-o-terreno",
+      "model": "Toyota Land Cruiser 4x4 ou similar",
+      "seats": 7,
+      "luggage": 4,
+      "transmission": "Manual",
+      "withDriver": false,
+      "pricePerDay": 135,
+      "currency": "USD",
+      "deposit": 800,
+      "images": [
+        "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "category": "Minibus",
+      "type": "Minibus",
+      "model": "Toyota Hiace ou similar",
+      "seats": 12,
+      "luggage": 8,
+      "transmission": "Manual",
+      "withDriver": true,
+      "pricePerDay": 95,
+      "currency": "USD",
+      "deposit": 300,
+      "images": [
+        "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "category": "Executivo",
+      "type": "Luxury Sedan",
+      "model": "Mercedes-Benz E-Class ou similar",
+      "seats": 4,
+      "luggage": 3,
+      "transmission": "Automatic",
+      "withDriver": true,
+      "pricePerDay": 165,
+      "currency": "USD",
+      "deposit": 500,
+      "images": [
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "slug": "bazaruto-beach-escape",
+      "nameEn": "Bazaruto Beach Escape",
+      "namePt": "Escapadinha de Praia em Bazaruto",
+      "destinationSlug": "vilanculos-bazaruto",
+      "theme": "ISLAND",
+      "itineraryEn": "Fly from Maputo to Vilanculos and continue to a beachfront island resort in the Bazaruto Archipelago. Enjoy relaxed beach days, a guided island excursion and a marine activity before returning to Maputo.",
+      "itineraryPt": "Voe de Maputo para Vilanculos e siga para um resort junto à praia no Arquipélago de Bazaruto. Desfrute de dias tranquilos na praia, uma excursão guiada pela ilha e uma actividade marinha antes do regresso a Maputo.",
+      "inclusions": [
+        "Voos de ida e volta",
+        "3 noites de alojamento",
+        "Pequeno-almoço",
+        "Transfer aeroporto-resort",
+        "Excursão de meio dia",
+        "Actividade marinha seleccionada"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Refeições não especificadas",
+        "Bebidas",
+        "Despesas pessoais"
+      ],
+      "durationDays": 4,
+      "pricePerPerson": 780,
+      "currency": "USD",
+      "capacity": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "kruger-big-five",
+      "nameEn": "Kruger Big Five Safari",
+      "namePt": "Safari Big Five no Kruger",
+      "destinationSlug": "kruger-national-park",
+      "theme": "SAFARI",
+      "itineraryEn": "Travel from Maputo towards Kruger and spend three nights in a safari lodge with guided game drives. The itinerary focuses on Big Five viewing, bush landscapes and relaxed evenings at the lodge.",
+      "itineraryPt": "Viaje de Maputo em direcção ao Kruger e passe três noites num lodge de safari com safaris guiados. O itinerário centra-se na observação dos Big Five, paisagens de savana e noites descontraídas no lodge.",
+      "inclusions": [
+        "Transporte terrestre",
+        "3 noites de alojamento",
+        "Pequeno-almoço",
+        "Safaris guiados",
+        "Taxas de conservação",
+        "Guia profissional"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Bebidas",
+        "Refeições não especificadas",
+        "Despesas pessoais"
+      ],
+      "durationDays": 4,
+      "pricePerPerson": 1250,
+      "currency": "USD",
+      "capacity": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "victoria-falls-adventure",
+      "nameEn": "Victoria Falls Adventure",
+      "namePt": "Aventura em Victoria Falls",
+      "destinationSlug": "victoria-falls",
+      "theme": "ADVENTURE",
+      "itineraryEn": "Discover Victoria Falls with guided visits on both the Zimbabwean and Zambian sides, followed by a sunset cruise on the Zambezi. The trip balances iconic scenery with optional adventure activities.",
+      "itineraryPt": "Descubra Victoria Falls com visitas guiadas aos lados zambiano e zimbabueano, seguidas de um cruzeiro ao pôr do sol no Zambeze. A viagem combina paisagens icónicas com actividades de aventura opcionais.",
+      "inclusions": [
+        "Voos de ida e volta",
+        "3 noites de alojamento",
+        "Pequeno-almoço",
+        "Transfers",
+        "Visita guiada às cataratas",
+        "Cruzeiro ao pôr do sol"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Visto",
+        "Actividades opcionais",
+        "Refeições não especificadas"
+      ],
+      "durationDays": 4,
+      "pricePerPerson": 980,
+      "currency": "USD",
+      "capacity": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "zanzibar-island-retreat",
+      "nameEn": "Zanzibar Island Retreat",
+      "namePt": "Refúgio na Ilha de Zanzibar",
+      "destinationSlug": "zanzibar",
+      "theme": "BEACH",
+      "itineraryEn": "Spend four days discovering Stone Town and Zanzibar's tropical coastline. The programme combines a cultural city tour with relaxed beach time and a half-day ocean excursion.",
+      "itineraryPt": "Passe quatro dias a descobrir Stone Town e a costa tropical de Zanzibar. O programa combina uma visita cultural pela cidade com momentos de descanso na praia e uma excursão de meio dia pelo oceano.",
+      "inclusions": [
+        "Voos de ida e volta",
+        "3 noites de alojamento",
+        "Pequeno-almoço",
+        "Transfers aeroporto-hotel",
+        "Visita guiada a Stone Town",
+        "Excursão marítima"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Visto e taxas de entrada",
+        "Refeições não especificadas",
+        "Despesas pessoais"
+      ],
+      "durationDays": 4,
+      "pricePerPerson": 890,
+      "currency": "USD",
+      "capacity": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "southern-africa-highlights",
+      "nameEn": "Southern Africa Highlights",
+      "namePt": "Destaques da África Austral",
+      "destinationSlug": null,
+      "theme": "CULTURAL",
+      "itineraryEn": "Combine Maputo, Johannesburg and Victoria Falls on a curated regional journey. Experience city culture, iconic landscapes and the Zambezi before returning to Mozambique.",
+      "itineraryPt": "Combine Maputo, Joanesburgo e Victoria Falls numa viagem regional cuidadosamente planeada. Viva a cultura urbana, paisagens icónicas e o Zambeze antes de regressar a Moçambique.",
+      "inclusions": [
+        "Voos regionais",
+        "6 noites de alojamento",
+        "Pequeno-almoço",
+        "Transfers aeroportuários",
+        "Visitas guiadas",
+        "Cruzeiro no Zambeze"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Vistos",
+        "Refeições não especificadas",
+        "Actividades opcionais"
+      ],
+      "durationDays": 7,
+      "pricePerPerson": 1650,
+      "currency": "USD",
+      "capacity": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "namibia-desert-discovery",
+      "nameEn": "Namibia Desert Discovery",
+      "namePt": "Descoberta do Deserto da Namíbia",
+      "destinationSlug": "windhoek",
+      "theme": "ADVENTURE",
+      "itineraryEn": "Start in Windhoek before travelling through Namibia's dramatic desert landscapes and wildlife areas. The route combines scenic drives, lodge stays and guided excursions in a compact adventure.",
+      "itineraryPt": "Comece em Windhoek antes de viajar pelas paisagens dramáticas do deserto e pelas áreas de vida selvagem da Namíbia. A rota combina viagens panorâmicas, estadias em lodges e excursões guiadas numa aventura compacta.",
+      "inclusions": [
+        "Voos de ida e volta",
+        "4 noites de alojamento",
+        "Pequeno-almoço",
+        "Veículo 4x4",
+        "Guia profissional",
+        "Excursões seleccionadas"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Refeições não especificadas",
+        "Combustível adicional",
+        "Despesas pessoais"
+      ],
+      "durationDays": 5,
+      "pricePerPerson": 1450,
+      "currency": "USD",
+      "capacity": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "kenya-safari-explorer",
+      "nameEn": "Kenya Safari Explorer",
+      "namePt": "Expedição Safari no Quénia",
+      "destinationSlug": "nairobi",
+      "theme": "SAFARI",
+      "itineraryEn": "Begin in Nairobi and continue into Kenya's wildlife country with guided safari drives. The experience focuses on wildlife viewing, dramatic landscapes and comfortable lodge accommodation.",
+      "itineraryPt": "Comece em Nairobi e siga para as zonas de vida selvagem do Quénia com safaris guiados. A experiência centra-se na observação de animais, paisagens dramáticas e alojamento confortável em lodges.",
+      "inclusions": [
+        "Voos de ida e volta",
+        "4 noites de alojamento",
+        "Pequeno-almoço",
+        "Transporte de safari",
+        "Safaris guiados",
+        "Taxas de parque"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Visto",
+        "Bebidas",
+        "Despesas pessoais"
+      ],
+      "durationDays": 5,
+      "pricePerPerson": 1950,
+      "currency": "USD",
+      "capacity": 7,
+      "images": [
+        "https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "slug": "maputo-luxury-weekend",
+      "nameEn": "Maputo Luxury Weekend",
+      "namePt": "Fim de Semana de Luxo em Maputo",
+      "destinationSlug": "maputo",
+      "theme": "LUXURY",
+      "itineraryEn": "Enjoy a refined long weekend in Maputo with premium accommodation, private transfers and curated dining experiences. The programme leaves time to explore the waterfront, historic centre and local cultural scene.",
+      "itineraryPt": "Desfrute de um fim de semana prolongado sofisticado em Maputo com alojamento premium, transfers privados e experiências gastronómicas seleccionadas. O programa deixa tempo para explorar a marginal, o centro histórico e a cena cultural local.",
+      "inclusions": [
+        "3 noites de alojamento",
+        "Pequeno-almoço",
+        "Transfers privados",
+        "Passeio guiado pela cidade",
+        "Experiência gastronómica",
+        "Assistência de concierge"
+      ],
+      "exclusions": [
+        "Seguro de viagem",
+        "Voos internacionais",
+        "Bebidas alcoólicas",
+        "Despesas pessoais"
+      ],
+      "durationDays": 4,
+      "pricePerPerson": 620,
+      "currency": "USD",
+      "capacity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "key": "visa-support",
+      "nameEn": "Visa Support",
+      "namePt": "Assistência de Vistos",
+      "descriptionEn": "Practical guidance on visa requirements, supporting documents and application procedures for destinations within our travel network.",
+      "descriptionPt": "Orientação prática sobre requisitos de visto, documentação de suporte e procedimentos de candidatura para destinos dentro da nossa rede de viagens."
+    },
+    {
+      "key": "travel-insurance",
+      "nameEn": "Travel Insurance",
+      "namePt": "Seguro de Viagem",
+      "descriptionEn": "Travel insurance options designed to provide protection for medical emergencies, trip interruptions, baggage issues and other covered travel risks.",
+      "descriptionPt": "Opções de seguro de viagem concebidas para oferecer protecção em emergências médicas, interrupções de viagem, problemas com bagagem e outros riscos de viagem cobertos."
+    },
+    {
+      "key": "tour-guide",
+      "nameEn": "Tour Guide",
+      "namePt": "Guia Turístico",
+      "descriptionEn": "Professional local guides who help travellers discover destinations safely and confidently while adding local knowledge and cultural context.",
+      "descriptionPt": "Guias locais profissionais que ajudam os viajantes a descobrir os destinos com segurança e confiança, acrescentando conhecimento local e contexto cultural."
+    },
+    {
+      "key": "airport-transfer",
+      "nameEn": "Airport Transfer",
+      "namePt": "Transfer Aeroporto",
+      "descriptionEn": "Reliable airport transfers arranged in advance, with private and group vehicle options for arrivals and departures.",
+      "descriptionPt": "Transfers aeroportuários fiáveis organizados antecipadamente, com opções de veículos privados e para grupos em chegadas e partidas."
+    },
+    {
+      "key": "concierge",
+      "nameEn": "Travel Concierge",
+      "namePt": "Concierge de Viagem",
+      "descriptionEn": "Personalised assistance before and during your trip, helping coordinate hotels, transport, activities and special travel requests.",
+      "descriptionPt": "Assistência personalizada antes e durante a viagem, ajudando a coordenar hotéis, transporte, actividades e pedidos especiais de viagem."
+    }
+  ],
+  "promoFares": [
+    {
+      "origin": "Maputo",
+      "destinationLabel": "Johannesburg",
+      "airline": "Airlink",
+      "labelEn": "WEEKEND",
+      "labelPt": "FIM DE SEMANA",
+      "highlightEn": "Daily departures, around 1 hour",
+      "highlightPt": "Partidas diárias, cerca de 1 hora",
+      "promoPrice": 145,
+      "currency": "USD",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "featured": true
+    },
+    {
+      "origin": "Maputo",
+      "destinationLabel": "Harare",
+      "airline": "LAM Mozambique Airlines",
+      "labelEn": "REGIONAL",
+      "labelPt": "REGIONAL",
+      "highlightEn": "Convenient regional connection",
+      "highlightPt": "Ligação regional conveniente",
+      "promoPrice": 185,
+      "currency": "USD",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "featured": false
+    },
+    {
+      "origin": "Maputo",
+      "destinationLabel": "Beira",
+      "airline": "LAM Mozambique Airlines",
+      "labelEn": "DOMESTIC",
+      "labelPt": "DOMÉSTICO",
+      "highlightEn": "Easy connection to central Mozambique",
+      "highlightPt": "Ligação fácil ao centro de Moçambique",
+      "promoPrice": 125,
+      "currency": "USD",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "featured": false
+    },
+    {
+      "origin": "Maputo",
+      "destinationLabel": "Lisbon",
+      "airline": "TAP Air Portugal",
+      "labelEn": "INTERNATIONAL",
+      "labelPt": "INTERNACIONAL",
+      "highlightEn": "Connect Maputo with Portugal",
+      "highlightPt": "Ligue Maputo a Portugal",
+      "promoPrice": 890,
+      "currency": "USD",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "featured": false
+    },
+    {
+      "origin": "Maputo",
+      "destinationLabel": "Dubai",
+      "airline": "Emirates",
+      "labelEn": "INTERNATIONAL",
+      "labelPt": "INTERNACIONAL",
+      "highlightEn": "Comfortable connection to the Gulf",
+      "highlightPt": "Ligação confortável para o Golfo",
+      "promoPrice": 820,
+      "currency": "USD",
+      "startsAt": "2026-01-01",
+      "endsAt": "2026-12-31",
+      "featured": false
+    }
+  ]
+}

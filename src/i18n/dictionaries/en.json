@@ -48,7 +48,16 @@
       "contactAlt": "Contact us",
       "followUs": "Follow Us",
       "instagramAlt": "ZambiTour on Instagram",
-      "copyright": "©2026 ZambiTour. All Rights Reserved.",
+      "contactTitle": "Contact",
+      "legalName": "Zambi Tours Agência de Viagens, SU, LDA",
+      "nuitLabel": "Tax ID (NUIT)",
+      "nuit": "402 149 817",
+      "addressLine1": "Polana Cimento A, Rua Dr. Almeida Ribeiro, n.º 74",
+      "addressLine2": "Maputo, Mozambique",
+      "phone1": "+258 84 566 9066",
+      "phone2": "+258 86 263 9066",
+      "email": "info@zambitour.co.mz",
+      "copyright": "© 2026 Zambi Tours Agência de Viagens, SU, LDA. All Rights Reserved.",
       "developedBy": "Developed by"
     }
   },
@@ -155,49 +164,7 @@
       "to": "To",
       "startingFrom": "Starting from",
       "perPerson": "per person",
-      "bookThisFare": "Book This Fare",
-      "fares": [
-        {
-          "from": "Maputo",
-          "to": "Johannesburg",
-          "highlight": "Daily departures — 1h flight",
-          "price": "89",
-          "currency": "USD",
-          "validity": "Valid until 30 Jun 2026",
-          "badge": "HOT DEAL",
-          "badgeClass": "badge-shimmer"
-        },
-        {
-          "from": "Maputo",
-          "to": "Lisbon",
-          "highlight": "Direct route — 11h flight",
-          "price": "890",
-          "currency": "USD",
-          "validity": "Valid until 31 Jul 2026",
-          "badge": "INTERNATIONAL",
-          "badgeClass": "bg-white/20"
-        },
-        {
-          "from": "Maputo",
-          "to": "Dubai",
-          "highlight": "Stopover packages available",
-          "price": "650",
-          "currency": "USD",
-          "validity": "Valid until 15 Aug 2026",
-          "badge": "POPULAR",
-          "badgeClass": "bg-white/20"
-        },
-        {
-          "from": "Maputo",
-          "to": "Cape Town",
-          "highlight": "Weekend getaway special",
-          "price": "220",
-          "currency": "USD",
-          "validity": "Valid until 30 Jun 2026",
-          "badge": "WEEKEND",
-          "badgeClass": "bg-white/20"
-        }
-      ]
+      "bookThisFare": "Book This Fare"
     },
     "howItWorks": {
       "title": "How It",
@@ -235,17 +202,7 @@
       "titleRest": "Destinations",
       "description": "Discover a world of unparalleled beauty and charm with our handpicked selection of exclusive destinations.",
       "previous": "Previous",
-      "next": "Next",
-      "items": [
-        { "name": "Zambia", "label": "4 National Parks", "image": "/images/safari1.jpg" },
-        { "name": "Zimbabwe", "label": "Victoria Falls", "image": "/images/safari2.jpg" },
-        { "name": "South Africa", "label": "5 World Wonders", "image": "/images/Switzerland.jpg" },
-        { "name": "Mozambique", "label": "3 Island Escapes", "image": "/images/Maldives.jpg" },
-        { "name": "Botswana", "label": "Okavango Delta", "image": "/images/Brazil.jpg" },
-        { "name": "Tanzania", "label": "Serengeti Safari", "image": "/images/safari2.jpg" },
-        { "name": "Namibia", "label": "Desert Landscapes", "image": "/images/Iceland.jpg" },
-        { "name": "Kenya", "label": "5 National Parks", "image": "/images/India.jpg" }
-      ]
+      "next": "Next"
     },
     "tours": {
       "title": "Explore Our Tours",
@@ -254,15 +211,7 @@
       "previous": "Previous",
       "next": "Next",
       "days": "Days",
-      "from": "From",
-      "tours": [
-        { "name": "Victoria Falls", "description": "Experience The World's Largest Waterfall.", "days": 3, "price": "1,200", "image": "/images/safari2.jpg", "slug": "victoria-falls" },
-        { "name": "Kruger National Park", "description": "Big Five Safari In South Africa.", "days": 4, "price": "2,100", "image": "/images/safari1.jpg", "slug": "kruger-national-park" },
-        { "name": "Cape Town Explorer", "description": "Discover Cape Town & The Winelands.", "days": 3, "price": "1,500", "image": "/images/Switzerland.jpg", "slug": "cape-town-explorer" },
-        { "name": "Mozambique Islands", "description": "Pristine Beaches & Turquoise Waters.", "days": 5, "price": "2,800", "image": "/images/Maldives.jpg", "slug": "mozambique-islands" },
-        { "name": "Okavango Delta", "description": "Explore Botswana's Paradise Delta.", "days": 4, "price": "3,200", "image": "/images/Brazil.jpg", "slug": "okavango-delta" },
-        { "name": "Serengeti Migration", "description": "Witness The Great Migration In Tanzania.", "days": 6, "price": "4,500", "image": "/images/safari2.jpg", "slug": "serengeti-migration" }
-      ]
+      "from": "From"
     },
     "packages": {
       "eyebrow": "Curated Experiences",
@@ -271,49 +220,7 @@
       "description": "All-in-one itineraries with flights, accommodation and activities included. Just pick your destination.",
       "from": "From",
       "perPerson": "/person",
-      "bookPackage": "Book Package",
-      "packages": [
-        {
-          "title": "Weekend in Vilankulo",
-          "destination": "Vilankulo, Mozambique",
-          "duration": "3 Days / 2 Nights",
-          "included": ["Return flights from Maputo", "Beachfront accommodation", "Boat trip to Bazaruto Island", "Daily breakfast"],
-          "priceFrom": 650,
-          "currency": "USD",
-          "image": "/images/Maldives.jpg",
-          "tag": "BEACH"
-        },
-        {
-          "title": "Kruger Safari",
-          "destination": "Kruger Park, South Africa",
-          "duration": "4 Days / 3 Nights",
-          "included": ["Return flights Maputo–Johannesburg", "Safari lodge accommodation", "2 game drives per day", "Full board meals"],
-          "priceFrom": 1200,
-          "currency": "USD",
-          "image": "/images/safari1.jpg",
-          "tag": "SAFARI"
-        },
-        {
-          "title": "Zanzibar Escape",
-          "destination": "Zanzibar, Tanzania",
-          "duration": "5 Days / 4 Nights",
-          "included": ["Return flights", "Beach resort (half board)", "Stone Town guided tour", "Snorkeling trip"],
-          "priceFrom": 980,
-          "currency": "USD",
-          "image": "/images/safari2.jpg",
-          "tag": "ISLAND"
-        },
-        {
-          "title": "Dubai Experience",
-          "destination": "Dubai, UAE",
-          "duration": "6 Days / 5 Nights",
-          "included": ["Return flights from Maputo", "4-star hotel accommodation", "Desert safari & dune dinner", "City sightseeing tour"],
-          "priceFrom": 1850,
-          "currency": "USD",
-          "image": "/images/Switzerland.jpg",
-          "tag": "LUXURY"
-        }
-      ]
+      "bookPackage": "Book Package"
     },
     "hotels": {
       "eyebrow": "Accommodation",
@@ -323,13 +230,7 @@
       "browseAllHotels": "Browse All Hotels",
       "from": "From",
       "perNight": "/night",
-      "checkAvailability": "Check Availability",
-      "hotels": [
-        { "name": "Polana Serena Hotel", "location": "Maputo, Mozambique", "stars": 5, "priceFrom": 220, "currency": "USD", "description": "Iconic colonial landmark with ocean views, infinity pool and award-winning dining.", "amenities": ["Pool", "Spa", "Restaurant", "WiFi"], "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" },
-        { "name": "Baobab Beach Resort", "location": "Vilankulo, Mozambique", "stars": 4, "priceFrom": 180, "currency": "USD", "description": "Tropical beachfront resort with direct access to the pristine Bazaruto Archipelago.", "amenities": ["Beach", "Water Sports", "Pool", "WiFi"], "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" },
-        { "name": "Victoria Falls Hotel", "location": "Victoria Falls, Zimbabwe", "stars": 5, "priceFrom": 340, "currency": "USD", "description": "The grande dame of African hotels, steps from the world's most spectacular waterfall.", "amenities": ["Fine Dining", "Spa", "Pool", "WiFi"], "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80" },
-        { "name": "Sandton Sun Hotel", "location": "Johannesburg, South Africa", "stars": 4, "priceFrom": 95, "currency": "USD", "description": "Contemporary hotel in the heart of Sandton's financial and shopping district.", "amenities": ["Gym", "Restaurant", "Business Centre", "WiFi"], "image": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" }
-      ]
+      "checkAvailability": "Check Availability"
     },
     "cars": {
       "eyebrow": "Mobility",
@@ -342,13 +243,7 @@
       "gearbox": "Gearbox",
       "from": "From",
       "perDay": "/day",
-      "reserveCar": "Reserve Car",
-      "cars": [
-        { "category": "Economy", "brand": "Toyota Corolla or similar", "pricePerDay": 35, "currency": "USD", "seats": 5, "luggage": 1, "transmission": "Manual", "type": "Sedan", "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" },
-        { "category": "SUV", "brand": "Toyota RAV4 or similar", "pricePerDay": 75, "currency": "USD", "seats": 5, "luggage": 2, "transmission": "Automatic", "type": "4x2 SUV", "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" },
-        { "category": "4x4 Safari", "brand": "Toyota Land Cruiser or similar", "pricePerDay": 120, "currency": "USD", "seats": 7, "luggage": 3, "transmission": "Manual / 4WD", "type": "Off-Road", "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" },
-        { "category": "Minibus", "brand": "Toyota HiAce or similar", "pricePerDay": 90, "currency": "USD", "seats": 12, "luggage": 4, "transmission": "Manual", "type": "Group Transfer", "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" }
-      ]
+      "reserveCar": "Reserve Car"
     },
     "booking": {
       "imageAlt": "Book your Southern Africa trip",
@@ -428,7 +323,6 @@
       "methods": [
         { "id": "mpesa", "name": "M-Pesa", "description": "Pay instantly via Vodacom M-Pesa mobile money." },
         { "id": "emola", "name": "e-Mola", "description": "Secure mobile payment through BCI e-Mola." },
-        { "id": "visa", "name": "Visa", "description": "Pay with your Visa credit or debit card." },
         { "id": "bank", "name": "Bank Transfer", "description": "Direct bank transfer in MZN, USD or ZAR." }
       ]
     },
@@ -441,13 +335,7 @@
     "services": {
       "title": "Everything You Need to",
       "titleAccent": "Travel Africa",
-      "imageAlt": "Travel",
-      "services": [
-        { "icon": "/images/paths.svg", "title": "Flight & Hotel Booking", "description": "Book domestic and international flights and hotels across Southern Africa with ease. We search hundreds of options to find you the best rates.", "dark": true },
-        { "icon": "/images/vip.svg", "title": "Car Rentals", "description": "Explore Southern Africa at your own pace. From city sedans to 4x4 safari vehicles — we have the right car for every road.", "dark": false },
-        { "icon": "/images/safe.svg", "title": "Secure Online Payments", "description": "Book and pay securely online through our trusted payment platform. Multiple currencies and payment methods accepted.", "dark": false },
-        { "icon": "/images/price.svg", "title": "Promo Fares & Custom Itineraries", "description": "Enjoy exclusive promotional fares on top Southern Africa routes, plus custom itineraries crafted to match your style and budget.", "dark": false }
-      ]
+      "imageAlt": "Travel"
     },
     "blog": {
       "title": "Our Travel Blog",

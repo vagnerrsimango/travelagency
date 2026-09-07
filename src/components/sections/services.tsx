@@ -1,11 +1,18 @@
 import Image from "next/image";
 import type { Dictionary } from "@/i18n/types";
 
-type ServicesProps = {
-  copy: Dictionary["sections"]["services"];
+export type ServiceCard = {
+  icon: string;
+  title: string;
+  description: string;
 };
 
-export function Services({ copy }: ServicesProps) {
+type ServicesProps = {
+  copy: Dictionary["sections"]["services"];
+  services: ServiceCard[];
+};
+
+export function Services({ copy, services }: ServicesProps) {
   return (
     <div className="px-7 lg:px-28 pb-14 lg:pb-28 bg-lightbeige">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -50,24 +57,30 @@ export function Services({ copy }: ServicesProps) {
 
         {/* Right: 2x2 service cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {copy.services.map((s) => (
-            <div
-              key={s.title}
-              className={`p-6 rounded-xl hover:scale-105 duration-500 transition-all border border-darkgray ${
-                s.dark ? "bg-leafy" : "bg-white"
-              }`}
-            >
-              <div className="bg-shadow w-12 h-12 p-3 rounded-full">
-                <Image src={s.icon} alt={s.title} width={600} height={600} className="w-full h-full object-center object-cover" />
+          {services.map((s, i) => {
+            // Alternating dark/light treatment computed from card position —
+            // not stored per-item (the old JSON content had a literal "dark"
+            // boolean per service, which put presentation in the database).
+            const dark = i % 4 === 0;
+            return (
+              <div
+                key={s.title}
+                className={`p-6 rounded-xl hover:scale-105 duration-500 transition-all border border-darkgray ${
+                  dark ? "bg-leafy" : "bg-white"
+                }`}
+              >
+                <div className="bg-shadow w-12 h-12 p-3 rounded-full">
+                  <Image src={s.icon} alt={s.title} width={600} height={600} className="w-full h-full object-center object-cover" />
+                </div>
+                <h3 className={`text-2xl mt-8 mb-6 ${dark ? "text-white" : "text-textdark"}`}>
+                  {s.title}
+                </h3>
+                <p className={dark ? "text-white/80" : "text-parablack"}>
+                  {s.description}
+                </p>
               </div>
-              <h3 className={`text-2xl mt-8 mb-6 ${s.dark ? "text-white" : "text-textdark"}`}>
-                {s.title}
-              </h3>
-              <p className={s.dark ? "text-white/80" : "text-parablack"}>
-                {s.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

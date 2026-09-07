@@ -1,0 +1,31 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e14]
+  - generic [ref=e15]:
+    - complementary [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: ZambiTour
+        - paragraph [ref=e19]: Backoffice
+      - navigation [ref=e20]:
+        - link "Painel" [ref=e21] [cursor=pointer]:
+          - /url: /admin
+        - link "Catálogo" [ref=e22] [cursor=pointer]:
+          - /url: /admin/catalogo
+        - link "Reservas" [ref=e23] [cursor=pointer]:
+          - /url: /admin/reservas
+        - link "Pagamentos" [ref=e24] [cursor=pointer]:
+          - /url: /admin/pagamentos
+        - link "FAQ" [ref=e25] [cursor=pointer]:
+          - /url: /admin/faq
+        - link "Utilizadores" [ref=e26] [cursor=pointer]:
+          - /url: /admin/utilizadores
+      - generic [ref=e27]:
+        - paragraph [ref=e28]: ZambiTour Admin
+        - paragraph [ref=e29]: ADMINISTRATOR
+        - button "Terminar sessão" [ref=e30]
+    - main [ref=e31]:
+      - generic [ref=e32]:
+        - heading "Painel" [level=1] [ref=e33]
+        - paragraph [ref=e34]:
+          - text: Bem-vindo(a), ZambiTour Admin. O catálogo, reservas e pagamentos ficam disponíveis aqui à medida que cada fase avança — ver
+          - code [ref=e35]: ROADMAP.md
+          - text: .

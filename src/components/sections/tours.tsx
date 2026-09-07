@@ -4,8 +4,18 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import type { Dictionary } from "@/i18n/types";
 
+export type TourCard = {
+  slug: string;
+  name: string;
+  description: string;
+  days: number;
+  price: string;
+  image: string;
+};
+
 type ToursProps = {
   copy: Dictionary["sections"]["tours"];
+  tours: TourCard[];
 };
 
 const ClockIcon = () => (
@@ -27,7 +37,7 @@ const ArrowIcon = () => (
   </svg>
 );
 
-export function Tours({ copy }: ToursProps) {
+export function Tours({ copy, tours }: ToursProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", slidesToScroll: 1 });
 
   return (
@@ -52,7 +62,7 @@ export function Tours({ copy }: ToursProps) {
       <div className="relative">
         <div className="embla__viewport px-7 lg:px-28" ref={emblaRef}>
           <div className="embla__container flex gap-6">
-            {copy.tours.map((tour) => (
+            {tours.map((tour) => (
               <div
                 key={tour.slug}
                 className="embla__slide embla__slide--tours shrink-0"

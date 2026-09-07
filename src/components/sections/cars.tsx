@@ -1,8 +1,21 @@
 import Image from "next/image";
 import type { Dictionary } from "@/i18n/types";
 
+export type CarCard = {
+  category: string;
+  brand: string;
+  type: string;
+  seats: number;
+  luggage: number;
+  transmission: string;
+  pricePerDay: number;
+  currency: string;
+  image: string;
+};
+
 type CarsProps = {
   copy: Dictionary["sections"]["cars"];
+  cars: CarCard[];
 };
 
 const SeatIcon = () => (
@@ -23,7 +36,7 @@ const GearIcon = () => (
   </svg>
 );
 
-export function Cars({ copy }: CarsProps) {
+export function Cars({ copy, cars }: CarsProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-beige">
       {/* Header */}
@@ -47,7 +60,7 @@ export function Cars({ copy }: CarsProps) {
 
       {/* Car cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {copy.cars.map((car) => (
+        {cars.map((car) => (
           <div
             key={car.category}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"

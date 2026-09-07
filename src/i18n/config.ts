@@ -9,18 +9,22 @@ export const localeOptions: Record<
   {
     label: string;
     shortLabel: string;
-    flag: string;
+    /** ISO 3166-1 alpha-2 country code used to render a real flag image
+     * (via flagcdn.com) — not a Unicode flag emoji. English maps to South
+     * Africa rather than the UK: it's the region's actual English-speaking
+     * market, which is what this site serves. */
+    flagCountryCode: string;
   }
 > = {
   en: {
     label: "English",
     shortLabel: "EN",
-    flag: "🇬🇧",
+    flagCountryCode: "za",
   },
   pt: {
     label: "Português",
     shortLabel: "PT",
-    flag: "🇲🇿",
+    flagCountryCode: "mz",
   },
 };
 

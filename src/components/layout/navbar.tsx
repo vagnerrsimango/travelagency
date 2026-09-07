@@ -65,7 +65,14 @@ export function Navbar({ locale, copy }: NavbarProps) {
                 : "text-white/80 hover:bg-white/10 hover:text-white"
             }`}
           >
-            <span aria-hidden="true">{label.flag}</span>
+            <Image
+              src={`https://flagcdn.com/w40/${label.flagCountryCode}.png`}
+              alt=""
+              aria-hidden="true"
+              width={20}
+              height={14}
+              className="rounded-[2px] object-cover shrink-0"
+            />
             <span className={compact ? "sr-only" : ""}>{label.shortLabel}</span>
           </Link>
         );

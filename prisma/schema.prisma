@@ -1,0 +1,559 @@
+// ZambiTour data model.
+// Mirrors the BRD (2026-08-30) section 14 "Dados e integrações" plus the
+// functional requirements referenced inline (RF-xxx). Kept intentionally
+// close to the BRD's own vocabulary so requirement <-> schema traceability
+// stays obvious as the backoffice, reservation and payment flows get built.
+//
+// Scoping notes (see ROADMAP.md for the full rationale):
+// - PT/EN copy is stored as sibling columns (fooEn/fooPt) rather than a
+//   separate translation table. The BRD only requires two languages; a
+//   proper i18n table is a cheap future migration if a third language
+//   is ever needed (NFR "Escalabilidade").
+// - Cotação/Factura (BRD §14) is folded into Reservation's quoted* fields
+//   for the MVP. A line-itemised Quote/Invoice model is deferred until the
+//   business/finance side settles pricing & tax rules (BRD decision D-01).
+// - Catalog items (flights, hotels, vehicles, packages, services) are
+//   modelled as separate tables rather than one polymorphic "Product"
+//   table, since each has genuinely different required fields (RF-011..014)
+//   and this keeps admin forms and validation simple.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────
+
+enum Locale {
+  PT
+  EN
+}
+
+/// Editorial workflow state for anything customer-facing (BRD §12).
+enum ContentStatus {
+  DRAFT
+  IN_REVIEW
+  APPROVED
+  PUBLISHED
+  ARCHIVED
+}
+
+enum Currency {
+  MZN
+  USD
+  ZAR
+}
+
+/// Package theming for the public site's filter/badge UI (e.g. "PRAIA",
+/// "SAFARI" tags on package cards). Deliberately a fixed enum rather than
+/// free text — it's a content classification, not a caption.
+enum PackageTheme {
+  BEACH
+  SAFARI
+  ISLAND
+  LUXURY
+  CULTURAL
+  ADVENTURE
+  CITY
+}
+
+/// RF-026 — exact reservation lifecycle from the BRD.
+enum ReservationStatus {
+  RECEIVED
+  IN_REVIEW
+  QUOTE_SENT
+  AWAITING_PAYMENT
+  PAYMENT_PENDING
+  CONFIRMED
+  REJECTED
+  CANCELLED
+  COMPLETED
+}
+
+enum ReservationServiceType {
+  FLIGHT
+  HOTEL
+  CAR
+  PACKAGE
+  SERVICE
+  CUSTOM
+}
+
+/// RF-042 — MVP payment methods. Visa/bank transfer are explicitly out of
+/// scope per the BRD's decision box in §4 ("Decisão de escopo") unless a
+/// change request approves them.
+enum PaymentMethod {
+  MPESA
+  EMOLA
+}
+
+/// RF-046 + §10.3 exception table.
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  RECEIVED
+  RECONCILED
+  CONFIRMED
+  FAILED
+  TIMEOUT
+  DIVERGENT
+  CANCELLED
+}
+
+enum ReconciliationStatus {
+  PENDING
+  MATCHED
+  DIVERGENT
+}
+
+/// §9.1 — backoffice profiles / least-privilege roles.
+enum AdminRole {
+  ADMINISTRATOR
+  CATALOG_MANAGER
+  BOOKING_AGENT
+  FINANCE
+  READ_ONLY
+}
+
+// ─── Backoffice identity & audit (§9, RF-016, NFR Auditoria) ─────────────
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         AdminRole @default(READ_ONLY)
+  isActive     Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  reservationNotes   ReservationNote[]
+  handledReservations Reservation[]     @relation("ReservationAgent")
+  reconciliations    Reconciliation[]
+  auditLogs          AuditLog[]
+
+  @@map("admin_users")
+}
+
+/// Generic append-only trail for admin actions (RF-016, NFR Auditoria).
+/// entityType/entityId are a loose reference on purpose — this table must
+/// never block on a schema change to the entity it is auditing.
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      AdminUser? @relation(fields: [actorId], references: [id])
+  action     String // e.g. "product.publish", "reservation.status_change"
+  entityType String
+  entityId   String
+  before     Json?
+  after      Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([actorId])
+  @@map("audit_logs")
+}
+
+// ─── Catalog (§9 backoffice module, RF-010..016) ──────────────────────────
+
+model Destination {
+  id              String        @id @default(cuid())
+  slug            String        @unique
+  nameEn          String
+  namePt          String
+  country         String
+  region          String?
+  /// Short punchy line for hero/carousel cards — distinct from the long
+  /// descriptionEn/Pt used on richer displays.
+  taglineEn       String?
+  taglinePt       String?
+  descriptionEn   String
+  descriptionPt   String
+  images          String[]      @default([])
+  seoTitleEn      String?
+  seoTitlePt      String?
+  seoDescriptionEn String?
+  seoDescriptionPt String?
+  status          ContentStatus @default(DRAFT)
+  sortOrder       Int           @default(0)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  hotels   Hotel[]
+  packages TravelPackage[]
+  flights  FlightOffer[]
+
+  @@index([status])
+  @@map("destinations")
+}
+
+/// RF-011 — voos/ofertas.
+model FlightOffer {
+  id            String        @id @default(cuid())
+  origin        String
+  destinationId String?
+  destination   Destination?  @relation(fields: [destinationId], references: [id])
+  destinationLabel String     // free-text fallback when no catalog Destination applies yet
+  airline       String
+  price         Decimal       @db.Decimal(12, 2)
+  currency      Currency      @default(MZN)
+  tag           String? // promo label, e.g. "Tarifa relâmpago"
+  validFrom     DateTime?
+  validUntil    DateTime?
+  status        ContentStatus @default(DRAFT)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  reservations Reservation[]
+  promoOffers  PromoOffer[]
+
+  @@index([status])
+  @@map("flight_offers")
+}
+
+/// RF-012 — hotéis.
+model Hotel {
+  id             String        @id @default(cuid())
+  slug           String        @unique
+  nameEn         String
+  namePt         String
+  destinationId  String
+  destination    Destination   @relation(fields: [destinationId], references: [id])
+  category       String? // free-text classification, e.g. "Boutique", "Resort"
+  /// Numeric star rating (0–5) shown as icons on the public card —
+  /// distinct from category, which is a text classification, not a count.
+  stars          Int?
+  address        String
+  descriptionEn  String
+  descriptionPt  String
+  amenities      String[]      @default([])
+  images         String[]      @default([])
+  pricePerNight  Decimal       @db.Decimal(12, 2)
+  currency       Currency      @default(MZN)
+  conditionsEn   String?
+  conditionsPt   String?
+  status         ContentStatus @default(DRAFT)
+  sortOrder      Int           @default(0)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  reservations Reservation[]
+  promoOffers  PromoOffer[]
+
+  @@index([status])
+  @@index([destinationId])
+  @@map("hotels")
+}
+
+/// RF-013 — viaturas.
+model Vehicle {
+  id            String        @id @default(cuid())
+  category      String // e.g. "Económico", "SUV", "4x4 Safari", "Minibus"
+  /// Secondary badge shown on the card image — distinct from category,
+  /// e.g. category "SUV" + type "SUV 4x2" or "Todo-o-terreno".
+  type          String?
+  model         String
+  seats         Int
+  luggage       Int?
+  transmission  String? // manual / automatic
+  withDriver    Boolean       @default(false)
+  pricePerDay   Decimal       @db.Decimal(12, 2)
+  currency      Currency      @default(MZN)
+  deposit       Decimal?      @db.Decimal(12, 2) // caução
+  images        String[]      @default([])
+  status        ContentStatus @default(DRAFT)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  reservations Reservation[]
+  promoOffers  PromoOffer[]
+
+  @@index([status])
+  @@map("vehicles")
+}
+
+/// RF-014 — tours/pacotes. One type covers both the public site's "Tours"
+/// carousel and "Packages" grid — those are two display treatments of the
+/// same catalog item, not two content types (2026-09-07 decision).
+model TravelPackage {
+  id             String        @id @default(cuid())
+  slug           String        @unique
+  nameEn         String
+  namePt         String
+  destinationId  String?
+  destination    Destination?  @relation(fields: [destinationId], references: [id])
+  /// Theme badge shown on package cards, e.g. "PRAIA"/"SAFARI".
+  theme          PackageTheme?
+  itineraryEn    String
+  itineraryPt    String
+  inclusions     String[]      @default([])
+  exclusions     String[]      @default([])
+  durationDays   Int
+  pricePerPerson Decimal       @db.Decimal(12, 2)
+  currency       Currency      @default(MZN)
+  capacity       Int?
+  images         String[]      @default([])
+  status         ContentStatus @default(DRAFT)
+  sortOrder      Int           @default(0)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  reservations Reservation[]
+  promoOffers  PromoOffer[]
+
+  @@index([status])
+  @@map("travel_packages")
+}
+
+/// Ancillary / corporate-profile services that aren't a bookable catalog
+/// item with its own price grid — seguro de viagem, vistos e documentação,
+/// guia turístico, protocolo (Perfil Corporativo §"Nossos Serviços").
+model AncillaryService {
+  id            String        @id @default(cuid())
+  key           String        @unique // "visa", "insurance", "tour-guide", "protocol"
+  nameEn        String
+  namePt        String
+  descriptionEn String
+  descriptionPt String
+  icon          String?
+  status        ContentStatus @default(DRAFT)
+  sortOrder     Int           @default(0)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  reservations Reservation[]
+  promoOffers  PromoOffer[]
+
+  @@map("ancillary_services")
+}
+
+/// RF-011/RF-014 promo pricing ("Oferta", BRD §14 + §8.4). Soft-linked to
+/// whichever catalog item it discounts so adding a new sellable type later
+/// doesn't require touching this table's shape. Exactly one of the *Id
+/// columns must be set — enforced by a CHECK constraint added in migration
+/// 20260907_add_reservation_and_promo_ref_checks (Prisma's schema DSL has
+/// no native multi-column CHECK syntax, so this lives in raw SQL).
+model PromoOffer {
+  id          String   @id @default(cuid())
+  labelEn     String
+  labelPt     String
+  /// Short marketing blurb shown on the promo-fares strip, e.g.
+  /// "Voo directo, bagagem incluída".
+  highlightEn String?
+  highlightPt String?
+  /// Gets the eye-catching card treatment on the public promo-fares strip
+  /// (replaces the old hardcoded "badgeClass" content field — the frontend
+  /// decides the actual styling, this only says "this one's the headliner").
+  featured    Boolean  @default(false)
+  promoPrice  Decimal  @db.Decimal(12, 2)
+  currency    Currency @default(MZN)
+  startsAt    DateTime
+  endsAt      DateTime
+  active      Boolean  @default(true)
+  conditionEn String?
+  conditionPt String?
+
+  flightOfferId String?
+  flightOffer   FlightOffer?      @relation(fields: [flightOfferId], references: [id])
+  hotelId       String?
+  hotel         Hotel?            @relation(fields: [hotelId], references: [id])
+  vehicleId     String?
+  vehicle       Vehicle?          @relation(fields: [vehicleId], references: [id])
+  packageId     String?
+  package       TravelPackage?    @relation(fields: [packageId], references: [id])
+  ancillaryServiceId String?
+  ancillaryService   AncillaryService? @relation(fields: [ancillaryServiceId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([active])
+  @@map("promo_offers")
+}
+
+// ─── Customers & reservations (§8.3, RF-020..027) ────────────────────────
+
+model Customer {
+  id          String   @id @default(cuid())
+  fullName    String
+  phone       String
+  email       String?
+  preferences Json?
+  consentAt   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  reservations Reservation[]
+
+  @@index([phone])
+  @@index([email])
+  @@map("customers")
+}
+
+model Reservation {
+  id          String                 @id @default(cuid())
+  reference   String                 @unique // human-facing booking reference (RF-024)
+  customerId  String
+  customer    Customer               @relation(fields: [customerId], references: [id])
+  serviceType ReservationServiceType
+  status      ReservationStatus      @default(RECEIVED)
+
+  flightOfferId String?
+  flightOffer   FlightOffer? @relation(fields: [flightOfferId], references: [id])
+  hotelId       String?
+  hotel         Hotel?       @relation(fields: [hotelId], references: [id])
+  vehicleId     String?
+  vehicle       Vehicle?     @relation(fields: [vehicleId], references: [id])
+  packageId     String?
+  package       TravelPackage? @relation(fields: [packageId], references: [id])
+  ancillaryServiceId String?
+  ancillaryService   AncillaryService? @relation(fields: [ancillaryServiceId], references: [id])
+
+  passengers      Int      @default(1)
+  dateFrom        DateTime?
+  dateTo          DateTime?
+  origin          String?
+  customerRemarks String? // RF-022 "observações" — free text from the customer at submission time
+
+  // RF-027 — the price shown to the customer is frozen here; later catalog
+  // price changes must never mutate an already-quoted/confirmed reservation.
+  quotedPrice    Decimal?  @db.Decimal(12, 2)
+  quotedCurrency Currency?
+  quoteSentAt    DateTime?
+  confirmedAt    DateTime?
+
+  agentId String?
+  agent   AdminUser? @relation("ReservationAgent", fields: [agentId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  agentNotes ReservationNote[] // RF-025 — internal agent annotations, distinct from customerRemarks above
+  payments   Payment[]
+
+  @@index([status])
+  @@index([customerId])
+  @@index([agentId])
+  @@map("reservations")
+}
+
+/// RF-025 — agent annotations, attached quotes, internal comms trail.
+model ReservationNote {
+  id            String      @id @default(cuid())
+  reservationId String
+  reservation   Reservation @relation(fields: [reservationId], references: [id])
+  authorId      String
+  author        AdminUser   @relation(fields: [authorId], references: [id])
+  body          String
+  attachmentUrl String?
+  createdAt     DateTime    @default(now())
+
+  @@index([reservationId])
+  @@map("reservation_notes")
+}
+
+// ─── Payments & reconciliation (§10, RF-040..047) ─────────────────────────
+
+model Payment {
+  id            String        @id @default(cuid())
+  reservationId String
+  reservation   Reservation   @relation(fields: [reservationId], references: [id])
+  method        PaymentMethod
+  status        PaymentStatus @default(PENDING)
+
+  providerIntentId  String?  @unique // Payen-side intent/transaction id
+  providerReference String? // Payen reconciliation reference
+  walletMasked      String? // never store the full wallet number (NFR Pagamentos)
+
+  amount   Decimal  @db.Decimal(12, 2)
+  currency Currency @default(MZN)
+  feeAmount Decimal? @db.Decimal(12, 2)
+
+  rawResponse Json? // raw Payen payload for support/debugging (never PIN/credentials)
+
+  requestedAt DateTime  @default(now())
+  respondedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  webhookEvents  WebhookEvent[]
+  reconciliation Reconciliation?
+
+  @@index([status])
+  @@index([reservationId])
+  @@map("payments")
+}
+
+/// RF-044 — idempotency ledger. Every inbound Payen webhook is recorded by
+/// its provider-issued event id *before* it is processed; a repeat delivery
+/// is detected here and short-circuited (T-08 "Webhook duplicado").
+model WebhookEvent {
+  id          String    @id @default(cuid())
+  provider    String    @default("PAYEN")
+  eventId     String    @unique
+  paymentId   String?
+  payment     Payment?  @relation(fields: [paymentId], references: [id])
+  payload     Json
+  processedAt DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@map("webhook_events")
+}
+
+/// §10.3 "Valor divergente" / RF-047 reconciliation report source.
+model Reconciliation {
+  id               String                @id @default(cuid())
+  paymentId        String                @unique
+  payment          Payment               @relation(fields: [paymentId], references: [id])
+  expectedAmount   Decimal               @db.Decimal(12, 2)
+  receivedAmount   Decimal?              @db.Decimal(12, 2)
+  difference       Decimal?              @db.Decimal(12, 2)
+  status           ReconciliationStatus  @default(PENDING)
+  reviewedById     String?
+  reviewedBy       AdminUser?            @relation(fields: [reviewedById], references: [id])
+  comment          String?
+  reviewedAt       DateTime?
+  createdAt        DateTime              @default(now())
+  updatedAt        DateTime              @updatedAt
+
+  @@index([status])
+  @@map("reconciliations")
+}
+
+// ─── FAQ bot (§11, RF-060..067) ────────────────────────────────────────────
+
+model FaqEntry {
+  id          String        @id @default(cuid())
+  category    String
+  keywords    String[]      @default([])
+  questionEn  String
+  questionPt  String
+  answerEn    String
+  answerPt    String
+  source      String?
+  status      ContentStatus @default(DRAFT)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status])
+  @@index([category])
+  @@map("faq_entries")
+}
+
+/// RF-065 — questions the bot couldn't answer, for content-gap review.
+model FaqUnanswered {
+  id        String   @id @default(cuid())
+  question  String
+  locale    Locale
+  channel   String? // "website", "whatsapp", ...
+  handedOff Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("faq_unanswered")
+}

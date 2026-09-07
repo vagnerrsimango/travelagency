@@ -1,0 +1,29 @@
+- generic [ref=f3e2]:
+  - complementary [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - paragraph [ref=f3e5]: ZambiTour
+      - paragraph [ref=f3e6]: Backoffice
+    - navigation [ref=f3e7]:
+      - link "Painel" [ref=f3e8] [cursor=pointer]:
+        - /url: /admin
+      - link "Catálogo" [ref=f3e9] [cursor=pointer]:
+        - /url: /admin/catalogo
+      - link "Reservas" [ref=f3e10] [cursor=pointer]:
+        - /url: /admin/reservas
+      - link "Pagamentos" [ref=f3e11] [cursor=pointer]:
+        - /url: /admin/pagamentos
+      - link "FAQ" [ref=f3e12] [cursor=pointer]:
+        - /url: /admin/faq
+      - link "Utilizadores" [ref=f3e13] [cursor=pointer]:
+        - /url: /admin/utilizadores
+    - generic [ref=f3e14]:
+      - paragraph [ref=f3e15]: ZambiTour Admin
+      - paragraph [ref=f3e16]: ADMINISTRATOR
+      - button "Terminar sessão" [ref=f3e17]
+  - main [ref=f3e18]:
+    - generic [ref=f3e19]:
+      - heading "Reservas" [level=1] [ref=f3e20]
+      - generic [ref=f3e21]:
+        - paragraph [ref=f3e22]: Fase 3 — Reservations
+        - paragraph [ref=f3e23]: Fila de pedidos, cotações, mudança de estado (Recebido → Confirmado), notas do agente. O formulário de reserva do site público ainda não submete para nenhum lado — é o que esta fase liga.
+        - paragraph [ref=f3e24]: Ver ROADMAP.md para o plano completo.

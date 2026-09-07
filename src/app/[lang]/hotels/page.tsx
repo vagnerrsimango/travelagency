@@ -1,8 +1,17 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Shell } from "@/components/layout/shell";
 import { Booking } from "@/components/sections/booking";
-import { Hotels } from "@/components/sections/hotels";
+import { Hotels, type HotelCard } from "@/components/sections/hotels";
+import { SectionSkeleton } from "@/components/ui/skeleton";
 import { getLocalizedDictionary } from "@/i18n/server";
+import { HotelService } from "@/lib/data-access/hotels";
+import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
+
+// Reads live catalog data — must not be statically prerendered at build
+// time (see the identical note on the destinations page).
+export const dynamic = "force-dynamic";
 
 type LocalePageProps = {
   params: Promise<{ lang: string }>;
@@ -13,6 +22,23 @@ export async function generateMetadata({ params }: LocalePageProps): Promise<Met
   const { dict } = getLocalizedDictionary(lang);
 
   return dict.metadata.hotels;
+}
+
+async function HotelsSection({ locale, copy }: { locale: Locale; copy: Dictionary["sections"]["hotels"] }) {
+  const hotels = await HotelService.findAll({ status: "PUBLISHED" });
+  const hotelCards: HotelCard[] = hotels.map((h) => ({
+    name: locale === "pt" ? h.namePt : h.nameEn,
+    location: `${h.destination[locale === "pt" ? "namePt" : "nameEn"]}, ${h.destination.country}`,
+    stars: h.stars ?? 0,
+    priceFrom: Number(h.pricePerNight),
+    currency: h.currency,
+    description: locale === "pt" ? h.descriptionPt : h.descriptionEn,
+    amenities: h.amenities,
+    image: h.images[0] || "/images/safari1.jpg",
+  }));
+
+  if (hotelCards.length === 0) return null;
+  return <Hotels copy={copy} hotels={hotelCards} />;
 }
 
 export default async function HotelsPage({ params }: LocalePageProps) {
@@ -30,7 +56,18 @@ export default async function HotelsPage({ params }: LocalePageProps) {
           {page.description}
         </p>
       </div>
-      <Hotels copy={dict.sections.hotels} />
+      <Suspense
+        fallback={
+          <SectionSkeleton
+            eyebrow={dict.sections.hotels.eyebrow}
+            title={dict.sections.hotels.title}
+            titleAccent={dict.sections.hotels.titleAccent}
+            description={dict.sections.hotels.description}
+          />
+        }
+      >
+        <HotelsSection locale={locale} copy={dict.sections.hotels} />
+      </Suspense>
       <Booking copy={dict.sections.booking} />
     </Shell>
   );

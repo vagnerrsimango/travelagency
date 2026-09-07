@@ -4,11 +4,18 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import type { Dictionary } from "@/i18n/types";
 
-type DestinationsProps = {
-  copy: Dictionary["sections"]["destinations"];
+export type DestinationCard = {
+  name: string;
+  label: string;
+  image: string;
 };
 
-export function Destinations({ copy }: DestinationsProps) {
+type DestinationsProps = {
+  copy: Dictionary["sections"]["destinations"];
+  items: DestinationCard[];
+};
+
+export function Destinations({ copy, items }: DestinationsProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", slidesToScroll: 1 });
 
   return (
@@ -55,7 +62,7 @@ export function Destinations({ copy }: DestinationsProps) {
       {/* Carousel */}
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container flex gap-4">
-          {copy.items.map((d) => (
+          {items.map((d) => (
             <div
               key={d.name}
               className="embla__slide embla__slide--dest shrink-0"

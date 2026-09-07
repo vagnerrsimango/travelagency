@@ -13,10 +13,6 @@ const EMolaIcon = () => (
   <Image src="/images/e-mola.png" alt="e-Mola" width={96} height={40} className="h-9 w-auto object-contain" />
 );
 
-const VisaIcon = () => (
-  <Image src="/images/visa.png" alt="Visa" width={96} height={36} className="h-8 w-auto object-contain" />
-);
-
 const BankIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-9 h-9 text-leafy">
     <path d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 20v2h19v-2m-9-4v7h3v-7M7 10v7h3v-7H7z" />
@@ -26,7 +22,6 @@ const BankIcon = () => (
 const paymentIcons = {
   mpesa: MpesaIcon,
   emola: EMolaIcon,
-  visa: VisaIcon,
   bank: BankIcon,
 };
 

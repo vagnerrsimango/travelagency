@@ -3,12 +3,24 @@ import { AnimateIn } from "@/components/ui/animate-in";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
+export type FareCard = {
+  from: string;
+  to: string;
+  highlight: string;
+  price: string;
+  currency: string;
+  validity: string;
+  badge: string;
+  featured: boolean;
+};
+
 type PromoFaresProps = {
   locale: Locale;
   copy: Dictionary["home"]["promoFares"];
+  fares: FareCard[];
 };
 
-export function PromoFares({ locale, copy }: PromoFaresProps) {
+export function PromoFares({ locale, copy, fares }: PromoFaresProps) {
   return (
     <div className="bg-leafy px-7 lg:px-28 py-14 lg:py-28 overflow-hidden">
       {/* Header */}
@@ -32,7 +44,7 @@ export function PromoFares({ locale, copy }: PromoFaresProps) {
 
       {/* Cards grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {copy.fares.map((fare, i) => (
+        {fares.map((fare, i) => (
           <AnimateIn key={`${fare.from}-${fare.to}`} delay={i * 100}>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 flex flex-col gap-4 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 group overflow-hidden h-full">
 
@@ -42,8 +54,10 @@ export function PromoFares({ locale, copy }: PromoFaresProps) {
                 <span className="text-green-400/80 text-[10px] uppercase tracking-widest font-medium">{copy.liveOffer}</span>
               </div>
 
-              {/* Badge */}
-              <div className={`${fare.badgeClass} text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full w-fit`}>
+              {/* Badge — featured fares get the shimmer treatment, the
+                  rest a plain tint (was a raw CSS class stored as content
+                  before; now a semantic flag the component styles itself) */}
+              <div className={`${fare.featured ? "badge-shimmer" : "bg-white/20"} text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full w-fit`}>
                 {fare.badge}
               </div>
 
