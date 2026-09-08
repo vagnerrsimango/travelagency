@@ -29,20 +29,13 @@ export function About({ copy }: AboutProps) {
 
         {/* Center text */}
         <div className="lg:col-span-2 text-center">
+          <p className="text-orange text-sm uppercase tracking-widest mb-3">{copy.eyebrow}</p>
           <h2 className="text-4xl md:text-5xl text-textdark leading-tight">
-            {copy.title}
+            {copy.title} <span className="italic">{copy.titleAccent}</span>
           </h2>
           <p className="text-parablack text-lg py-6">
             {copy.description}
           </p>
-          <div className="mt-6">
-            <button
-              type="button"
-              className="bg-orange/80 text-white hover:bg-orange transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm cursor-pointer"
-            >
-              {copy.readMore}
-            </button>
-          </div>
         </div>
 
         {/* Right images */}

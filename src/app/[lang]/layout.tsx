@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Inter, Playfair_Display, Raleway } from "next/font/google";
 import { locales } from "@/i18n/config";
 import { getLocalizedDictionary } from "@/i18n/server";
 import "../globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair-display",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
 
 type LocaleParams = {
   params: Promise<{ lang: string }>;
@@ -41,7 +31,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.variable} ${playfairDisplay.variable} ${raleway.variable} font-sans overflow-x-hidden`}>
+      <body className="overflow-x-hidden">
         {children}
       </body>
     </html>

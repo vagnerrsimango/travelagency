@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
 export type HotelCard = {
+  id: string;
   name: string;
   location: string;
   stars: number;
@@ -13,6 +16,7 @@ export type HotelCard = {
 };
 
 type HotelsProps = {
+  locale: Locale;
   copy: Dictionary["sections"]["hotels"];
   hotels: HotelCard[];
 };
@@ -29,7 +33,7 @@ const LocationIcon = () => (
   </svg>
 );
 
-export function Hotels({ copy, hotels }: HotelsProps) {
+export function Hotels({ locale, copy, hotels }: HotelsProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-lightbeige">
       {/* Header */}
@@ -43,19 +47,19 @@ export function Hotels({ copy, hotels }: HotelsProps) {
             {copy.description}
           </p>
         </div>
-        <button
-          type="button"
-          className="bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0 cursor-pointer"
+        <Link
+          href={localizedPath(locale, "/hotels")}
+          className="bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0"
         >
           {copy.browseAllHotels}
-        </button>
+        </Link>
       </div>
 
       {/* Hotel cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {hotels.map((hotel) => (
           <div
-            key={hotel.name}
+            key={hotel.id}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
           >
             {/* Image */}
@@ -102,12 +106,12 @@ export function Hotels({ copy, hotels }: HotelsProps) {
                     <span className="text-darkgray text-xs font-normal">{copy.perNight}</span>
                   </p>
                 </div>
-                <button
-                  type="button"
-                  className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase cursor-pointer transition-all duration-300"
+                <Link
+                  href={`${localizedPath(locale, "/book")}?type=hotel&id=${hotel.id}`}
+                  className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase transition-all duration-300"
                 >
                   {copy.checkAvailability}
-                </button>
+                </Link>
               </div>
             </div>
           </div>

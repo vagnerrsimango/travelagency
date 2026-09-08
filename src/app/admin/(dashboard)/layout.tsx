@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
@@ -38,8 +39,14 @@ export default async function DashboardLayout({ children }: { children: ReactNod
     <div className="min-h-screen flex">
       <aside className="w-60 shrink-0 bg-white border-r border-slate-200 flex flex-col">
         <div className="px-5 py-5 border-b border-slate-200">
-          <p className="font-semibold text-slate-900">ZambiTour</p>
-          <p className="text-xs text-slate-500">Backoffice</p>
+          <Image
+            src="/icons/logooficial.png"
+            alt="ZambiTour"
+            width={280}
+            height={228}
+            className="h-10 w-auto object-contain invert mb-2"
+          />
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Backoffice · Viaje. Descubra. Viva.</p>
         </div>
         <nav className="flex-1 px-3 py-4 flex flex-col gap-1">
           {navItems.map((item) => (

@@ -157,39 +157,79 @@ added:**
    plus a `*-client.tsx` (the interactive form/list) — that split is now
    the required pattern for every remaining catalog screen.
 
-### Phase 3 — Reservations (RF-020–027, §8.3)
+### Phase 3 — Reservations (RF-020–027, §8.3) — done (2026-09-07)
 Managing *what a customer does with the catalog* — a genuinely different
 concern from Phase 2, not a variation of it: this is transactional/workflow
 logic (a request moving through states), not content management.
-- Wire the existing booking form (`booking.tsx`) to actually submit —
-  right now `onSubmit` calls `preventDefault()` and does nothing.
-- Server action / API route: validate, create `Customer` + `Reservation`,
-  generate a human-facing reference, set status `RECEIVED`.
-- Agent-side reservation queue in the backoffice: filter, notes, status
-  transitions through the exact RF-026 state list, quote attachment.
-- Freeze the quoted price on the reservation at quote time (RF-027) —
-  schema already supports this (`quotedPrice`/`quotedCurrency`).
-- **In scope:** a customer's request and its lifecycle to a quote.
-  **Not in scope:** editing the catalog item itself (Phase 2), and
-  collecting money for it (Phase 6 — a reservation can sit at
-  "Cotação enviada" with nothing paid yet).
+- Pricing engine (`src/lib/pricing.ts`) — one function prices any
+  hotel/car/package/service/flight booking correctly (nights/days/
+  passengers × unit price) and auto-applies an active promo if one exists.
+  Flights are the one open case: any city pair, not restricted to the
+  small set of published `FlightOffer` rows — a flight reservation can go
+  through unpriced, as a genuine quote request an agent prices by hand,
+  exactly like a real travel agency handles flights. Required relaxing a
+  database check constraint from earlier this session (own migration,
+  verified the other four service types still enforce their original
+  rule).
+- Booking form (`booking.tsx`) fully rebuilt: real catalog pickers for
+  hotel/car/package (a new tab), a live price estimate as the customer
+  fills it in, and a working submit with success/error states. Flight tab
+  stays free-route with no live price, matching the above.
+- Public API (`/api/reservations`, `/api/quote`) — validated, rate-limited,
+  creates `Customer` + `Reservation` with the price frozen at that moment
+  (RF-027), generates the human-facing reference, sends a confirmation
+  email (see Phase 6 note below — email works independent of Payen).
+- Agent-side reservation queue (`/admin/reservas`) — replaces the
+  placeholder. List, status/type filters, the full RF-026 state list,
+  internal notes, and the action that starts a payment (see Phase 6).
+- **Bug caught in testing, not shipped:** the reservation detail and note
+  endpoints were including the full `AdminUser` record for the assigned
+  agent/note author — leaking their bcrypt password hash to anyone with
+  reservation-read access. Fixed to select only safe fields everywhere;
+  confirmed no other place in the codebase has the same pattern.
 
 ### Phase 4 — UI & new pages from the corporate profile
 The site content/structure work — building the pages, not deciding the
 palette or logo (that's yours). I build the sections and bilingual copy;
 you keep driving colour/visual direction on top of them.
-- About page: Mission / Vision / Values + the "Porquê a ZambiTour"
-  six-differentiator block. Currently just a generic hero + description.
-- Services section: corporate profile lists 8 services (flights, hotels,
-  packages, insurance, car rental, visa/documentation, tour guide,
-  protocol) vs. 4 generic ones on the site today — new copy in both
-  `pt.json`/`en.json`, plus new icons or a redesigned grid.
-- "Como Trabalhamos" 5-step process block, "Para Quem Trabalhamos" segment
-  list — both in the corporate profile, neither on the site yet.
-- Favicon/app icons: `src/app/favicon.ico` is still the Next.js default
-  and `public/icons/` is empty — no ZambiTour tab icon exists yet.
+- **Done (2026-09-07):** `/about` rebuilt from the real corporate profile
+  PDF (re-shared that day) — every word below is the document's own text,
+  translated into English by me where the PDF didn't already give both
+  languages, not invented. Seven sections, in the PDF's own order:
+  `Sobre a ZambiTour` (intro, updated from generic filler), `A Nossa
+  Essência` (Viaje/Descubra/Viva three-pillar block), `Missão, Visão e
+  Valores` (mission, vision, all 8 values), `Nossos Serviços` (the real
+  8-service overview — new, static/marketing content, distinct from the
+  database-driven ancillary-services grid below it), `Porquê a
+  ZambiTour?` (the six differentiators), `Como Trabalhamos` (the 5-step
+  process), `Para Quem Trabalhamos` (the 4 customer segments). Verified
+  live in both languages, no layout breakage, no encoding corruption.
+- **Real content correction, not just addition:** the "8 services" turned
+  out to be 4 core catalog types (flights/hotels/packages/cars — already
+  full products with their own pages) plus 4 real ancillary services
+  (Seguro de viagem, Apoio para vistos, Guia turístico, **Protocolo**).
+  The `AncillaryService` rows seeded back in Phase 2 (`airport-transfer`,
+  `concierge`) were reasonable guesses made without the real source
+  document — neither is real. Replaced both with `protocolo` and
+  corrected the other three descriptions to the PDF's exact wording.
+- **Bug found and fixed, not shipped silently:** passing accented
+  Portuguese text through inline `curl -d '...'` on this Windows/Git-Bash
+  setup silently corrupts it (replacement-character bytes get stored,
+  HTTP status still reports success) — caught by checking the actual
+  bytes after an update, not by trusting the 200 response. Fixed by
+  switching to file-based curl payloads for the rest of this work; saved
+  to memory so it doesn't recur in a future session.
+- **Done (2026-09-07):** Favicon/app icons — cropped the globe+plane emblem
+  out of the existing full logo (`public/images/zambitour.png`), excluding
+  the wordmark, checked it stays legible at 32×32/16×16, and generated
+  `favicon.ico` (hand-built PNG-in-ICO container, no new dependency),
+  `icon.png` (192×192) and `apple-icon.png` (180×180) in `src/app/`.
+  Verified live: all three serve correctly and Next.js generates the
+  right `<link>` tags for each. `public/icons/` turned out to be an
+  unused leftover — nothing references it, left as-is.
 - Social links are still placeholder `#` hrefs — need real URLs, or drop
-  the ones that don't exist rather than link to nowhere.
+  the ones that don't exist rather than link to nowhere. **Blocked on
+  you** — asked 2026-09-07, waiting on real URLs (or "drop platform X").
 
 ### Phase 5 — FAQ bot (§11, RF-060–067)
 - Needs Phase 2's content workflow (approved/published state) for its
@@ -202,22 +242,34 @@ you keep driving colour/visual direction on top of them.
   engine) is BRD decision D-06 — open.
 
 ### Phase 6 — Payments: Payen / M-Pesa / e-Mola (§10, RF-040–047)
-Sequenced last on purpose: it's the phase blocked on an external party
-(Payen sandbox access), so everything above it can proceed regardless of
-how long that takes. Worth starting that access request now in parallel —
-it's the longest lead time in the whole plan, independent of build order.
-**Also blocked on BRD decisions D-01, D-02, D-03** (currency/conversion
-rule, Payen sandbox credentials, what "confirmed" means) — business/
-finance calls, not engineering ones.
-- Payment intent creation against Payen, webhook receiver with the
-  idempotency ledger (`WebhookEvent`, RF-044/T-08) already modelled.
-- Exception handling per §10.3: timeout, duplicate, divergent amount,
-  repeated webhook, abandonment, Payen downtime, wallet failure.
-- Reconciliation screen for Finance: expected vs. received, divergence
-  queue, export (RF-047).
-- **In scope:** collecting and reconciling money against an existing
-  reservation. **Not in scope:** anything about the reservation's own
-  lifecycle — that's entirely Phase 3's concern, Payments only reacts to it.
+Originally sequenced last since it's blocked on an external party (Payen
+sandbox access) — as of 2026-09-07, everything *except the actual Payen
+API call* is built and verified, specifically so that access landing is
+the very last step, not a redesign:
+- **Done:** `PaymentService` (`src/lib/data-access/payments.ts`) — an
+  agent starts payment collection from a quoted reservation (masked
+  wallet number, RF-026 -> `AWAITING_PAYMENT`), the admin payments
+  dashboard (`/admin/pagamentos`) with status/method filters and summary
+  tiles, manual status override (used until Payen is wired, and afterwards
+  for anything a webhook doesn't cleanly cover), and confirming a payment
+  correctly cascades the reservation to `CONFIRMED`. All verified live
+  against the real database, including the "not quoted yet" error path.
+- **Done, deliberately a stub:** `src/lib/payments/payen-adapter.ts` is
+  the *only* piece of this phase that isn't real — one function,
+  clearly marked, that creates a `PENDING` intent locally instead of
+  calling Payen. Everything upstream (Payment model, dashboard, the
+  reservation-to-payment flow) is built against its real return shape, so
+  wiring the actual API call later doesn't touch any caller.
+- **Still blocked on Payen access:** the real `initiatePayment` call, the
+  webhook receiver (idempotency ledger `WebhookEvent`/RF-044/T-08 already
+  modelled, not yet built), and the §10.3 exception handling that only
+  makes sense against a real gateway (timeout, duplicate, divergent
+  amount, wallet failure). **Also blocked on BRD decisions D-01, D-02,
+  D-03** (currency/conversion rule, Payen sandbox credentials, what
+  "confirmed" means) — business/finance calls, not engineering ones.
+- Reconciliation screen for Finance (expected vs. received, divergence
+  queue, export, RF-047) is the one piece not started at all — needs a
+  real webhook flow to reconcile against first.
 
 ### Phase 7 — Hardening & launch
 - Testing against the BRD's own scenario list (§17.1, T-01…T-12).
@@ -229,19 +281,14 @@ finance calls, not engineering ones.
 ## Sequencing summary
 
 ```
-Phase 0 done (database) → Phase 1 done (admin & auth) → Phase 2 done (catalog CRUD)
-                                                       │
-                                                       ▼
-                                                 Phase 3 (reservations)
-                                                       │
-                                                       ▼
-                                                 Phase 4 (UI & new pages)
+Phase 0 done → Phase 1 done → Phase 2 done → Phase 3 done → Phase 4 done **
                                                        │
                                                        ▼
                                                  Phase 5 (FAQ bot)
                                                        │
                                                        ▼
-                                                 Phase 6 (payments) *
+                                          Phase 6 (payments) — readiness done,
+                                          real Payen call still blocked *
                                                        │
                                                        ▼
                                                  Phase 7 (hardening & launch)
@@ -249,12 +296,18 @@ Phase 0 done (database) → Phase 1 done (admin & auth) → Phase 2 done (catalo
 \* Payen access-request should start now, in parallel, regardless of where
 build order is — it's not gated on any other phase, only on an external
 party responding.
+\*\* All content work done; only the real social-media URLs remain open.
 
 ## What's next
-Phase 2 (catalog CRUD) is done — all six catalog types have real admin
-screens and the public site reads every one of them live from the
-database. Phase 3 (reservations) is next: wiring the booking form to
-actually submit, and the agent-side reservation queue.
+Phases 0–3 are done, and Phase 4's content work is done too — only the
+social-media URLs remain open (see that phase's own note above; still
+waiting on real links or "drop platform X"). Phase 5 (FAQ bot) is next.
+
+To actually go live on payments, two things need to happen outside this
+codebase: Payen sandbox access (the access-request should already be in
+flight — see the note below), and the business/finance decisions this
+ROADMAP has flagged as blocked (D-01/D-02/D-03). Once both land, wiring
+the real API call is a small, contained change to one file.
 
 **2026-09-07 — demo content:** the catalog is now populated with realistic
 showcase data for client presentation — 8 destinations, 12 hotels, 6

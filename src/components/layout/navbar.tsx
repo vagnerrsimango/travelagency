@@ -90,11 +90,11 @@ export function Navbar({ locale, copy }: NavbarProps) {
       >
         <Link href={localizedPath(locale, "/")}>
           <Image
-            src="/images/zambitour.png"
+            src="/icons/logooficial.png"
             alt="ZambiTour"
-            width={200}
-            height={70}
-            className="h-14 w-auto object-contain"
+            width={280}
+            height={228}
+            className="h-16 w-auto object-contain"
           />
         </Link>
 
@@ -125,11 +125,11 @@ export function Navbar({ locale, copy }: NavbarProps) {
       >
         <Link href={localizedPath(locale, "/")} className="shrink-0">
           <Image
-            src="/images/zambitour.png"
+            src="/icons/logooficial.png"
             alt="ZambiTour"
-            width={200}
-            height={70}
-            className="h-12 w-auto max-w-[150px] object-contain sm:h-14 sm:max-w-none"
+            width={280}
+            height={228}
+            className="h-12 w-auto max-w-[110px] object-contain sm:h-14 sm:max-w-none"
           />
         </Link>
         <div className="flex items-center gap-2">

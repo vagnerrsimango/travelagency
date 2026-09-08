@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { CitySelect } from "@/components/ui/city-select";
 import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
@@ -12,15 +13,6 @@ type HeroProps = {
   locale: Locale;
   copy: Dictionary["home"]["hero"];
 };
-
-const cities = [
-  "Maputo", "Beira", "Nampula", "Pemba",
-  "Johannesburg", "Cape Town", "Durban",
-  "Harare", "Victoria Falls",
-  "Lusaka", "Livingstone",
-  "Nairobi", "Zanzibar", "Dar es Salaam",
-  "Dubai", "Lisbon", "London",
-];
 
 const PlaneIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
@@ -52,13 +44,61 @@ function countLabel(count: number, singular: string, plural: string) {
   return `${count} ${count > 1 ? plural : singular}`;
 }
 
+function todayStr(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
 export function Hero({ locale, copy }: HeroProps) {
+  const router = useRouter();
   const [tab, setTab] = useState<Tab>("flight");
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [date, setDate] = useState("");
+  const [passengers, setPassengers] = useState(1);
+  const [rooms, setRooms] = useState(1);
+  const [carType, setCarType] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
   const tabItems: TabItem[] = [
     { id: "flight", label: copy.tabs.flight, Icon: PlaneIcon },
     { id: "hotel", label: copy.tabs.hotel, Icon: BedIcon },
     { id: "car", label: copy.tabs.car, Icon: CarIcon },
   ];
+
+  const handleTabChange = (next: Tab) => {
+    setTab(next);
+    setError(null);
+  };
+
+  const handleSearch = () => {
+    setError(null);
+
+    if (tab === "flight") {
+      if (from && to && from === to) {
+        setError(copy.sameCityError);
+        return;
+      }
+      const params = new URLSearchParams({ type: "flight" });
+      if (from) params.set("from", from);
+      if (to) params.set("to", to);
+      if (date) params.set("date", date);
+      params.set("passengers", String(passengers));
+      router.push(`${localizedPath(locale, "/book")}?${params.toString()}`);
+      return;
+    }
+
+    if (tab === "hotel") {
+      const params = new URLSearchParams();
+      if (to) params.set("destination", to);
+      const query = params.toString();
+      router.push(`${localizedPath(locale, "/hotels")}${query ? `?${query}` : ""}`);
+      return;
+    }
+
+    // Cars aren't modelled per-destination in the catalog (a fleet, not
+    // city-scoped listings) — nothing to filter by, just go browse them.
+    router.push(localizedPath(locale, "/cars"));
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden flex flex-col justify-center">
@@ -76,6 +116,10 @@ export function Hero({ locale, copy }: HeroProps) {
       </div>
 
       <div className="relative z-10 px-7 lg:px-28 pt-28 pb-20">
+        {/* Slogan */}
+        <p className="text-orange text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold mb-4 animate-fade-up">
+          {copy.slogan}
+        </p>
         {/* Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl text-white leading-none mb-5 max-w-3xl animate-fade-up" style={{ animationDelay: "150ms" }}>
           {copy.title}<br />
@@ -94,7 +138,7 @@ export function Hero({ locale, copy }: HeroProps) {
               <button
                 key={t.id}
                 type="button"
-                onClick={() => setTab(t.id)}
+                onClick={() => handleTabChange(t.id)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   tab === t.id
                     ? "bg-orange text-white shadow"
@@ -109,36 +153,55 @@ export function Hero({ locale, copy }: HeroProps) {
 
           {/* Search row */}
           <div className="flex flex-col sm:flex-row gap-2 p-2 bg-white rounded-xl">
-            <select className="flex-1 border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white min-w-0">
-              <option value="">{tab === "car" ? copy.fields.pickupCity : copy.fields.from}</option>
-              {cities.map((c) => <option key={c}>{c}</option>)}
-            </select>
-            <select className="flex-1 border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white min-w-0">
-              <option value="">{tab === "car" ? copy.fields.dropOffCity : tab === "hotel" ? copy.fields.destination : copy.fields.to}</option>
-              {cities.map((c) => <option key={c}>{c}</option>)}
-            </select>
+            {tab !== "hotel" && (
+              <CitySelect
+                value={from}
+                onChange={setFrom}
+                placeholder={tab === "car" ? copy.fields.pickupCity : copy.fields.from}
+                className="flex-1 border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white min-w-0"
+              />
+            )}
+            <CitySelect
+              value={to}
+              onChange={setTo}
+              placeholder={tab === "car" ? copy.fields.dropOffCity : tab === "hotel" ? copy.fields.destination : copy.fields.to}
+              className="flex-1 border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white min-w-0"
+            />
             <input
               type="date"
+              min={todayStr()}
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
               className="flex-1 border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange min-w-0"
             />
-            <select className="border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white shrink-0">
+            <select
+              value={tab === "hotel" ? rooms : tab === "car" ? carType : passengers}
+              onChange={(e) =>
+                tab === "hotel"
+                  ? setRooms(Number(e.target.value))
+                  : tab === "car"
+                    ? setCarType(e.target.value)
+                    : setPassengers(Number(e.target.value))
+              }
+              className="border border-shadow rounded-lg px-4 py-3 text-parablack text-sm focus:outline-none focus:border-orange bg-white shrink-0"
+            >
               {tab === "hotel" ? (
-                <>{[1, 2, 3, 4].map((n) => <option key={n}>{countLabel(n, copy.rooms.singular, copy.rooms.plural)}</option>)}</>
+                <>{[1, 2, 3, 4].map((n) => <option key={n} value={n}>{countLabel(n, copy.rooms.singular, copy.rooms.plural)}</option>)}</>
               ) : tab === "car" ? (
-                <>
-                  {copy.carTypes.map((type) => <option key={type}>{type}</option>)}
-                </>
+                <>{copy.carTypes.map((type) => <option key={type} value={type}>{type}</option>)}</>
               ) : (
-                <>{[1, 2, 3, 4, 5, 6].map((n) => <option key={n}>{countLabel(n, copy.passengers.singular, copy.passengers.plural)}</option>)}</>
+                <>{[1, 2, 3, 4, 5, 6].map((n) => <option key={n} value={n}>{countLabel(n, copy.passengers.singular, copy.passengers.plural)}</option>)}</>
               )}
             </select>
-            <Link
-              href={localizedPath(locale, "/book")}
-              className="bg-orange hover:bg-orange/90 text-white rounded-lg px-8 py-3 text-sm font-bold uppercase transition-all duration-300 text-center shrink-0 whitespace-nowrap"
+            <button
+              type="button"
+              onClick={handleSearch}
+              className="bg-orange hover:bg-orange/90 text-white rounded-lg px-8 py-3 text-sm font-bold uppercase transition-all duration-300 text-center shrink-0 whitespace-nowrap cursor-pointer"
             >
               {copy.search}
-            </Link>
+            </button>
           </div>
+          {error && <p className="text-orange text-xs px-2 pt-2">{error}</p>}
         </div>
 
         {/* Trust badges */}

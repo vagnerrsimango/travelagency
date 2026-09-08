@@ -322,6 +322,10 @@ model AncillaryService {
   descriptionEn String
   descriptionPt String
   icon          String?
+  /// Nullable on purpose — some services (e.g. visa guidance) are
+  /// genuinely quote-only and have no fixed price to show upfront.
+  basePrice     Decimal?      @db.Decimal(12, 2)
+  currency      Currency      @default(MZN)
   status        ContentStatus @default(DRAFT)
   sortOrder     Int           @default(0)
   createdAt     DateTime      @default(now())
@@ -418,7 +422,11 @@ model Reservation {
   passengers      Int      @default(1)
   dateFrom        DateTime?
   dateTo          DateTime?
-  origin          String?
+  origin          String? // flight bookings only
+  destinationCity String? // flight bookings only — routes are open (any city
+  // pair), not restricted to the small set of published FlightOffer rows,
+  // so this is separate from flightOfferId above, which is only set when
+  // the customer picked a specific published fare/promo.
   customerRemarks String? // RF-022 "observações" — free text from the customer at submission time
 
   // RF-027 — the price shown to the customer is frozen here; later catalog

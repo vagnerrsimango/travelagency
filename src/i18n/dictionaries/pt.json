@@ -1,31 +1,31 @@
 {
   "metadata": {
     "root": {
-      "title": "ZambiTour — Agência de Viagens da África Austral",
+      "title": "ZambiTour | Agência de Viagens da África Austral",
       "description": "Reserve voos, hotéis, aluguer de carros e pacotes de viagem pela África Austral. A ZambiTour é especialista em Moçambique, Zâmbia, Zimbábue, África do Sul e muito mais."
     },
     "destinations": {
-      "title": "Destinos e Tours — ZambiTour",
-      "description": "Explore os principais destinos da África Austral — das Cataratas Vitória às ilhas de Moçambique, do Kruger ao Serengeti."
+      "title": "Destinos e Tours | ZambiTour",
+      "description": "Explore os principais destinos da África Austral: das Cataratas Vitória às ilhas de Moçambique, do Kruger ao Serengeti."
     },
     "hotels": {
-      "title": "Hotéis e Alojamento — ZambiTour",
+      "title": "Hotéis e Alojamento | ZambiTour",
       "description": "Veja hotéis, lodges e resorts de praia selecionados pela África Austral."
     },
     "cars": {
-      "title": "Aluguer de Carros — ZambiTour",
+      "title": "Aluguer de Carros | ZambiTour",
       "description": "Alugue sedans económicos, SUVs, viaturas 4x4 de safari e minibuses pela África Austral."
     },
     "about": {
-      "title": "Sobre a ZambiTour — Agência de Viagens da África Austral",
-      "description": "Conheça a ZambiTour — o parceiro de confiança da África Austral para voos, hotéis, aluguer de carros e pacotes de safari."
+      "title": "Sobre a ZambiTour | Agência de Viagens da África Austral",
+      "description": "Conheça a ZambiTour, o parceiro de confiança da África Austral para voos, hotéis, aluguer de carros e pacotes de safari."
     },
     "book": {
-      "title": "Reserve a Sua Viagem — ZambiTour",
+      "title": "Reserve a Sua Viagem | ZambiTour",
       "description": "Reserve voos, hotéis e aluguer de carros pela África Austral. Receba confirmação em até 24 horas."
     },
     "blog": {
-      "title": "Blog de Viagens — ZambiTour",
+      "title": "Blog de Viagens | ZambiTour",
       "description": "Dicas de viagem, guias de destinos e histórias locais de toda a África Austral."
     }
   },
@@ -42,10 +42,8 @@
       "switchTo": "Mudar para"
     },
     "footer": {
-      "description": "A ZambiTour é o parceiro de confiança para viagens na África Austral — voos, hotéis, aluguer de carros e itinerários de safari personalizados pela Zâmbia, Zimbábue, África do Sul, Moçambique, Botswana e muito mais.",
-      "conversationLine1": "VAMOS",
-      "conversationLine2": "CONVERSAR",
-      "contactAlt": "Contacte-nos",
+      "slogan": "Viaje. Descubra. Viva.",
+      "description": "A ZambiTour é o parceiro de confiança para viagens na África Austral: voos, hotéis, aluguer de carros e itinerários de safari personalizados pela Zâmbia, Zimbábue, África do Sul, Moçambique, Botswana e muito mais.",
       "followUs": "Siga-nos",
       "instagramAlt": "ZambiTour no Instagram",
       "contactTitle": "Contactos",
@@ -63,29 +61,34 @@
   },
   "pages": {
     "destinations": {
+      "slogan": "Viaje. Descubra. Viva.",
       "title": "Explore",
       "titleAccent": "a África Austral",
       "description": "Descubra destinos selecionados, tours personalizados e pacotes de viagem completos por toda a região."
     },
     "hotels": {
+      "slogan": "Viaje. Descubra. Viva.",
       "title": "Hotéis e",
       "titleAccent": "Alojamento",
-      "description": "De resorts de praia a hotéis urbanos e lodges de safari — trabalhamos com as melhores propriedades da região."
+      "description": "De resorts de praia a hotéis urbanos e lodges de safari, trabalhamos com as melhores propriedades da região."
     },
     "cars": {
+      "slogan": "Viaje. Descubra. Viva.",
       "title": "Aluguer de",
       "titleAccent": "Carros",
-      "description": "Escolha a viatura certa para a sua viagem — de sedans urbanos a 4x4 de safari totalmente equipados. Levantamento em qualquer ponto da região."
+      "description": "Escolha a viatura certa para a sua viagem: de sedans urbanos a 4x4 de safari totalmente equipados. Levantamento em qualquer ponto da região."
     },
     "about": {
+      "slogan": "Viaje. Descubra. Viva.",
       "title": "Sobre a",
       "titleAccent": "ZambiTour",
-      "description": "O parceiro de confiança da África Austral — construído com conhecimento local, paixão e compromisso para tornar a sua viagem simples."
+      "description": "O parceiro de confiança da África Austral, construído com conhecimento local, paixão e compromisso para tornar a sua viagem simples."
     },
     "book": {
+      "slogan": "Viaje. Descubra. Viva.",
       "title": "Faça uma",
       "titleAccent": "Reserva",
-      "description": "Preencha o formulário abaixo e a nossa equipa confirmará a sua reserva em até 24 horas. Não é necessário pagamento inicial."
+      "description": "Preencha o formulário abaixo e a nossa equipa prepara a sua cotação em até 24 horas. Tratamos o pagamento diretamente consigo."
     },
     "blog": {
       "title": "Blog de",
@@ -95,6 +98,7 @@
   },
   "home": {
     "hero": {
+      "slogan": "Viaje. Descubra. Viva.",
       "imageAlt": "África Austral",
       "title": "Encontre a Sua",
       "titleAccent": "Viagem Perfeita",
@@ -122,6 +126,7 @@
       },
       "carTypes": ["Económico", "SUV", "4x4 Safari", "Minibus"],
       "search": "Pesquisar",
+      "sameCityError": "Escolha cidades diferentes para a origem e o destino.",
       "trustItems": [
         "Confirmação em 24h",
         "Garantia do Melhor Preço",
@@ -131,7 +136,7 @@
     "bookingOptions": {
       "title": "O Que Procura",
       "titleAccent": "Hoje?",
-      "description": "Escolha o serviço de viagem e deixe a ZambiTour tratar de tudo — da primeira pesquisa ao embarque.",
+      "description": "Escolha o serviço de viagem e deixe a ZambiTour tratar de tudo, da primeira pesquisa ao embarque.",
       "options": [
         {
           "id": "flights",
@@ -142,7 +147,7 @@
         {
           "id": "hotels",
           "title": "Hotéis",
-          "description": "Hotéis, lodges e resorts de praia escolhidos a dedo para todos os orçamentos — de guesthouses a propriedades cinco estrelas.",
+          "description": "Hotéis, lodges e resorts de praia escolhidos a dedo para todos os orçamentos, de guesthouses a propriedades cinco estrelas.",
           "cta": "Ver Hotéis"
         },
         {
@@ -165,33 +170,6 @@
       "startingFrom": "A partir de",
       "perPerson": "por pessoa",
       "bookThisFare": "Reservar Tarifa"
-    },
-    "howItWorks": {
-      "title": "Como",
-      "titleAccent": "Funciona",
-      "description": "Reservar a sua próxima aventura pela África Austral é simples. Quatro passos e está pronto para viajar.",
-      "steps": [
-        {
-          "number": "01",
-          "title": "Escolha o Serviço",
-          "description": "Selecione voos, hotéis, aluguer de carros ou um pacote completo ajustado ao seu destino."
-        },
-        {
-          "number": "02",
-          "title": "Envie o Pedido",
-          "description": "Preencha o formulário de reserva com datas, preferências e dados dos passageiros."
-        },
-        {
-          "number": "03",
-          "title": "Receba a Confirmação",
-          "description": "A nossa equipa analisa o pedido e envia a cotação detalhada e a confirmação em até 24h."
-        },
-        {
-          "number": "04",
-          "title": "Pague e Prepare-se",
-          "description": "Confirme a reserva com pagamento seguro via M-Pesa, cartão ou transferência bancária. Depois é só preparar as malas."
-        }
-      ]
     }
   },
   "sections": {
@@ -206,7 +184,7 @@
     },
     "tours": {
       "title": "Explore os Nossos Tours",
-      "description": "De quedas de água imponentes a savanas vastas e praias intocadas — explore tours pela África Austral criados para cada tipo de viajante.",
+      "description": "Explore tours pela África Austral criados para cada tipo de viajante, de quedas de água imponentes a savanas vastas e praias intocadas.",
       "viewMore": "Ver Mais",
       "previous": "Anterior",
       "next": "Seguinte",
@@ -226,7 +204,7 @@
       "eyebrow": "Alojamento",
       "title": "Hotéis em",
       "titleAccent": "Destaque",
-      "description": "De resorts de praia a hotéis urbanos — trabalhamos com as melhores propriedades da África Austral.",
+      "description": "De resorts de praia a hotéis urbanos, trabalhamos com as melhores propriedades da África Austral.",
       "browseAllHotels": "Ver Todos os Hotéis",
       "from": "A partir de",
       "perNight": "/noite",
@@ -236,7 +214,7 @@
       "eyebrow": "Mobilidade",
       "title": "Opções de",
       "titleAccent": "Aluguer",
-      "description": "Escolha a viatura certa para a sua viagem — de sedans urbanos a 4x4 de safari totalmente equipados.",
+      "description": "Escolha a viatura certa para a sua viagem: de sedans urbanos a 4x4 de safari totalmente equipados.",
       "seeAllVehicles": "Ver Todas as Viaturas",
       "seats": "Lugares",
       "bags": "Malas",
@@ -257,7 +235,8 @@
       "tabs": {
         "flight": "Voo",
         "hotel": "Hotel",
-        "car": "Aluguer"
+        "car": "Aluguer",
+        "package": "Pacote"
       },
       "labels": {
         "from": "Origem *",
@@ -278,7 +257,16 @@
         "yourDetails": "Os Seus Dados",
         "fullName": "Nome Completo *",
         "phone": "Telefone *",
-        "email": "Email *"
+        "email": "Email *",
+        "selectHotel": "Hotel *",
+        "selectVehicle": "Viatura *",
+        "selectPackage": "Pacote *",
+        "remarks": "Observações (opcional)",
+        "included": "O que está incluído"
+      },
+      "errors": {
+        "sameCity": "Escolha cidades diferentes para a origem e o destino.",
+        "invalidDates": "A data inicial não pode ser anterior a hoje e a data final não pode ser anterior à inicial."
       },
       "placeholders": {
         "departureCity": "Cidade de partida",
@@ -288,7 +276,11 @@
         "anyVehicle": "Qualquer viatura",
         "fullName": "O seu nome completo",
         "phone": "+258 8x xxx xxxx",
-        "email": "seu@email.com"
+        "email": "seu@email.com",
+        "selectHotel": "Escolha um hotel",
+        "selectVehicle": "Escolha uma viatura",
+        "selectPackage": "Escolha um pacote",
+        "remarks": "Algo que devamos saber sobre a sua viagem?"
       },
       "passengers": {
         "singular": "passageiro",
@@ -304,33 +296,136 @@
       },
       "vehicleTypes": ["Sedan Económico", "SUV", "4x4 Safari", "Minibus"],
       "submit": "Enviar Pedido de Reserva",
-      "note": "Não é necessário pagar agora. Confirmaremos em até 24 horas."
+      "note": "Fazemos a sua cotação e tratamos o pagamento diretamente consigo.",
+      "price": {
+        "estimate": "Valor estimado",
+        "calculating": "A calcular...",
+        "perNight": "/noite",
+        "perDay": "/dia",
+        "perPerson": "/pessoa",
+        "quoteOnRequest": "Cotação feita por um dos nossos agentes",
+        "unavailable": "Não foi possível calcular o preço para esta seleção"
+      },
+      "status": {
+        "submitting": "A enviar o seu pedido...",
+        "successTitle": "Pedido recebido",
+        "successBody": "Vai receber um email de confirmação e um dos nossos agentes entrará em contacto em breve.",
+        "reference": "Referência",
+        "newRequest": "Fazer outro pedido",
+        "errorTitle": "Algo correu mal",
+        "tryAgain": "Tentar novamente"
+      }
     },
     "payment": {
       "title": "Pagamento",
       "titleAccent": "Online Seguro",
-      "description": "O pagamento só é necessário depois de receber a confirmação de reserva da nossa equipa. Aceitamos vários métodos de pagamento para que possa pagar da forma mais conveniente.",
+      "description": "Preparamos a sua cotação e tratamos o pagamento diretamente consigo, pelo método que preferir.",
       "steps": [
-        "Preencha o formulário de reserva",
-        "Receba a nossa confirmação e fatura",
-        "Pague pelo método preferido",
-        "Receba os documentos da reserva"
+        "Cotação",
+        "Pagamento",
+        "Viagem"
       ],
       "secureTitle": "Seguro e protegido",
-      "secureDescription": "Todas as transações são processadas por canais de pagamento verificados. Os seus dados financeiros nunca ficam guardados nos nossos servidores.",
-      "acceptedMethods": "Métodos de Pagamento Aceites",
+      "secureDescription": "Canais de pagamento verificados. Os seus dados financeiros nunca ficam guardados nos nossos servidores.",
+      "acceptedMethods": "Métodos de Pagamento",
       "available": "Disponível",
       "methods": [
         { "id": "mpesa", "name": "M-Pesa", "description": "Pague de imediato via Vodacom M-Pesa." },
-        { "id": "emola", "name": "e-Mola", "description": "Pagamento móvel seguro através do BCI e-Mola." },
-        { "id": "bank", "name": "Transferência Bancária", "description": "Transferência bancária direta em MZN, USD ou ZAR." }
+        { "id": "emola", "name": "e-Mola", "description": "Pagamento móvel seguro, tal como o M-Pesa." }
       ]
     },
     "about": {
       "imageAlt": "Viajantes",
-      "title": "O Parceiro de Confiança para Viajar pela África Austral",
-      "description": "Na ZambiTour, somos especialistas em viagens pela África Austral. Com raízes profundas na região, oferecemos conhecimento especializado sobre Zâmbia, Zimbábue, África do Sul, Moçambique, Botswana e muito mais — desde a reserva de voos e hotéis até ao planeamento do seu safari perfeito.",
-      "readMore": "Ler Mais"
+      "eyebrow": "Quem Somos",
+      "title": "Sobre a",
+      "titleAccent": "ZambiTour",
+      "description": "Uma agência de viagens moçambicana, sediada em Maputo, que trata de tudo o que uma deslocação exige, para que o cliente só tenha de partir. Reunimos num único ponto de contacto passagens aéreas, alojamento, seguros, transporte, documentação e apoio permanente, libertando o cliente da complexidade e do tempo que estes processos normalmente consomem. Servimos particulares, famílias, empresas e instituições com o mesmo rigor e o mesmo nível de atenção: do bilhete isolado ao programa completo, da viagem pessoal à missão corporativa."
+    },
+    "essencia": {
+      "eyebrow": "A Nossa Essência",
+      "title": "Viaje. Descubra.",
+      "titleAccent": "Viva.",
+      "description": "Mais do que reservas, criamos experiências completas.",
+      "pillars": [
+        { "title": "Viaje.", "description": "Tratamos de toda a logística com rigor e antecedência, para que só reste o prazer de partir." },
+        { "title": "Descubra.", "description": "Abrimos caminho a destinos, culturas e experiências que valem cada quilómetro percorrido." },
+        { "title": "Viva.", "description": "Acompanhamos cada etapa, do primeiro contacto ao regresso, para que a viagem seja vivida sem preocupações." }
+      ],
+      "calloutLabel": "O Que Nos Distingue",
+      "callout": "Uma viagem bem organizada nota-se em tudo aquilo que não corre mal. É esse o padrão a que trabalhamos."
+    },
+    "missionValues": {
+      "eyebrow": "Identidade",
+      "title": "Missão, Visão",
+      "titleAccent": "e Valores",
+      "description": "Estes princípios não são declarações de circunstância: são o critério com que escolhemos parceiros, construímos propostas e respondemos a cada cliente.",
+      "missionLabel": "Missão",
+      "mission": "Prestar serviços turísticos de elevada qualidade, oferecendo soluções de viagem seguras, eficientes e personalizadas, superando as expectativas dos clientes.",
+      "visionLabel": "Visão",
+      "vision": "Ser reconhecida como uma das agências de viagens mais confiáveis e inovadoras de Moçambique, destacando-se pela excelência no atendimento e pela qualidade dos seus serviços.",
+      "valuesLabel": "Valores",
+      "values": ["Ética e transparência", "Excelência no atendimento", "Responsabilidade", "Trabalho em equipa", "Inovação", "Compromisso", "Segurança", "Qualidade"]
+    },
+    "fullServices": {
+      "eyebrow": "O Que Fazemos",
+      "title": "Nossos",
+      "titleAccent": "Serviços",
+      "description": "Soluções completas de viagem, num único ponto de contacto.",
+      "items": [
+        { "title": "Passagens aéreas", "subtitle": "Flight Bookings", "description": "Emissão de bilhetes nacionais e internacionais, com procura das melhores rotas, horários e tarifas disponíveis.", "href": "/book" },
+        { "title": "Reservas de hotéis", "subtitle": "Hotel Reservations", "description": "Alojamento seleccionado de acordo com a localização, o padrão pretendido e o orçamento do cliente.", "href": "/hotels" },
+        { "title": "Pacotes turísticos", "subtitle": "Travel Packages", "description": "Programas organizados que reúnem transporte, alojamento e experiências num só serviço.", "href": "/destinations" },
+        { "title": "Seguro de viagem", "subtitle": "Travel Insurance", "description": "Cobertura adequada a cada destino e duração, para viajar com tranquilidade e em conformidade com as exigências de entrada.", "href": "/book" },
+        { "title": "Aluguer de viaturas", "subtitle": "Car Rentals", "description": "Viaturas disponíveis para deslocações particulares, turísticas ou corporativas, com ou sem motorista.", "href": "/cars" },
+        { "title": "Apoio para vistos e documentação", "subtitle": "Visa and Documentation Assistance", "description": "Orientação e preparação do processo documental, reduzindo erros, atrasos e deslocações desnecessárias.", "href": "/book" },
+        { "title": "Guia turístico", "subtitle": "Tour Guide", "description": "Acompanhamento profissional que valoriza o destino e aproveita ao máximo o tempo disponível.", "href": "/book" },
+        { "title": "Protocolo", "subtitle": "Protocol", "description": "Receção, assistência e acompanhamento de passageiros, delegações e convidados institucionais.", "href": "/book" }
+      ],
+      "calloutLabel": "Serviço Integrado",
+      "callout": "Todos os serviços podem ser contratados isoladamente ou combinados num único pacote, com uma só proposta e um só interlocutor."
+    },
+    "whyUs": {
+      "eyebrow": "Diferenciais",
+      "title": "Porquê a",
+      "titleAccent": "ZambiTour?",
+      "description": "Seis razões que os nossos clientes reconhecem.",
+      "items": [
+        { "title": "Atendimento personalizado", "description": "Cada cliente tem um interlocutor que conhece o seu processo do princípio ao fim." },
+        { "title": "Segurança em cada etapa", "description": "Reservas confirmadas, seguros adequados e documentação verificada antes da partida." },
+        { "title": "Organização rigorosa", "description": "Nada fica por confirmar. Cada detalhe é validado antes de chegar ao cliente." },
+        { "title": "Acompanhamento permanente", "description": "Atendimento 24H, para responder também quando a viagem já começou." },
+        { "title": "Conveniência total", "description": "Passagens, alojamento, seguros, viaturas e documentação num único serviço." },
+        { "title": "Presença local, alcance global", "description": "Uma equipa em Maputo, com soluções para destinos nacionais e internacionais." }
+      ],
+      "callout": "O cliente não deve ter de gerir a sua própria viagem. É para isso que existimos."
+    },
+    "howWeWork": {
+      "eyebrow": "Processo",
+      "title": "Como",
+      "titleAccent": "Trabalhamos",
+      "description": "Um processo simples, claro e sem surpresas.",
+      "steps": [
+        { "title": "Entendemos a necessidade", "description": "Ouvimos o objectivo da viagem, as datas, o orçamento e as preferências do cliente." },
+        { "title": "Procuramos as melhores soluções", "description": "Comparamos rotas, tarifas, alojamentos e alternativas disponíveis no mercado." },
+        { "title": "Apresentamos a proposta", "description": "Opções claras, com custos e condições explicados sem ambiguidades." },
+        { "title": "Confirmamos e organizamos", "description": "Emitimos, reservamos e tratamos da documentação necessária." },
+        { "title": "Acompanhamos o cliente", "description": "Estamos disponíveis antes, durante e depois da viagem." }
+      ],
+      "calloutLabel": "24H",
+      "callout": "Depois da confirmação, o acompanhamento continua: alterações, imprevistos e apoio em viagem são tratados pela mesma equipa."
+    },
+    "whoWeServe": {
+      "eyebrow": "Clientes",
+      "title": "Para Quem",
+      "titleAccent": "Trabalhamos",
+      "description": "Perfis diferentes. O mesmo nível de exigência.",
+      "segments": [
+        { "title": "Particulares e famílias", "description": "Viagens de lazer, visitas a familiares, deslocações pessoais e tratamento médico no exterior." },
+        { "title": "Empresas", "description": "Missões de trabalho, deslocações de equipas, formações e participação em eventos." },
+        { "title": "Instituições e organizações", "description": "Delegações oficiais, projectos, missões técnicas e programas com agendas fixas." },
+        { "title": "Grupos e estudantes", "description": "Programas colectivos, viagens de estudo e deslocações organizadas em grupo." }
+      ],
+      "callout": "Seja uma viagem de férias ou uma missão institucional, o processo é o mesmo: ouvir, organizar e acompanhar."
     },
     "services": {
       "title": "Tudo o Que Precisa para",

@@ -6,80 +6,72 @@ type PaymentProps = {
 };
 
 const MpesaIcon = () => (
-  <Image src="/images/m-pesa.jpg" alt="M-Pesa" width={96} height={40} className="h-9 w-auto object-contain" />
+  <Image src="/images/m-pesa.jpg" alt="M-Pesa" width={96} height={40} className="h-8 w-auto object-contain" />
 );
 
 const EMolaIcon = () => (
-  <Image src="/images/e-mola.png" alt="e-Mola" width={96} height={40} className="h-9 w-auto object-contain" />
-);
-
-const BankIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-9 h-9 text-leafy">
-    <path d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 20v2h19v-2m-9-4v7h3v-7M7 10v7h3v-7H7z" />
-  </svg>
+  <Image src="/images/e-mola.png" alt="e-Mola" width={96} height={40} className="h-8 w-auto object-contain" />
 );
 
 const paymentIcons = {
   mpesa: MpesaIcon,
   emola: EMolaIcon,
-  bank: BankIcon,
 };
 
 export function Payment({ copy }: PaymentProps) {
   return (
-    <div className="bg-beige px-7 lg:px-28 py-14 lg:py-28">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left: explanation */}
-        <div>
-          <h2 className="text-4xl md:text-5xl text-textdark leading-tight">
-            {copy.title} <span className="italic">{copy.titleAccent}</span>
-          </h2>
-          <p className="text-parablack text-lg mt-6 mb-8 leading-relaxed">
-            {copy.description}
-          </p>
-          <ul className="flex flex-col gap-4">
-            {copy.steps.map((step, i) => (
-              <li key={step} className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-orange/10 text-orange flex items-center justify-center text-sm font-bold shrink-0">
-                  {i + 1}
+    <div className="bg-beige px-7 lg:px-28 py-14 lg:py-24">
+      <div className="max-w-4xl mx-auto bg-white border border-darkgray/20 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          {/* Left: explanation */}
+          <div className="p-8 lg:p-10 border-b sm:border-b-0 sm:border-r border-darkgray/15">
+            <h2 className="text-3xl md:text-4xl text-textdark leading-tight">
+              {copy.title} <span className="italic">{copy.titleAccent}</span>
+            </h2>
+            <p className="text-parablack mt-3 mb-6 leading-relaxed">{copy.description}</p>
+
+            <div className="flex items-center gap-2 mb-6">
+              {copy.steps.map((step, i) => (
+                <div key={step} className="flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 bg-orange/10 text-orange rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide">
+                    <span className="w-4 h-4 rounded-full bg-orange text-white flex items-center justify-center text-[10px]">{i + 1}</span>
+                    {step}
+                  </span>
+                  {i < copy.steps.length - 1 && <span className="text-darkgray/50 text-xs">&rarr;</span>}
                 </div>
-                <span className="text-parablack">{step}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-10 bg-leafy/10 border border-leafy/30 rounded-xl p-5">
-            <p className="text-parablack text-sm leading-relaxed">
-              <span className="font-semibold text-leafy">{copy.secureTitle}</span> — {copy.secureDescription}
+              ))}
+            </div>
+
+            <p className="text-parablack text-xs leading-relaxed">
+              <span className="font-semibold text-leafy">{copy.secureTitle}.</span> {copy.secureDescription}
             </p>
           </div>
-        </div>
 
-        {/* Right: payment method cards */}
-        <div>
-          <p className="text-sm uppercase tracking-widest text-darkgray mb-6">{copy.acceptedMethods}</p>
-          <div className="grid grid-cols-2 gap-5">
-            {copy.methods.map((method) => {
-              const Icon = paymentIcons[method.id as keyof typeof paymentIcons];
+          {/* Right: payment methods */}
+          <div className="p-8 lg:p-10 bg-lightbeige/60">
+            <p className="text-xs uppercase tracking-widest text-darkgray mb-4">{copy.acceptedMethods}</p>
+            <div className="flex flex-col gap-3">
+              {copy.methods.map((method) => {
+                const Icon = paymentIcons[method.id as keyof typeof paymentIcons];
 
-              return (
-                <div
-                  key={method.id}
-                  className="bg-white border border-darkgray/30 rounded-2xl p-6 flex flex-col gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  <div className="h-10 flex items-center">
+                return (
+                  <div
+                    key={method.id}
+                    className="bg-white border border-darkgray/20 rounded-xl p-4 flex items-center gap-4"
+                  >
                     <Icon />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <p className="font-semibold text-textdark text-sm">{method.name}</p>
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
+                        <span className="text-[10px] text-darkgray uppercase tracking-wide">{copy.available}</span>
+                      </div>
+                      <p className="text-xs text-parablack mt-0.5">{method.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-textdark">{method.name}</p>
-                    <p className="text-sm text-parablack mt-1">{method.description}</p>
-                  </div>
-                  <div className="inline-flex items-center gap-1.5 mt-auto">
-                    <div className="w-2 h-2 rounded-full bg-green-500" />
-                    <span className="text-xs text-darkgray">{copy.available}</span>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

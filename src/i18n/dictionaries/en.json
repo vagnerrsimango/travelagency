@@ -1,31 +1,31 @@
 {
   "metadata": {
     "root": {
-      "title": "ZambiTour — Southern Africa Travel Agency",
+      "title": "ZambiTour | Southern Africa Travel Agency",
       "description": "Book flights, hotels, car rentals and travel packages across Southern Africa. ZambiTour specialises in Mozambique, Zambia, Zimbabwe, South Africa and beyond."
     },
     "destinations": {
-      "title": "Destinations & Tours — ZambiTour",
-      "description": "Explore Southern Africa's top destinations — from Victoria Falls to Mozambique's islands, Kruger to the Serengeti."
+      "title": "Destinations & Tours | ZambiTour",
+      "description": "Explore Southern Africa's top destinations: from Victoria Falls to Mozambique's islands, Kruger to the Serengeti."
     },
     "hotels": {
-      "title": "Hotels & Accommodation — ZambiTour",
+      "title": "Hotels & Accommodation | ZambiTour",
       "description": "Browse handpicked hotels, lodges and beach resorts across Southern Africa."
     },
     "cars": {
-      "title": "Car Rentals — ZambiTour",
+      "title": "Car Rentals | ZambiTour",
       "description": "Rent economy sedans, SUVs, 4x4 safari vehicles and minibuses across Southern Africa."
     },
     "about": {
-      "title": "About ZambiTour — Southern Africa Travel Agency",
-      "description": "Learn about ZambiTour — Southern Africa's trusted travel partner for flights, hotels, car rentals and safari packages."
+      "title": "About ZambiTour | Southern Africa Travel Agency",
+      "description": "Learn about ZambiTour, Southern Africa's trusted travel partner for flights, hotels, car rentals and safari packages."
     },
     "book": {
-      "title": "Book Your Trip — ZambiTour",
+      "title": "Book Your Trip | ZambiTour",
       "description": "Reserve flights, hotels and car rentals across Southern Africa. Receive confirmation within 24 hours."
     },
     "blog": {
-      "title": "Travel Blog — ZambiTour",
+      "title": "Travel Blog | ZambiTour",
       "description": "Travel tips, destination guides and insider stories from across Southern Africa."
     }
   },
@@ -42,10 +42,8 @@
       "switchTo": "Switch to"
     },
     "footer": {
-      "description": "ZambiTour is Southern Africa's trusted travel partner — flights, hotels, car rentals, and bespoke safari itineraries across Zambia, Zimbabwe, South Africa, Mozambique, Botswana, and beyond.",
-      "conversationLine1": "LET'S HAVE A",
-      "conversationLine2": "CONVERSATION",
-      "contactAlt": "Contact us",
+      "slogan": "Travel. Discover. Live.",
+      "description": "ZambiTour is Southern Africa's trusted travel partner: flights, hotels, car rentals, and bespoke safari itineraries across Zambia, Zimbabwe, South Africa, Mozambique, Botswana, and beyond.",
       "followUs": "Follow Us",
       "instagramAlt": "ZambiTour on Instagram",
       "contactTitle": "Contact",
@@ -63,29 +61,34 @@
   },
   "pages": {
     "destinations": {
+      "slogan": "Travel. Discover. Live.",
       "title": "Explore",
       "titleAccent": "Southern Africa",
       "description": "Discover our handpicked destinations, curated tours and all-inclusive travel packages across the region."
     },
     "hotels": {
+      "slogan": "Travel. Discover. Live.",
       "title": "Hotels &",
       "titleAccent": "Accommodation",
-      "description": "From beach resorts to city hotels and safari lodges — we partner with the best properties across the region."
+      "description": "From beach resorts to city hotels and safari lodges, we partner with the best properties across the region."
     },
     "cars": {
+      "slogan": "Travel. Discover. Live.",
       "title": "Car",
       "titleAccent": "Rentals",
-      "description": "Choose the right vehicle for your journey — city sedans to fully-equipped 4x4 safari vehicles. Pick up anywhere in the region."
+      "description": "Choose the right vehicle for your journey: city sedans to fully-equipped 4x4 safari vehicles. Pick up anywhere in the region."
     },
     "about": {
+      "slogan": "Travel. Discover. Live.",
       "title": "About",
       "titleAccent": "ZambiTour",
-      "description": "Southern Africa's trusted travel partner — built on local knowledge, passion and a commitment to making your journey seamless."
+      "description": "Southern Africa's trusted travel partner, built on local knowledge, passion and a commitment to making your journey seamless."
     },
     "book": {
+      "slogan": "Travel. Discover. Live.",
       "title": "Make a",
       "titleAccent": "Reservation",
-      "description": "Fill in the form below and our team will confirm your booking within 24 hours. No payment required upfront."
+      "description": "Fill in the form below and our team will prepare your quote within 24 hours. We handle payment directly with you."
     },
     "blog": {
       "title": "Travel",
@@ -95,6 +98,7 @@
   },
   "home": {
     "hero": {
+      "slogan": "Travel. Discover. Live.",
       "imageAlt": "Southern Africa",
       "title": "Find Your",
       "titleAccent": "Perfect Trip",
@@ -122,6 +126,7 @@
       },
       "carTypes": ["Economy", "SUV", "4x4 Safari", "Minibus"],
       "search": "Search",
+      "sameCityError": "Choose different cities for origin and destination.",
       "trustItems": [
         "24h Booking Confirmation",
         "Best Price Guarantee",
@@ -131,7 +136,7 @@
     "bookingOptions": {
       "title": "What Are You",
       "titleAccent": "Looking For?",
-      "description": "Select your travel need and let ZambiTour handle everything — from the first search to boarding.",
+      "description": "Select your travel need and let ZambiTour handle everything, from the first search to boarding.",
       "options": [
         {
           "id": "flights",
@@ -142,7 +147,7 @@
         {
           "id": "hotels",
           "title": "Hotels",
-          "description": "Handpicked hotels, lodges and beach resorts at every price point — from guesthouses to five-star properties.",
+          "description": "Handpicked hotels, lodges and beach resorts at every price point, from guesthouses to five-star properties.",
           "cta": "Browse Hotels"
         },
         {
@@ -165,33 +170,6 @@
       "startingFrom": "Starting from",
       "perPerson": "per person",
       "bookThisFare": "Book This Fare"
-    },
-    "howItWorks": {
-      "title": "How It",
-      "titleAccent": "Works",
-      "description": "Booking your next Southern Africa adventure is simple. Four steps and you are ready to go.",
-      "steps": [
-        {
-          "number": "01",
-          "title": "Choose Your Service",
-          "description": "Select flights, hotels, car rentals or a complete travel package tailored to your destination."
-        },
-        {
-          "number": "02",
-          "title": "Send Your Request",
-          "description": "Fill in our reservation form with your travel dates, preferences and passenger details."
-        },
-        {
-          "number": "03",
-          "title": "Receive Confirmation",
-          "description": "Our team reviews your request and sends a detailed quote and booking confirmation within 24h."
-        },
-        {
-          "number": "04",
-          "title": "Pay & Prepare",
-          "description": "Confirm your booking with a secure payment via M-Pesa, card or bank transfer. Then pack your bags."
-        }
-      ]
     }
   },
   "sections": {
@@ -206,7 +184,7 @@
     },
     "tours": {
       "title": "Explore Our Tours",
-      "description": "From thundering waterfalls to vast savannas and pristine island beaches — explore our curated Southern Africa tours designed for every kind of traveller.",
+      "description": "Explore our curated Southern Africa tours designed for every kind of traveller, from thundering waterfalls to vast savannas and pristine island beaches.",
       "viewMore": "View More",
       "previous": "Previous",
       "next": "Next",
@@ -226,7 +204,7 @@
       "eyebrow": "Accommodation",
       "title": "Featured",
       "titleAccent": "Hotels",
-      "description": "From beach resorts to city hotels — we partner with the best properties across Southern Africa.",
+      "description": "From beach resorts to city hotels, we partner with the best properties across Southern Africa.",
       "browseAllHotels": "Browse All Hotels",
       "from": "From",
       "perNight": "/night",
@@ -236,7 +214,7 @@
       "eyebrow": "Mobility",
       "title": "Car Rental",
       "titleAccent": "Options",
-      "description": "Choose the right vehicle for your journey — from city sedans to fully-equipped safari 4x4s.",
+      "description": "Choose the right vehicle for your journey: from city sedans to fully-equipped safari 4x4s.",
       "seeAllVehicles": "See All Vehicles",
       "seats": "Seats",
       "bags": "Bags",
@@ -257,7 +235,8 @@
       "tabs": {
         "flight": "Flight",
         "hotel": "Hotel",
-        "car": "Car Rental"
+        "car": "Car Rental",
+        "package": "Package"
       },
       "labels": {
         "from": "From *",
@@ -278,7 +257,16 @@
         "yourDetails": "Your Details",
         "fullName": "Full Name *",
         "phone": "Phone *",
-        "email": "Email *"
+        "email": "Email *",
+        "selectHotel": "Hotel *",
+        "selectVehicle": "Vehicle *",
+        "selectPackage": "Package *",
+        "remarks": "Notes (optional)",
+        "included": "What's included"
+      },
+      "errors": {
+        "sameCity": "Choose different cities for origin and destination.",
+        "invalidDates": "The start date cannot be earlier than today, and the end date cannot be earlier than the start date."
       },
       "placeholders": {
         "departureCity": "Departure city",
@@ -288,7 +276,11 @@
         "anyVehicle": "Any vehicle",
         "fullName": "Your full name",
         "phone": "+258 8x xxx xxxx",
-        "email": "your@email.com"
+        "email": "your@email.com",
+        "selectHotel": "Choose a hotel",
+        "selectVehicle": "Choose a vehicle",
+        "selectPackage": "Choose a package",
+        "remarks": "Anything we should know about your trip?"
       },
       "passengers": {
         "singular": "passenger",
@@ -304,33 +296,136 @@
       },
       "vehicleTypes": ["Economy Sedan", "SUV", "4x4 Safari", "Minibus"],
       "submit": "Send Booking Request",
-      "note": "No payment required now. We will confirm within 24 hours."
+      "note": "We prepare your quote and handle payment directly with you.",
+      "price": {
+        "estimate": "Estimated total",
+        "calculating": "Calculating...",
+        "perNight": "/night",
+        "perDay": "/day",
+        "perPerson": "/person",
+        "quoteOnRequest": "Priced by one of our agents",
+        "unavailable": "Could not calculate a price for this selection"
+      },
+      "status": {
+        "submitting": "Sending your request...",
+        "successTitle": "Request received",
+        "successBody": "You'll receive a confirmation email and one of our agents will be in touch shortly.",
+        "reference": "Reference",
+        "newRequest": "Make another request",
+        "errorTitle": "Something went wrong",
+        "tryAgain": "Try again"
+      }
     },
     "payment": {
       "title": "Secure",
       "titleAccent": "Online Payment",
-      "description": "Payment is only required after you receive booking confirmation from our team. We support multiple payment methods so you can pay the way that works best for you.",
+      "description": "We prepare your quote and handle payment directly with you, in the method you prefer.",
       "steps": [
-        "Complete the booking form",
-        "Receive our confirmation & invoice",
-        "Pay via your preferred method",
-        "Get your booking documents"
+        "Quote",
+        "Payment",
+        "Travel"
       ],
       "secureTitle": "Secure & protected",
-      "secureDescription": "All transactions are processed through verified payment channels. Your financial data is never stored on our servers.",
-      "acceptedMethods": "Accepted Payment Methods",
+      "secureDescription": "Verified payment channels. Your financial data is never stored on our servers.",
+      "acceptedMethods": "Payment Methods",
       "available": "Available",
       "methods": [
         { "id": "mpesa", "name": "M-Pesa", "description": "Pay instantly via Vodacom M-Pesa mobile money." },
-        { "id": "emola", "name": "e-Mola", "description": "Secure mobile payment through BCI e-Mola." },
-        { "id": "bank", "name": "Bank Transfer", "description": "Direct bank transfer in MZN, USD or ZAR." }
+        { "id": "emola", "name": "e-Mola", "description": "Secure mobile money, just like M-Pesa." }
       ]
     },
     "about": {
       "imageAlt": "Travelers",
-      "title": "Southern Africa's Trusted Travel Partner",
-      "description": "At ZambiTour, we specialize in Southern Africa travel. With deep roots in the region, we offer expert knowledge of Zambia, Zimbabwe, South Africa, Mozambique, Botswana, and beyond — from booking flights and hotels to planning your perfect safari itinerary.",
-      "readMore": "Read More"
+      "eyebrow": "Who We Are",
+      "title": "About",
+      "titleAccent": "ZambiTour",
+      "description": "A Mozambican travel agency based in Maputo, handling everything a trip requires, so the client only has to leave. We bring flights, accommodation, insurance, transport, documentation and ongoing support together in one point of contact, freeing the client from the complexity and time these processes normally consume. We serve individuals, families, companies and institutions with the same rigour and the same level of attention: from a single ticket to a full programme, from a personal trip to a corporate mission."
+    },
+    "essencia": {
+      "eyebrow": "Our Essence",
+      "title": "Travel. Discover.",
+      "titleAccent": "Live.",
+      "description": "More than bookings, we create complete experiences.",
+      "pillars": [
+        { "title": "Travel.", "description": "We handle all the logistics with rigour and lead time, so all that's left is the joy of departure." },
+        { "title": "Discover.", "description": "We open the way to destinations, cultures and experiences worth every kilometre travelled." },
+        { "title": "Live.", "description": "We stay with you every step, from first contact to return, so the trip is lived without worry." }
+      ],
+      "calloutLabel": "What Sets Us Apart",
+      "callout": "A well-organised trip shows in everything that doesn't go wrong. That's the standard we work to."
+    },
+    "missionValues": {
+      "eyebrow": "Identity",
+      "title": "Mission, Vision",
+      "titleAccent": "and Values",
+      "description": "These principles aren't statements of convenience: they're the standard by which we choose partners, build proposals and respond to every client.",
+      "missionLabel": "Mission",
+      "mission": "To provide high-quality tourism services, offering safe, efficient and personalised travel solutions that exceed our clients' expectations.",
+      "visionLabel": "Vision",
+      "vision": "To be recognised as one of the most trusted and innovative travel agencies in Mozambique, standing out for service excellence and the quality of our offerings.",
+      "valuesLabel": "Values",
+      "values": ["Ethics and transparency", "Service excellence", "Responsibility", "Teamwork", "Innovation", "Commitment", "Safety", "Quality"]
+    },
+    "fullServices": {
+      "eyebrow": "What We Do",
+      "title": "Our",
+      "titleAccent": "Services",
+      "description": "Complete travel solutions, in one point of contact.",
+      "items": [
+        { "title": "Flight Bookings", "subtitle": "Passagens aéreas", "description": "Issuing domestic and international tickets, sourcing the best routes, schedules and fares available.", "href": "/book" },
+        { "title": "Hotel Reservations", "subtitle": "Reservas de hotéis", "description": "Accommodation selected according to location, standard and the client's budget.", "href": "/hotels" },
+        { "title": "Travel Packages", "subtitle": "Pacotes turísticos", "description": "Organised programmes bringing transport, accommodation and experiences together in one service.", "href": "/destinations" },
+        { "title": "Travel Insurance", "subtitle": "Seguro de viagem", "description": "Coverage suited to each destination and duration, so you can travel with peace of mind and in line with entry requirements.", "href": "/book" },
+        { "title": "Car Rentals", "subtitle": "Aluguer de viaturas", "description": "Vehicles available for personal, tourist or corporate travel, with or without a driver.", "href": "/cars" },
+        { "title": "Visa and Documentation Assistance", "subtitle": "Apoio para vistos e documentação", "description": "Guidance and preparation of the documentation process, reducing errors, delays and unnecessary trips.", "href": "/book" },
+        { "title": "Tour Guide", "subtitle": "Guia turístico", "description": "Professional guidance that makes the most of the destination and the time available.", "href": "/book" },
+        { "title": "Protocol", "subtitle": "Protocolo", "description": "Reception, assistance and support for passengers, delegations and institutional guests.", "href": "/book" }
+      ],
+      "calloutLabel": "Integrated Service",
+      "callout": "Every service can be booked on its own or combined into a single package, with one proposal and one point of contact."
+    },
+    "whyUs": {
+      "eyebrow": "What Sets Us Apart",
+      "title": "Why",
+      "titleAccent": "ZambiTour?",
+      "description": "Six reasons our clients recognise.",
+      "items": [
+        { "title": "Personalised service", "description": "Every client has one point of contact who knows their process from start to finish." },
+        { "title": "Safety at every step", "description": "Confirmed bookings, adequate insurance and documentation verified before departure." },
+        { "title": "Rigorous organisation", "description": "Nothing is left unconfirmed. Every detail is validated before it reaches the client." },
+        { "title": "Ongoing support", "description": "24H support, ready to respond even once the trip has already begun." },
+        { "title": "Total convenience", "description": "Flights, accommodation, insurance, vehicles and documentation in a single service." },
+        { "title": "Local presence, global reach", "description": "A team in Maputo, with solutions for domestic and international destinations." }
+      ],
+      "callout": "Clients shouldn't have to manage their own trip. That's what we're here for."
+    },
+    "howWeWork": {
+      "eyebrow": "Process",
+      "title": "How We",
+      "titleAccent": "Work",
+      "description": "A simple, clear process, with no surprises.",
+      "steps": [
+        { "title": "We understand the need", "description": "We listen to the trip's purpose, dates, budget and the client's preferences." },
+        { "title": "We search for the best solutions", "description": "We compare routes, fares, accommodation and the alternatives available on the market." },
+        { "title": "We present the proposal", "description": "Clear options, with costs and conditions explained with no ambiguity." },
+        { "title": "We confirm and organise", "description": "We issue, book and handle the necessary documentation." },
+        { "title": "We stay with the client", "description": "We're available before, during and after the trip." }
+      ],
+      "calloutLabel": "24H",
+      "callout": "After confirmation, support continues: changes, unexpected events and in-trip assistance are handled by the same team."
+    },
+    "whoWeServe": {
+      "eyebrow": "Clients",
+      "title": "Who We",
+      "titleAccent": "Work With",
+      "description": "Different profiles. The same standard.",
+      "segments": [
+        { "title": "Individuals and families", "description": "Leisure trips, visiting family, personal travel and medical treatment abroad." },
+        { "title": "Companies", "description": "Business missions, team travel, training and event participation." },
+        { "title": "Institutions and organisations", "description": "Official delegations, projects, technical missions and fixed-agenda programmes." },
+        { "title": "Groups and students", "description": "Group programmes, study trips and organised group travel." }
+      ],
+      "callout": "Whether it's a holiday or an institutional mission, the process is the same: listen, organise and support."
     },
     "services": {
       "title": "Everything You Need to",

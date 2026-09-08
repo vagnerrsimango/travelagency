@@ -313,7 +313,7 @@ export function DestinosClient() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <Field label="Tagline (PT) — linha curta para o carrossel">
+            <Field label="Tagline (PT): linha curta para o carrossel">
               <input
                 value={formData.taglinePt}
                 onChange={(e) => setFormData({ ...formData, taglinePt: e.target.value })}
@@ -321,7 +321,7 @@ export function DestinosClient() {
                 className="input"
               />
             </Field>
-            <Field label="Tagline (EN) — short line for the carousel">
+            <Field label="Tagline (EN): short line for the carousel">
               <input
                 value={formData.taglineEn}
                 onChange={(e) => setFormData({ ...formData, taglineEn: e.target.value })}

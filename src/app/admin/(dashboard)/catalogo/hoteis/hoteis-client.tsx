@@ -253,7 +253,7 @@ export function HoteisClient() {
 
       {destinations.length === 0 && !loading && (
         <div className="mb-4 rounded-lg bg-amber-50 text-amber-700 text-sm px-4 py-3">
-          Crie pelo menos um destino primeiro — cada hotel pertence a um destino.
+          Crie pelo menos um destino primeiro. Cada hotel pertence a um destino.
         </div>
       )}
 

@@ -34,12 +34,12 @@ export function PromoFares({ locale, copy, fares }: PromoFaresProps) {
             {copy.description}
           </p>
         </div>
-        <button
-          type="button"
-          className="border border-white/30 text-white hover:bg-white hover:text-leafy transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0 cursor-pointer"
+        <Link
+          href={`${localizedPath(locale, "/book")}?type=flight`}
+          className="border border-white/30 text-white hover:bg-white hover:text-leafy transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0"
         >
           {copy.viewAllFares}
-        </button>
+        </Link>
       </AnimateIn>
 
       {/* Cards grid */}
@@ -92,7 +92,7 @@ export function PromoFares({ locale, copy, fares }: PromoFaresProps) {
               <p className="text-white/35 text-[10px] border-t border-white/10 pt-3">{fare.validity}</p>
 
               <Link
-                href={localizedPath(locale, "/book")}
+                href={`${localizedPath(locale, "/book")}?type=flight&from=${encodeURIComponent(fare.from)}&to=${encodeURIComponent(fare.to)}`}
                 className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-5 py-2.5 text-xs font-semibold uppercase transition-all duration-300 w-full text-center block group-hover:shadow-lg"
               >
                 {copy.bookThisFare}

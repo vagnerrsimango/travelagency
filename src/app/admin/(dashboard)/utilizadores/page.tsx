@@ -1,16 +1,15 @@
 import { requirePagePermission } from "@/lib/require-permission";
 import { canManageUsers } from "@/lib/permissions";
-import { ComingSoon } from "../coming-soon";
+import { UtilizadoresClient } from "./utilizadores-client";
 
 export default async function UtilizadoresPage() {
-  await requirePagePermission(canManageUsers);
+  const session = await requirePagePermission(canManageUsers);
 
   return (
-    <ComingSoon
-      title="Utilizadores"
-      phase={1}
-      phaseLabel="Admin & Auth — follow-up, not yet built"
-      description="Criar e editar contas de equipa (nome, email, papel, activo/inactivo). Por agora, a única forma de criar uma conta é `npm run admin:bootstrap` (só cria Administradores) — não há forma de adicionar um Agente de Reservas ou Financeiro sem isto."
-    />
+    <div>
+      <h1 className="text-2xl font-semibold text-slate-900 mb-1">Utilizadores</h1>
+      <p className="text-slate-500 text-sm mb-6">Contas de equipa do backoffice: criação, papéis e acesso.</p>
+      <UtilizadoresClient currentUserId={session.user.id} />
+    </div>
   );
 }

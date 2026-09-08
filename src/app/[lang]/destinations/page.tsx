@@ -69,6 +69,7 @@ async function ToursAndPackagesSection({
     image: p.images[0] || "/images/safari1.jpg",
   }));
   const packageCards: PackageCard[] = packages.map((p) => ({
+    id: p.id,
     title: locale === "pt" ? p.namePt : p.nameEn,
     destination: p.destination ? (locale === "pt" ? p.destination.namePt : p.destination.nameEn) : "",
     duration: `${p.durationDays} ${locale === "pt" ? "dias" : "days"}`,
@@ -85,7 +86,7 @@ async function ToursAndPackagesSection({
   return (
     <>
       {tourCards.length > 0 && <Tours copy={toursCopy} tours={tourCards} />}
-      {packageCards.length > 0 && <Packages copy={packagesCopy} packages={packageCards} />}
+      {packageCards.length > 0 && <Packages locale={locale} copy={packagesCopy} packages={packageCards} />}
     </>
   );
 }
@@ -98,6 +99,7 @@ export default async function DestinationsPage({ params }: LocalePageProps) {
   return (
     <Shell locale={locale} copy={dict.layout}>
       <div className="bg-leafy px-7 lg:px-28 pt-36 pb-0">
+        <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold mb-3">{page.slogan}</p>
         <h1 className="text-4xl md:text-6xl text-white leading-tight">
           {page.title} <span className="italic">{page.titleAccent}</span>
         </h1>

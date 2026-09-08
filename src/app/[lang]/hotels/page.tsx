@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Shell } from "@/components/layout/shell";
-import { Booking } from "@/components/sections/booking";
+import { BookingWithCatalog } from "@/components/sections/booking-with-catalog";
 import { Hotels, type HotelCard } from "@/components/sections/hotels";
-import { SectionSkeleton } from "@/components/ui/skeleton";
+import { SectionSkeleton, BookingFormSkeleton } from "@/components/ui/skeleton";
 import { getLocalizedDictionary } from "@/i18n/server";
 import { HotelService } from "@/lib/data-access/hotels";
 import type { Locale } from "@/i18n/config";
@@ -15,6 +15,7 @@ export const dynamic = "force-dynamic";
 
 type LocalePageProps = {
   params: Promise<{ lang: string }>;
+  searchParams: Promise<{ destination?: string }>;
 };
 
 export async function generateMetadata({ params }: LocalePageProps): Promise<Metadata> {
@@ -24,9 +25,28 @@ export async function generateMetadata({ params }: LocalePageProps): Promise<Met
   return dict.metadata.hotels;
 }
 
-async function HotelsSection({ locale, copy }: { locale: Locale; copy: Dictionary["sections"]["hotels"] }) {
+async function HotelsSection({
+  locale,
+  copy,
+  destinationFilter,
+}: {
+  locale: Locale;
+  copy: Dictionary["sections"]["hotels"];
+  destinationFilter?: string;
+}) {
   const hotels = await HotelService.findAll({ status: "PUBLISHED" });
-  const hotelCards: HotelCard[] = hotels.map((h) => ({
+  const needle = destinationFilter?.trim().toLowerCase();
+  const filtered = needle
+    ? hotels.filter(
+        (h) =>
+          h.destination.namePt.toLowerCase().includes(needle) ||
+          h.destination.nameEn.toLowerCase().includes(needle) ||
+          h.destination.country.toLowerCase().includes(needle)
+      )
+    : hotels;
+
+  const hotelCards: HotelCard[] = filtered.map((h) => ({
+    id: h.id,
     name: locale === "pt" ? h.namePt : h.nameEn,
     location: `${h.destination[locale === "pt" ? "namePt" : "nameEn"]}, ${h.destination.country}`,
     stars: h.stars ?? 0,
@@ -38,17 +58,19 @@ async function HotelsSection({ locale, copy }: { locale: Locale; copy: Dictionar
   }));
 
   if (hotelCards.length === 0) return null;
-  return <Hotels copy={copy} hotels={hotelCards} />;
+  return <Hotels locale={locale} copy={copy} hotels={hotelCards} />;
 }
 
-export default async function HotelsPage({ params }: LocalePageProps) {
+export default async function HotelsPage({ params, searchParams }: LocalePageProps) {
   const { lang } = await params;
+  const { destination } = await searchParams;
   const { locale, dict } = getLocalizedDictionary(lang);
   const page = dict.pages.hotels;
 
   return (
     <Shell locale={locale} copy={dict.layout}>
       <div className="bg-leafy px-7 lg:px-28 pt-36 pb-14">
+        <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold mb-3">{page.slogan}</p>
         <h1 className="text-4xl md:text-6xl text-white leading-tight">
           {page.title} <span className="italic">{page.titleAccent}</span>
         </h1>
@@ -66,9 +88,11 @@ export default async function HotelsPage({ params }: LocalePageProps) {
           />
         }
       >
-        <HotelsSection locale={locale} copy={dict.sections.hotels} />
+        <HotelsSection locale={locale} copy={dict.sections.hotels} destinationFilter={destination} />
       </Suspense>
-      <Booking copy={dict.sections.booking} />
+      <Suspense fallback={<BookingFormSkeleton />}>
+        <BookingWithCatalog locale={locale} copy={dict.sections.booking} />
+      </Suspense>
     </Shell>
   );
 }

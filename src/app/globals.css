@@ -12,12 +12,21 @@
   --color-textdark: #0B2340;
 }
 
+/* Brand typeface — one consistent family across headings and body,
+   rather than the previous mismatched Playfair Display/Inter/Raleway
+   mix. Not a webfont: relies on the OS-installed "Lucida Sans Unicode"
+   (ships with Windows), with metrically-similar fallbacks for platforms
+   that don't have it. */
+:root {
+  --font-brand: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Verdana, sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair-display), Georgia, serif;
+  font-family: var(--font-brand);
 }
 
 body {
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-brand);
 }
 
 .embla__viewport {

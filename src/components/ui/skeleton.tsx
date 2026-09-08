@@ -7,6 +7,26 @@ export function Skeleton({ className = "" }: { className?: string }) {
   return <div className={`animate-skeleton rounded-lg ${className}`} />;
 }
 
+// Matches the booking form's two-column layout while its catalog options
+// (hotels/vehicles/packages for the pickers) are still loading.
+export function BookingFormSkeleton() {
+  return (
+    <div className="bg-beige px-7 lg:px-28 pt-14 lg:pt-28 pb-14 lg:pb-28">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+        <Skeleton className="hidden lg:block rounded-2xl min-h-[500px]" />
+        <div className="bg-leafy rounded-2xl px-8 py-10 flex flex-col gap-4">
+          <Skeleton className="h-9 w-2/3 bg-white/10" />
+          <Skeleton className="h-10 w-full bg-white/10 mt-4" />
+          <Skeleton className="h-12 w-full bg-white/10" />
+          <Skeleton className="h-12 w-full bg-white/10" />
+          <Skeleton className="h-12 w-full bg-white/10" />
+          <Skeleton className="h-12 w-full bg-white/10 mt-4" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function CardGridSkeleton({ count = 4 }: { count?: number }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

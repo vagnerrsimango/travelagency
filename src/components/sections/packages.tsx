@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
 export type PackageCard = {
+  id: string;
   title: string;
   destination: string;
   duration: string;
@@ -13,6 +16,7 @@ export type PackageCard = {
 };
 
 type PackagesProps = {
+  locale: Locale;
   copy: Dictionary["sections"]["packages"];
   packages: PackageCard[];
 };
@@ -29,7 +33,7 @@ const ClockIcon = () => (
   </svg>
 );
 
-export function Packages({ copy, packages }: PackagesProps) {
+export function Packages({ locale, copy, packages }: PackagesProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-lightbeige">
       {/* Header */}
@@ -47,7 +51,7 @@ export function Packages({ copy, packages }: PackagesProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {packages.map((pkg) => (
           <div
-            key={pkg.title}
+            key={pkg.id}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
           >
             {/* Image */}
@@ -97,12 +101,12 @@ export function Packages({ copy, packages }: PackagesProps) {
                     <span className="text-darkgray text-xs font-normal">{copy.perPerson}</span>
                   </p>
                 </div>
-                <button
-                  type="button"
-                  className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase cursor-pointer transition-all duration-300"
+                <Link
+                  href={`${localizedPath(locale, "/book")}?type=package&id=${pkg.id}`}
+                  className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase transition-all duration-300"
                 >
                   {copy.bookPackage}
-                </button>
+                </Link>
               </div>
             </div>
           </div>

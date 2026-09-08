@@ -1,17 +1,17 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Shell } from "@/components/layout/shell";
 import { About } from "@/components/sections/about";
-import { Services, type ServiceCard } from "@/components/sections/services";
-import { SectionSkeleton } from "@/components/ui/skeleton";
+import { Essencia } from "@/components/sections/essencia";
+import { MissionValues } from "@/components/sections/mission-values";
+import { FullServices } from "@/components/sections/full-services";
+import { WhyUs } from "@/components/sections/why-us";
+import { HowWeWork } from "@/components/sections/how-we-work";
+import { WhoWeServe } from "@/components/sections/who-we-serve";
 import { getLocalizedDictionary } from "@/i18n/server";
-import { ServiceService } from "@/lib/data-access/services";
-import type { Locale } from "@/i18n/config";
-import type { Dictionary } from "@/i18n/types";
 
-// Reads live catalog data — must not be statically prerendered at build
-// time (see the identical note on the destinations page).
-export const dynamic = "force-dynamic";
+// This page's content is static (translated straight from the corporate
+// profile PDF) — no live catalog reads here any more, so it doesn't need
+// force-dynamic like the pages that show real hotel/car/package data.
 
 type LocalePageProps = {
   params: Promise<{ lang: string }>;
@@ -24,18 +24,6 @@ export async function generateMetadata({ params }: LocalePageProps): Promise<Met
   return dict.metadata.about;
 }
 
-async function ServicesSection({ locale, copy }: { locale: Locale; copy: Dictionary["sections"]["services"] }) {
-  const services = await ServiceService.findAll({ status: "PUBLISHED" });
-  const serviceCards: ServiceCard[] = services.map((s) => ({
-    icon: s.icon || "/images/paths.svg",
-    title: locale === "pt" ? s.namePt : s.nameEn,
-    description: locale === "pt" ? s.descriptionPt : s.descriptionEn,
-  }));
-
-  if (serviceCards.length === 0) return null;
-  return <Services copy={copy} services={serviceCards} />;
-}
-
 export default async function AboutPage({ params }: LocalePageProps) {
   const { lang } = await params;
   const { locale, dict } = getLocalizedDictionary(lang);
@@ -44,6 +32,7 @@ export default async function AboutPage({ params }: LocalePageProps) {
   return (
     <Shell locale={locale} copy={dict.layout}>
       <div className="bg-leafy px-7 lg:px-28 pt-36 pb-14">
+        <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold mb-3">{page.slogan}</p>
         <h1 className="text-4xl md:text-6xl text-white leading-tight">
           {page.title} <span className="italic">{page.titleAccent}</span>
         </h1>
@@ -52,17 +41,12 @@ export default async function AboutPage({ params }: LocalePageProps) {
         </p>
       </div>
       <About copy={dict.sections.about} />
-      <Suspense
-        fallback={
-          <SectionSkeleton
-            title={dict.sections.services.title}
-            titleAccent={dict.sections.services.titleAccent}
-            bgClassName="bg-lightbeige"
-          />
-        }
-      >
-        <ServicesSection locale={locale} copy={dict.sections.services} />
-      </Suspense>
+      <Essencia copy={dict.sections.essencia} />
+      <MissionValues copy={dict.sections.missionValues} />
+      <FullServices locale={locale} copy={dict.sections.fullServices} />
+      <WhyUs copy={dict.sections.whyUs} />
+      <HowWeWork copy={dict.sections.howWeWork} />
+      <WhoWeServe copy={dict.sections.whoWeServe} />
     </Shell>
   );
 }

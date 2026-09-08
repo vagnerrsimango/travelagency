@@ -240,7 +240,7 @@ export function PromocoesClient() {
       </div>
 
       <p className="text-xs text-slate-400 mb-4">
-        Só ofertas de voo por agora — é o único tipo com secção pública (a faixa de promoções na página inicial).
+        Só ofertas de voo por agora: é o único tipo com secção pública (a faixa de promoções na página inicial).
       </p>
 
       {error && <div className="mb-4 rounded-lg bg-red-50 text-red-700 text-sm px-4 py-3">{error}</div>}

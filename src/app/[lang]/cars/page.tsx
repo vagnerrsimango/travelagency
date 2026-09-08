@@ -1,12 +1,13 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Shell } from "@/components/layout/shell";
-import { Booking } from "@/components/sections/booking";
+import { BookingWithCatalog } from "@/components/sections/booking-with-catalog";
 import { Cars, type CarCard } from "@/components/sections/cars";
-import { SectionSkeleton } from "@/components/ui/skeleton";
+import { SectionSkeleton, BookingFormSkeleton } from "@/components/ui/skeleton";
 import { getLocalizedDictionary } from "@/i18n/server";
 import { VehicleService } from "@/lib/data-access/vehicles";
 import type { Dictionary } from "@/i18n/types";
+import type { Locale } from "@/i18n/config";
 
 // Reads live catalog data — must not be statically prerendered at build
 // time (see the identical note on the destinations page).
@@ -23,9 +24,10 @@ export async function generateMetadata({ params }: LocalePageProps): Promise<Met
   return dict.metadata.cars;
 }
 
-async function CarsSection({ copy }: { copy: Dictionary["sections"]["cars"] }) {
+async function CarsSection({ locale, copy }: { locale: Locale; copy: Dictionary["sections"]["cars"] }) {
   const vehicles = await VehicleService.findAll({ status: "PUBLISHED" });
   const carCards: CarCard[] = vehicles.map((v) => ({
+    id: v.id,
     category: v.category,
     brand: v.model,
     type: v.type || v.category,
@@ -38,7 +40,7 @@ async function CarsSection({ copy }: { copy: Dictionary["sections"]["cars"] }) {
   }));
 
   if (carCards.length === 0) return null;
-  return <Cars copy={copy} cars={carCards} />;
+  return <Cars locale={locale} copy={copy} cars={carCards} />;
 }
 
 export default async function CarsPage({ params }: LocalePageProps) {
@@ -49,6 +51,7 @@ export default async function CarsPage({ params }: LocalePageProps) {
   return (
     <Shell locale={locale} copy={dict.layout}>
       <div className="bg-leafy px-7 lg:px-28 pt-36 pb-14">
+        <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold mb-3">{page.slogan}</p>
         <h1 className="text-4xl md:text-6xl text-white leading-tight">
           {page.title} <span className="italic">{page.titleAccent}</span>
         </h1>
@@ -67,9 +70,11 @@ export default async function CarsPage({ params }: LocalePageProps) {
           />
         }
       >
-        <CarsSection copy={dict.sections.cars} />
+        <CarsSection locale={locale} copy={dict.sections.cars} />
       </Suspense>
-      <Booking copy={dict.sections.booking} />
+      <Suspense fallback={<BookingFormSkeleton />}>
+        <BookingWithCatalog locale={locale} copy={dict.sections.booking} />
+      </Suspense>
     </Shell>
   );
 }

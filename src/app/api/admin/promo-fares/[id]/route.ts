@@ -52,7 +52,7 @@ export async function DELETE(_request: NextRequest, { params }: RouteParams) {
       return NextResponse.json({ error: "Oferta não encontrada" }, { status: 404 });
     }
     return NextResponse.json(
-      { error: "Só é possível eliminar rascunhos — arquive em vez de eliminar" },
+      { error: "Só é possível eliminar rascunhos; arquive em vez de eliminar" },
       { status: 409 }
     );
   }

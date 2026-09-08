@@ -32,7 +32,18 @@ export function isAllowed(
   request: NextRequest,
   { windowMs, maxRequests, keyPrefix }: { windowMs: number; maxRequests: number; keyPrefix: string }
 ): boolean {
-  const key = `${keyPrefix}:${getClientIp(request)}`;
+  return isAllowedForKey(getClientIp(request), { windowMs, maxRequests, keyPrefix });
+}
+
+// Same bucket logic, keyed on any identifier rather than the requester's
+// IP — used to throttle by phone number, since one person can submit from
+// several IPs (mobile data switching towers, shared office wifi) but not
+// several phone numbers.
+export function isAllowedForKey(
+  identifier: string,
+  { windowMs, maxRequests, keyPrefix }: { windowMs: number; maxRequests: number; keyPrefix: string }
+): boolean {
+  const key = `${keyPrefix}:${identifier}`;
   const now = Date.now();
   const bucket = buckets.get(key);
 
@@ -53,4 +64,30 @@ export const loginRateLimit = {
   windowMs: 15 * 60 * 1000, // 15 minutes
   maxRequests: 10,
   keyPrefix: "login",
+};
+
+// A real customer submits one reservation at a time, occasionally two if
+// they're booking a flight and a hotel separately. This is generous enough
+// for that and tight enough to blunt a scripted flood.
+export const reservationRateLimit = {
+  windowMs: 10 * 60 * 1000, // 10 minutes
+  maxRequests: 8,
+  keyPrefix: "reservation",
+};
+
+// Tighter, per-phone-number ceiling on top of the per-IP one above — one
+// customer legitimately submits a handful of requests (a flight, a hotel,
+// a car) in one sitting, never dozens.
+export const reservationPhoneRateLimit = {
+  windowMs: 30 * 60 * 1000, // 30 minutes
+  maxRequests: 5,
+  keyPrefix: "reservation-phone",
+};
+
+// The live-quote endpoint gets called on every form keystroke/blur — much
+// higher ceiling than actual submission, still bounded.
+export const quoteRateLimit = {
+  windowMs: 60 * 1000,
+  maxRequests: 30,
+  keyPrefix: "quote",
 };

@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { Shell } from "@/components/layout/shell";
 import { BookingOptions } from "@/components/sections/booking-options";
 import { Hero } from "@/components/sections/hero";
-import { HowItWorks } from "@/components/sections/how-it-works";
 import { PromoFares, type FareCard } from "@/components/sections/promo-fares";
 import { SectionSkeleton } from "@/components/ui/skeleton";
 import { getLocalizedDictionary } from "@/i18n/server";
@@ -66,7 +65,6 @@ export default async function Home({ params }: LocalePageProps) {
       >
         <PromoFaresSection locale={locale} copy={dict.home.promoFares} />
       </Suspense>
-      <HowItWorks copy={dict.home.howItWorks} />
     </Shell>
   );
 }

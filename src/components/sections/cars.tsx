@@ -1,7 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
 export type CarCard = {
+  id: string;
   category: string;
   brand: string;
   type: string;
@@ -14,6 +17,7 @@ export type CarCard = {
 };
 
 type CarsProps = {
+  locale: Locale;
   copy: Dictionary["sections"]["cars"];
   cars: CarCard[];
 };
@@ -36,7 +40,7 @@ const GearIcon = () => (
   </svg>
 );
 
-export function Cars({ copy, cars }: CarsProps) {
+export function Cars({ locale, copy, cars }: CarsProps) {
   return (
     <div className="px-7 lg:px-28 py-14 lg:py-28 bg-beige">
       {/* Header */}
@@ -50,19 +54,19 @@ export function Cars({ copy, cars }: CarsProps) {
             {copy.description}
           </p>
         </div>
-        <button
-          type="button"
-          className="bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0 cursor-pointer"
+        <Link
+          href={localizedPath(locale, "/cars")}
+          className="bg-orange/10 text-orange hover:bg-orange hover:text-white transition-all duration-300 rounded-3xl px-6 py-3 uppercase text-sm shrink-0"
         >
           {copy.seeAllVehicles}
-        </button>
+        </Link>
       </div>
 
       {/* Car cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {cars.map((car) => (
           <div
-            key={car.category}
+            key={car.id}
             className="bg-white rounded-2xl border border-darkgray/20 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
           >
             {/* Car image */}
@@ -115,12 +119,12 @@ export function Cars({ copy, cars }: CarsProps) {
                     <span className="text-darkgray text-xs font-normal">{copy.perDay}</span>
                   </p>
                 </div>
-                <button
-                  type="button"
-                  className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase cursor-pointer transition-all duration-300"
+                <Link
+                  href={`${localizedPath(locale, "/book")}?type=car&id=${car.id}`}
+                  className="bg-orange hover:bg-orange/90 text-white rounded-3xl px-4 py-2 text-xs font-semibold uppercase transition-all duration-300"
                 >
                   {copy.reserveCar}
-                </button>
+                </Link>
               </div>
             </div>
           </div>
