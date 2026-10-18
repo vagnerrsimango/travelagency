@@ -93,14 +93,14 @@ export function paymentReceiptEmail(input: PaymentReceiptEmailInput): { subject:
 // this project isn't deployed yet, so siteUrl would resolve to localhost,
 // which Gmail's servers can never reach (hence the broken-image icon).
 // A data URI has no such requirement — it works identically before and
-// after deployment — and at ~30KB the logo is well within what email
+// after deployment — and at a small pre-resized file the logo is well within what email
 // clients render inline without complaint. Read once per process, not
 // per email.
 let logoDataUri: string | null = null;
 function getLogoDataUri(): string {
   if (logoDataUri) return logoDataUri;
   try {
-    const bytes = readFileSync(join(process.cwd(), "public/icons/logooficial.png"));
+    const bytes = readFileSync(join(process.cwd(), "public/icons/zambi-tour-logo-email.png"));
     logoDataUri = `data:image/png;base64,${bytes.toString("base64")}`;
   } catch {
     logoDataUri = "";

@@ -35,6 +35,7 @@
       "destinations": "Destinos",
       "hotels": "Hotéis",
       "cars": "Carros",
+      "contact": "Contacte-nos",
       "about": "Sobre",
       "bookNow": "Reservar",
       "toggleMenu": "Abrir ou fechar menu",
@@ -217,7 +218,7 @@
       "browseAllHotels": "Ver Todos os Hotéis",
       "from": "A partir de",
       "perNight": "/noite",
-      "checkAvailability": "Ver Disponibilidade"
+      "checkAvailability": "Reservar"
     },
     "cars": {
       "eyebrow": "Mobilidade",

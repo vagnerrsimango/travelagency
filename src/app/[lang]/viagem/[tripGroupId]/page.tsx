@@ -116,7 +116,7 @@ export default async function TripQuotePage({ params }: PageProps) {
               white for print (see the parent div below), so without
               inverting here the logo would be invisible on a printed
               page — this is the actual fix for "the PDF needs our logo". */}
-          <Image src="/icons/logooficial.png" alt="ZambiTour" width={280} height={228} className="h-12 w-auto object-contain print:invert" />
+          <Image src="/icons/zambi-tour-logo.png" alt="ZambiTour" width={400} height={101} className="h-12 w-auto object-contain print:invert" />
           <div className="text-right">
             <h1 className="text-white text-xl print:text-black">{t.title}</h1>
             <p className="text-white/50 text-xs print:text-black">{tripGroupId.slice(0, 8).toUpperCase()}</p>

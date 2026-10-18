@@ -7,10 +7,10 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-sm bg-white rounded-xl border border-slate-200 shadow-sm p-8">
         <Image
-          src="/icons/logooficial.png"
+          src="/icons/zambi-tour-logo.png"
           alt="ZambiTour"
-          width={280}
-          height={228}
+          width={400}
+          height={101}
           className="h-14 w-auto object-contain invert mb-4"
         />
         <h1 className="text-xl font-semibold text-slate-900">ZambiTour Backoffice</h1>

@@ -46,10 +46,10 @@ export default async function DashboardLayout({ children }: { children: ReactNod
        * server component. */}
       <div className="md:hidden bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between">
         <Image
-          src="/icons/logooficial.png"
+          src="/icons/zambi-tour-logo.png"
           alt="ZambiTour"
-          width={280}
-          height={228}
+          width={400}
+          height={101}
           className="h-8 w-auto object-contain invert"
         />
         <details className="relative">
@@ -82,10 +82,10 @@ export default async function DashboardLayout({ children }: { children: ReactNod
       <aside className="hidden md:flex w-60 shrink-0 bg-white border-r border-slate-200 flex-col">
         <div className="px-5 py-5 border-b border-slate-200">
           <Image
-            src="/icons/logooficial.png"
+            src="/icons/zambi-tour-logo.png"
             alt="ZambiTour"
-            width={280}
-            height={228}
+            width={400}
+            height={101}
             className="h-10 w-auto object-contain invert mb-2"
           />
           <p className="text-xs text-slate-500 uppercase tracking-wide">Backoffice · Viaje. Descubra. Viva.</p>

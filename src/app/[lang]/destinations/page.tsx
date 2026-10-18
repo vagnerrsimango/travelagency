@@ -61,6 +61,7 @@ async function ToursAndPackagesSection({
 }) {
   const packages = await PackageService.findAll({ status: "PUBLISHED" });
   const tourCards: TourCard[] = packages.map((p) => ({
+    id: p.id,
     slug: p.slug,
     name: locale === "pt" ? p.namePt : p.nameEn,
     description: locale === "pt" ? p.itineraryPt : p.itineraryEn,

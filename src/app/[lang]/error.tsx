@@ -21,7 +21,7 @@ export default function Error({
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-beige px-6 text-center gap-6">
       <div className="bg-leafy rounded-2xl px-6 py-5">
-        <Image src="/icons/logooficial.png" alt="ZambiTour" width={280} height={228} className="h-14 w-auto object-contain" />
+        <Image src="/icons/zambi-tour-logo.png" alt="ZambiTour" width={400} height={101} className="h-14 w-auto object-contain" />
       </div>
       <div>
         <h1 className="text-textdark text-2xl md:text-3xl font-semibold mb-2">{copy.title}</h1>

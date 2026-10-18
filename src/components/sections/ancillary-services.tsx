@@ -50,7 +50,7 @@ export function AncillaryServices({ locale, copy, services }: AncillaryServicesP
           >
             <div className="w-11 h-11 rounded-xl bg-orange/10 flex items-center justify-center">
               {service.icon ? (
-                <Image src={service.icon} alt="" width={24} height={24} className="w-6 h-6 object-contain" />
+                <Image src={service.icon} alt="" width={24} height={24} className="w-6 h-6 object-contain brightness-0 invert" />
               ) : (
                 <DefaultIcon />
               )}

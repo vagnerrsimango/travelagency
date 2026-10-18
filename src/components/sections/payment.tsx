@@ -55,9 +55,10 @@ export function Payment({ copy }: PaymentProps) {
                 const Icon = paymentIcons[method.id as keyof typeof paymentIcons];
 
                 return (
-                  <div
+                  <button
+                    type="button"
                     key={method.id}
-                    className="bg-white border border-darkgray/20 rounded-xl p-4 flex items-center gap-4"
+                    className="bg-white border border-darkgray/20 rounded-xl p-4 flex items-center gap-4 text-left w-full cursor-pointer transition-all duration-300 hover:border-orange hover:shadow-md"
                   >
                     <Icon />
                     <div className="flex-1 min-w-0">
@@ -68,7 +69,7 @@ export function Payment({ copy }: PaymentProps) {
                       </div>
                       <p className="text-xs text-parablack mt-0.5">{method.description}</p>
                     </div>
-                  </div>
+                  </button>
                 );
               })}
             </div>

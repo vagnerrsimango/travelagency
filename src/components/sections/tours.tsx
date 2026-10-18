@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { formatMZN, formatUSDApprox } from "@/lib/currency";
-import type { Locale } from "@/i18n/config";
+import { localizedPath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 
 export type TourCard = {
+  id: string;
   slug: string;
   name: string;
   description: string;
@@ -74,7 +76,7 @@ export function Tours({ locale, copy, tours }: ToursProps) {
                 key={tour.slug}
                 className="embla__slide embla__slide--tours shrink-0"
               >
-                <div className="cursor-pointer">
+                <Link href={`${localizedPath(locale, "/book")}?type=package&id=${tour.id}`} className="block">
                   <div className="grid border border-darkgray/50 bg-white/50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
                     <div className="flex flex-col gap-4 px-6 py-8">
                       <div className="flex flex-row justify-between items-center">
@@ -108,7 +110,7 @@ export function Tours({ locale, copy, tours }: ToursProps) {
                       />
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

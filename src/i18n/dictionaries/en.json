@@ -35,6 +35,7 @@
       "destinations": "Destinations",
       "hotels": "Hotels",
       "cars": "Cars",
+      "contact": "Contact Us",
       "about": "About",
       "bookNow": "Book Now",
       "toggleMenu": "Toggle menu",
@@ -217,7 +218,7 @@
       "browseAllHotels": "Browse All Hotels",
       "from": "From",
       "perNight": "/night",
-      "checkAvailability": "Check Availability"
+      "checkAvailability": "Book Now"
     },
     "cars": {
       "eyebrow": "Mobility",

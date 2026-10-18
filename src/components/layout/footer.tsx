@@ -67,16 +67,16 @@ type FooterProps = {
 
 export function Footer({ locale, copy }: FooterProps) {
   return (
-    <footer className="bg-leafy px-7 lg:px-28 py-10 lg:py-14">
+    <footer id="contact" className="scroll-mt-24 bg-leafy px-7 lg:px-28 py-10 lg:py-14">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 pb-8 border-b border-white/10">
         {/* Left: Logo + description + social icons */}
         <div className="flex flex-col gap-4">
           <Link href={localizedPath(locale, "/")}>
             <Image
-              src="/icons/logooficial.png"
+              src="/icons/zambi-tour-logo.png"
               alt="ZambiTour"
-              width={280}
-              height={228}
+              width={400}
+              height={101}
               className="h-14 w-auto object-contain"
             />
           </Link>

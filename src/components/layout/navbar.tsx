@@ -32,10 +32,11 @@ export function Navbar({ locale, copy }: NavbarProps) {
 
   const navLinks = [
     { label: copy.home, href: localizedPath(locale, "/") },
+    { label: copy.about, href: localizedPath(locale, "/about") },
     { label: copy.destinations, href: localizedPath(locale, "/destinations") },
     { label: copy.hotels, href: localizedPath(locale, "/hotels") },
     { label: copy.cars, href: localizedPath(locale, "/cars") },
-    { label: copy.about, href: localizedPath(locale, "/about") },
+    { label: copy.contact, href: `${localizedPath(locale, "/")}#contact` },
   ];
 
   const languageSwitcher = (compact = false) => (
@@ -86,16 +87,16 @@ export function Navbar({ locale, copy }: NavbarProps) {
       {/* Desktop navbar */}
       <div
         className={`text-white hidden lg:flex flex-row items-center justify-between py-5 px-10 fixed w-full z-50 top-0 border-b border-lightbeige/20 transition-all duration-300 ${
-          scrolled ? "bg-leafy/95 backdrop-blur-sm" : "bg-transparent"
+          scrolled ? "bg-leafy/95 backdrop-blur-sm" : "bg-black/65 backdrop-blur-sm"
         }`}
       >
         <Link href={localizedPath(locale, "/")}>
           <Image
-            src="/icons/logooficial.png"
+            src="/icons/zambi-tour-logo.png"
             alt="ZambiTour"
-            width={280}
-            height={228}
-            className="h-16 w-auto object-contain"
+            width={400}
+            height={101}
+            className="h-14 w-auto object-contain"
           />
         </Link>
 
@@ -127,11 +128,11 @@ export function Navbar({ locale, copy }: NavbarProps) {
       >
         <Link href={localizedPath(locale, "/")} className="shrink-0">
           <Image
-            src="/icons/logooficial.png"
+            src="/icons/zambi-tour-logo.png"
             alt="ZambiTour"
-            width={280}
-            height={228}
-            className="h-12 w-auto max-w-[110px] object-contain sm:h-14 sm:max-w-none"
+            width={400}
+            height={101}
+            className="h-12 w-auto max-w-[170px] object-contain sm:h-14 sm:max-w-none"
           />
         </Link>
         <div className="flex items-center gap-2">

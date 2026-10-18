@@ -14,7 +14,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-beige px-6 text-center gap-6">
       <div className="bg-leafy rounded-2xl px-6 py-5">
-        <Image src="/icons/logooficial.png" alt="ZambiTour" width={280} height={228} className="h-14 w-auto object-contain" />
+        <Image src="/icons/zambi-tour-logo.png" alt="ZambiTour" width={400} height={101} className="h-14 w-auto object-contain" />
       </div>
       <div>
         <p className="text-orange text-xs font-semibold uppercase tracking-widest mb-2">{copy.code}</p>
